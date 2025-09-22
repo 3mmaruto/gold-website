@@ -6,6 +6,21 @@
     --dark: #010A35;
 }
 
+/* Ensure hero carousel has consistent height on desktop and images cover fully */
+#header-carousel .carousel-item {
+    position: relative;
+    min-height: 600px;
+}
+
+#header-carousel .carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -80,7 +95,7 @@
 
 /*** Navbar ***/
 .navbar.sticky-top {
-    top: -100px;
+    top: 0;
     transition: .5s;
 }
 
