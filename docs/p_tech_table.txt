@@ -1,0 +1,30 @@
+{
+  "heat_pumps": {
+    "mini_heat_pump": {
+      "title": "Mini Heat Pump Specifications",
+      "columns": [
+        "Model", "Power Supply", "Rated Capacity (H/C)", "Rated Power Input", "COP", "Max Power Input", "Max Current", "Refrigerant Type", "Charge Volume", "Max Pressure (Exhaust)", "Max Pressure (Suction)", "Water Flow", "Shock Proof", "Water Proof", "Ambient Temp", "Sound Pressure", "Net Weight", "Dimensions"
+      ],
+      "rows": [
+        ["SK10", "220V/1PH/50Hz", "10000W", "2300W", "4.35", "4000W", "19A", "R410A", "1500g", "4.15MPa", "1.5MPa", ">3m³/h", "Class I", "IPX4", "-7~43℃", ">48 dB(A)", "76kg", "1090×435×810mm"],
+        ["SK16", "220V/1PH/50Hz", "16200W", "5500W", "4.25", "6320W", "29.3A", "R410A", "2000g", "4.15MPa", "1.5MPa", ">3.2m³/h", "Class I", "IPX4", "-7~43℃", ">50 dB(A)", "84kg", "1110×395×770mm"],
+        ["SK22", "220V/1PH/50Hz", "22000W", "4100W", "4.26", "6000W", "28.5A", "R410A", "2200g", "4.2MPa", "2.8MPa", ">3.8m³/h", "Class I", "IPX4", "-10~43℃", ">58 dB(A)", "104kg", "1140×470×970mm"],
+        ["SK22", "380V/3PH/50Hz", "22000W", "4100W", "4.26", "6000W", "11A", "R410A", "2200g", "4.2MPa", "2.8MPa", ">3.8m³/h", "Class I", "IPX4", "-10~43℃", ">58 dB(A)", "104kg", "1140×470×970mm"],
+        ["SK30", "380V/3PH/50Hz", "30000W", "5500W", "4.25", "7500W", "13.5A", "R410A", "2800g", "4.2MPa", "2.8MPa", ">5m³/h", "Class I", "IPX4", "-10~43℃", ">58 dB(A)", "130kg", "1140×470×1270mm"]
+      ]
+    },
+    "max_heat_pump": {
+      "title": "Max Heat Pump Specifications",
+      "dropdown": true,
+      "columns": [
+        "Model", "Power Supply", "Heating Capacity (kW)", "Heating Input Power (kW)", "COP", "Cooling Capacity (kW)", "Cooling Input Power (kW)", "SCOP @35℃", "SCOP @55℃", "Max Power (kW)", "Max Current (A)", "Refrigerant", "Charge (g)", "CO2 Equivalent", "Water Temp. Max (℃)", "Wifi Control", "Compressor Brand", "Heat Exchanger", "Pump", "Expansion Tank", "Dimensions", "Net Weight"
+      ],
+      "rows": [
+        ["SK10-CDWB", "220-240V/50Hz", "10", "2.61", "3.84", "11", "2.44", "A+++", "A++", "3.1", "15", "R290", "500", "0.0015", "80", "Yes", "Panasonic Full Inverter", "Danfoss Plate", "Built-in", "Built-in", "1090×435×810mm", "89kg"],
+        ["SK16-CDWB", "220-240V/50Hz", "16", "4.23", "3.78", "17.2", "3.97", "A+++", "A++", "5.85", "17", "R290", "800", "0.0024", "80", "Yes", "Panasonic Full Inverter", "Danfoss Plate", "Built-in", "Built-in", "1277×434×962mm", "106kg"],
+        ["SK22-CDWB", "220-240V/50Hz", "22", "5.88", "3.74", "17.2", "7.31", "A+++", "A++", "7.5", "18", "R290", "1400", "0.0042", "80", "Yes", "Panasonic Full Inverter", "Danfoss Plate", "Built-in", "Built-in", "1277×434×1262mm", "131kg"],
+        ["SK22-CDWB/3N", "380-415V/50Hz", "22", "5.88", "3.74", "17.2", "7.31", "A+++", "A++", "10.5", "16", "R290", "1400", "0.0042", "80", "Yes", "Panasonic Full Inverter", "Danfoss Plate", "Built-in", "Built-in", "1277×434×1262mm", "131kg"]
+      ]
+    }
+  }
+}

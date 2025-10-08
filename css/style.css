@@ -499,3 +499,69 @@
 .footer .copyright a:hover {
     color: #FFFFFF;
 }
+
+/* Attention Glow Effect */
+.table-crop {
+    width: 100%;
+    /* Set a height so object-fit can crop */
+    height: 340px;
+    object-fit: cover;
+    /* Shift view upward to hide a small bottom part */
+    object-position: center 30%;
+}
+
+@media (min-width: 576px) {
+    .table-crop { height: 380px; }
+}
+
+@media (min-width: 992px) {
+    .table-crop { height: 460px; }
+}
+
+.glow-text {
+    text-shadow:
+        0 0 7px rgba(255, 128, 15, 0.75),
+        0 0 14px rgba(255, 128, 15, 0.6),
+        0 0 22px rgba(1, 10, 53, 0.45);
+    animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+    from {
+        text-shadow:
+            0 0 5px rgba(255, 128, 15, 0.55),
+            0 0 10px rgba(255, 128, 15, 0.4),
+            0 0 16px rgba(1, 10, 53, 0.3);
+    }
+    to {
+        text-shadow:
+            0 0 12px rgba(255, 128, 15, 0.95),
+            0 0 24px rgba(255, 128, 15, 0.75),
+            0 0 32px rgba(1, 10, 53, 0.5);
+    }
+}
+
+/* Language & RTL Helpers */
+.lang-ar .en-only { display: none !important; }
+.lang-en .ar-only { display: none !important; }
+
+/* Apply RTL only to body content wrapper, not navbar/footer */
+.rtl-body[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+.rtl-body[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+}
+
+/* Optional tweak: flip default list paddings in RTL */
+.rtl-body[dir="rtl"] ul,
+.rtl-body[dir="rtl"] ol {
+    padding-right: 1.25rem;
+    padding-left: 0;
+}
+
+.rtl-body[dir="rtl"] .text-start { text-align: right !important; }
+.rtl-body[dir="rtl"] .text-end { text-align: left !important; }

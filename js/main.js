@@ -61,6 +61,35 @@
         ]
     });
 
+    // Language Switcher (default Arabic)
+    function applyLanguage(lang) {
+        var $body = $("body");
+        var $html = $("html");
+        $body.removeClass("lang-ar lang-en").addClass(lang === "ar" ? "lang-ar" : "lang-en");
+        $html.attr("lang", lang);
+        // Toggle RTL on wrappers
+        var dir = (lang === "ar") ? "rtl" : "ltr";
+        $(".rtl-body").attr("dir", dir);
+        // Update dropdown label
+        var label = (lang === "ar") ? "العربية" : "English";
+        $("#langDropdownLabel").text(label);
+        // Persist
+        try { localStorage.setItem("site_lang", lang); } catch(e) {}
+    }
+
+    function initLanguage() {
+        var stored = null;
+        try { stored = localStorage.getItem("site_lang"); } catch(e) {}
+        var initial = stored || "ar"; // default Arabic
+        applyLanguage(initial);
+    }
+
+    $(document).on("click", ".lang-select", function(e){
+        e.preventDefault();
+        var lang = $(this).data("lang");
+        applyLanguage(lang);
+    });
+
+    initLanguage();
     
 })(jQuery);
-
