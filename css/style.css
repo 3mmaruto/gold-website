@@ -501,22 +501,6 @@
 }
 
 /* Attention Glow Effect */
-.table-crop {
-    width: 100%;
-    /* Set a height so object-fit can crop */
-    height: 340px;
-    object-fit: cover;
-    /* Shift view upward to hide a small bottom part */
-    object-position: center 30%;
-}
-
-@media (min-width: 576px) {
-    .table-crop { height: 380px; }
-}
-
-@media (min-width: 992px) {
-    .table-crop { height: 460px; }
-}
 
 .glow-text {
     text-shadow:
@@ -570,4 +554,8 @@
     direction: rtl;
     text-align: right;
     unicode-bidi: plaintext;
+}
+
+.text-nowrap { 
+    white-space: nowrap; 
 }
