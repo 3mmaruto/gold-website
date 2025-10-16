@@ -565,3 +565,9 @@
 
 .rtl-body[dir="rtl"] .text-start { text-align: right !important; }
 .rtl-body[dir="rtl"] .text-end { text-align: left !important; }
+
+.rtl-text {
+    direction: rtl;
+    text-align: right;
+    unicode-bidi: plaintext;
+}
