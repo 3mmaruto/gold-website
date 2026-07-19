@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "pageSize": 8,
+  "paginationThreshold": 12,
+  "categories": [
+    { "id": "heat-pumps", "label": { "ar": "المضخات الحرارية", "en": "Heat pumps" } },
+    { "id": "hot-water-cylinders", "label": { "ar": "أسطوانات المياه الساخنة", "en": "Hot-water cylinders" } },
+    { "id": "buffer-tanks", "label": { "ar": "خزانات الدعم", "en": "Buffer tanks" } },
+    { "id": "expansion-tanks", "label": { "ar": "خزانات التمدد", "en": "Expansion tanks" } },
+    { "id": "circulation-pumps", "label": { "ar": "مضخات التدوير", "en": "Circulation pumps" } }
+  ],
+  "products": [
+    {
+      "id": "r290-high-temperature-series",
+      "slug": "r290-high-temperature-series",
+      "category": "heat-pumps",
+      "name": {
+        "ar": "سلسلة R290 عالية الحرارة",
+        "en": "R290 High-Temperature Series"
+      },
+      "summary": {
+        "ar": "مضخة حرارية هواء إلى ماء بإنفرتر كامل للتدفئة والتبريد والمياه الساخنة، مع ماء خروج يصل إلى 80 درجة مئوية.",
+        "en": "A full-inverter air-to-water platform for heating, cooling and hot water, with outlet water up to 80 C."
+      },
+      "images": [
+        {
+          "base": "/media/products/generated/gold-heat-pump-r290-80c-series-v1",
+          "fallback": "/media/products/generated/gold-heat-pump-r290-80c-series-v1.png",
+          "width": 1448,
+          "height": 1086,
+          "widths": [480, 768, 1200],
+          "alt": {
+            "ar": "مضخة غولد الحرارية من سلسلة R290 عالية الحرارة حتى 80 درجة",
+            "en": "GOLD R290 high-temperature heat-pump series up to 80 C"
+          }
+        }
+      ],
+      "specs": [
+        { "label": { "ar": "غاز التبريد", "en": "Refrigerant" }, "value": "R290 · GWP 3" },
+        { "label": { "ar": "ماء الخروج", "en": "Outlet water" }, "value": { "ar": "حتى 80°م", "en": "Up to 80 C" } },
+        { "label": { "ar": "الاستطاعات", "en": "Capacities" }, "value": "8 · 12 · 16 · 22 kW" }
+      ],
+      "highlights": {
+        "ar": [
+          "ضاغط باناسونيك إنفرتر كامل",
+          "مبادل صفائحي وصمام تمدد إلكتروني من دانفوس",
+          "شاشة LCD واتصال Wi-Fi",
+          "مضخة تدوير إنفرتر وخزان تمدد مدمجان"
+        ],
+        "en": [
+          "Panasonic full-inverter compressor",
+          "Danfoss plate heat exchanger and electronic expansion valve",
+          "LCD and Wi-Fi control",
+          "Built-in inverter circulation pump and expansion tank"
+        ]
+      },
+      "models": ["8 kW", "12 kW", "16 kW", "22 kW"]
+    },
+    {
+      "id": "r32-full-inverter-series",
+      "slug": "r32-full-inverter-series",
+      "category": "heat-pumps",
+      "name": {
+        "ar": "سلسلة R32 إنفرتر كامل",
+        "en": "R32 Full-Inverter Series"
+      },
+      "summary": {
+        "ar": "سلسلة هواء إلى ماء حتى 60 درجة مئوية، بتكوينات هيكل مفردة ومزدوجة المروحة بحسب الاستطاعة.",
+        "en": "An air-to-water series up to 60 C, with single- and dual-fan cabinet configurations according to capacity."
+      },
+      "images": [
+        {
+          "base": "/media/products/generated/gold-heat-pump-r32-60c-single-fan-v1",
+          "fallback": "/media/products/generated/gold-heat-pump-r32-60c-single-fan-v1.png",
+          "width": 1448,
+          "height": 1086,
+          "widths": [480, 768, 1200],
+          "label": { "ar": "هيكل مفرد المروحة", "en": "Single-fan cabinet" },
+          "alt": {
+            "ar": "مضخة غولد الحرارية R32 بتكوين مفرد المروحة",
+            "en": "GOLD R32 heat pump in a single-fan cabinet"
+          }
+        },
+        {
+          "base": "/media/products/generated/gold-heat-pump-r32-60c-dual-fan-v1",
+          "fallback": "/media/products/generated/gold-heat-pump-r32-60c-dual-fan-v1.png",
+          "width": 1448,
+          "height": 1086,
+          "widths": [480, 768, 1200],
+          "label": { "ar": "هيكل 22 كيلوواط مزدوج المروحة", "en": "22 kW dual-fan cabinet" },
+          "alt": {
+            "ar": "مضخة غولد الحرارية R32 باستطاعة 22 كيلوواط وهيكل مزدوج المروحة",
+            "en": "GOLD 22 kW R32 heat pump in a dual-fan cabinet"
+          }
+        }
+      ],
+      "specs": [
+        { "label": { "ar": "غاز التبريد", "en": "Refrigerant" }, "value": "R32" },
+        { "label": { "ar": "ماء الخروج", "en": "Outlet water" }, "value": { "ar": "حتى 60°م", "en": "Up to 60 C" } },
+        { "label": { "ar": "الاستطاعات", "en": "Capacities" }, "value": "8 · 12.5 · 16 · 22 kW" }
+      ],
+      "highlights": {
+        "ar": [
+          "ضاغط ميتسوبيشي إنفرتر كامل",
+          "صمام تمدد إلكتروني من دانفوس",
+          "شاشة LCD واتصال Wi-Fi",
+          "هيكل مزدوج المروحة لموديل 22 كيلوواط"
+        ],
+        "en": [
+          "Mitsubishi full-inverter compressor",
+          "Danfoss electronic expansion valve",
+          "LCD and Wi-Fi control",
+          "Dual-fan cabinet for the 22 kW model"
+        ]
+      },
+      "models": ["8 kW", "12.5 kW", "16 kW", "22 kW"]
+    },
+    {
+      "id": "hot-water-cylinders",
+      "slug": "hot-water-cylinders",
+      "category": "hot-water-cylinders",
+      "name": { "ar": "أسطوانات المياه الساخنة", "en": "Hot-water cylinders" },
+      "summary": {
+        "ar": "حلول تخزين للمياه الساخنة تعمل بالتكامل مع مصدر الحرارة وحاجة المبنى.",
+        "en": "Hot-water storage solutions coordinated with the heat source and the building's demand."
+      },
+      "images": [
+        {
+          "base": "/media/products/generated/gold-hot-water-cylinders-v1",
+          "fallback": "/media/products/generated/gold-hot-water-cylinders-v1.png",
+          "width": 1448,
+          "height": 1086,
+          "widths": [480, 768, 1200],
+          "alt": { "ar": "أسطوانات مياه ساخنة من غولد بأحجام مختلفة", "en": "GOLD hot-water cylinders in multiple sizes" }
+        }
+      ],
+      "specs": [
+        { "label": { "ar": "الوظيفة", "en": "Purpose" }, "value": { "ar": "تخزين المياه الساخنة", "en": "Hot-water storage" } },
+        { "label": { "ar": "أساس الاختيار", "en": "Selection basis" }, "value": { "ar": "الحجم وترتيب المبادلات", "en": "Volume and coil layout" } }
+      ],
+      "highlights": {
+        "ar": ["حجم التخزين", "ترتيب المبادلات", "أماكن التوصيلات", "العزل ومساحة التركيب"],
+        "en": ["Storage volume", "Coil configuration", "Connection layout", "Insulation and installation space"]
+      }
+    },
+    {
+      "id": "buffer-tanks",
+      "slug": "buffer-tanks",
+      "category": "buffer-tanks",
+      "name": { "ar": "خزانات الدعم", "en": "Buffer tanks" },
+      "summary": {
+        "ar": "تضيف حجماً حرارياً واستقراراً هيدروليكياً يساعد المنظومة على العمل بسلاسة.",
+        "en": "Add thermal volume and hydraulic stability to help the complete system operate smoothly."
+      },
+      "images": [
+        {
+          "base": "/media/products/generated/gold-buffer-tanks-v1",
+          "fallback": "/media/products/generated/gold-buffer-tanks-v1.png",
+          "width": 1448,
+          "height": 1086,
+          "widths": [480, 768, 1200],
+          "alt": { "ar": "خزانات دعم من غولد بأحجام وتجهيزات مختلفة", "en": "GOLD buffer tanks in multiple sizes and configurations" }
+        }
+      ],
+      "specs": [
+        { "label": { "ar": "الوظيفة", "en": "Purpose" }, "value": { "ar": "استقرار حراري وهيدروليكي", "en": "Thermal and hydraulic stability" } },
+        { "label": { "ar": "أساس الاختيار", "en": "Selection basis" }, "value": { "ar": "حجم النظام والاستطاعة", "en": "System volume and capacity" } }
+      ],
+      "highlights": {
+        "ar": ["حجم مياه النظام", "استطاعة المضخة الحرارية", "الفصل الهيدروليكي", "مساحة غرفة التجهيزات"],
+        "en": ["System water volume", "Heat-pump capacity", "Hydraulic separation", "Available plant-room space"]
+      }
+    },
+    {
+      "id": "expansion-tanks",
+      "slug": "expansion-tanks",
+      "category": "expansion-tanks",
+      "name": { "ar": "خزانات التمدد", "en": "Expansion tanks" },
+      "summary": {
+        "ar": "تتعامل مع تغير حجم المياه عند تغير الحرارة وتساعد في الحفاظ على ضغط آمن.",
+        "en": "Manage water-volume change as temperature varies and help maintain safe system pressure."
+      },
+      "images": [
+        {
+          "base": "/media/products/generated/gold-expansion-tanks-v1",
+          "fallback": "/media/products/generated/gold-expansion-tanks-v1.png",
+          "width": 1448,
+          "height": 1086,
+          "widths": [480, 768, 1200],
+          "alt": { "ar": "خزانات تمدد من غولد بأحجام مختلفة", "en": "GOLD expansion tanks in multiple sizes" }
+        }
+      ],
+      "specs": [
+        { "label": { "ar": "الوظيفة", "en": "Purpose" }, "value": { "ar": "إدارة تمدد مياه النظام", "en": "Manage system-water expansion" } },
+        { "label": { "ar": "أساس الاختيار", "en": "Selection basis" }, "value": { "ar": "الحجم والحرارة والضغط", "en": "Volume, temperature and pressure" } }
+      ],
+      "highlights": {
+        "ar": ["حجم النظام", "مجال درجات الحرارة", "ضغط الشحن الأولي", "ضغط العمل الأقصى"],
+        "en": ["System volume", "Temperature range", "Pre-charge pressure", "Maximum working pressure"]
+      }
+    },
+    {
+      "id": "circulation-pumps",
+      "slug": "circulation-pumps",
+      "category": "circulation-pumps",
+      "name": { "ar": "مضخات التدوير", "en": "Circulation pumps" },
+      "summary": {
+        "ar": "تحرك المياه في دارات التدفئة والتبريد والمياه الساخنة وفق حاجة الدارة.",
+        "en": "Move water through heating, cooling and hot-water circuits according to circuit demand."
+      },
+      "images": [
+        {
+          "base": "/media/products/generated/gold-circulation-pump-v1",
+          "fallback": "/media/products/generated/gold-circulation-pump-v1.png",
+          "width": 1448,
+          "height": 1086,
+          "widths": [480, 768, 1200],
+          "alt": { "ar": "مضخة تدوير غولد بشاشة تشغيل مضاءة", "en": "GOLD circulation pump with an illuminated operating display" }
+        }
+      ],
+      "specs": [
+        { "label": { "ar": "الوظيفة", "en": "Purpose" }, "value": { "ar": "تدوير مياه المنظومة", "en": "System-water circulation" } },
+        { "label": { "ar": "أساس الاختيار", "en": "Selection basis" }, "value": { "ar": "التدفق وارتفاع الضخ", "en": "Flow and required head" } }
+      ],
+      "highlights": {
+        "ar": ["التدفق التصميمي", "ارتفاع الضخ المطلوب", "نمط التحكم", "خصائص الأنابيب والدارة"],
+        "en": ["Design flow", "Required head", "Control mode", "Pipe and circuit characteristics"]
+      }
+    }
+  ]
+}
