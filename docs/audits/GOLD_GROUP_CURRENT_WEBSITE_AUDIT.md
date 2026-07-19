@@ -1,5 +1,7 @@
 # Gold Group Current Website Audit
 
+> Historical record: this audit describes the legacy HTML template before the approved 2026-07-20 React Router migration. The legacy application has since been removed; the production source is now `frontend-v2/`.
+
 ## 0. Previous Codex Cloud Task Investigation
 
 ### Access result
