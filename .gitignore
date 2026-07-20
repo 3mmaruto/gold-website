@@ -1,0 +1,9 @@
+# Local working files
+tmp/
+*.log
+
+# Frontend dependencies and generated output
+frontend-v2/node_modules/
+frontend-v2/build/
+frontend-v2/dist/
+frontend-v2/.react-router/

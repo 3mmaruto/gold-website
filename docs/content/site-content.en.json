@@ -1,0 +1,311 @@
+{
+  "locale": "en",
+  "lang": "en",
+  "dir": "ltr",
+  "brand": {
+    "name": "GOLD",
+    "companyName": "Gold Group",
+    "tagline": "Engineered comfort. Smarter energy."
+  },
+  "navigation": {
+    "home": "Home",
+    "heatPumps": "Heat Pumps",
+    "underfloorHeating": "Underfloor Heating",
+    "about": "About Us",
+    "products": "Our Products",
+    "contact": "Contact Us",
+    "languageLabel": "العربية"
+  },
+  "seo": {
+    "home": {
+      "title": "GOLD Heat Pumps & HVAC Systems | Damascus, Syria",
+      "description": "Explore GOLD high-temperature air-to-water heat pumps, heating and cooling systems, hot-water cylinders, tanks and circulation solutions in Syria."
+    },
+    "about": {
+      "title": "About Gold Group | Heating & Cooling Systems in Syria",
+      "description": "Learn about Gold Group, a Damascus-based heating and cooling company delivering heat-pump systems and integrated HVAC solutions since 2008."
+    },
+    "products": {
+      "title": "Heat Pumps & Hydronic Products in Syria | GOLD",
+      "description": "Explore GOLD R290 and R32 heat-pump series, hot-water cylinders, buffer and expansion tanks, and circulation pumps for integrated systems in Syria."
+    },
+    "contact": {
+      "title": "Contact Gold Group | HVAC Solutions in Damascus",
+      "description": "Contact Gold Group in Damascus for heat-pump, heating, cooling, hot-water and circulation-system enquiries and project support."
+    },
+    "heatPumps": {
+      "title": "Air-to-Water Heat Pumps in Syria | GOLD",
+      "description": "Learn how GOLD air-to-water heat pumps support heating, cooling and domestic hot water, and what matters when selecting a system in Syria."
+    },
+    "underfloorHeating": {
+      "title": "Hydronic Underfloor Heating Systems in Syria | GOLD",
+      "description": "Explore hydronic underfloor heating, heat-pump integration, pipe layout, zoning, water temperature and the project inputs needed for a coordinated system."
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "80 C R290 Full DC Inverter Series",
+      "title": "High-temperature heating, engineered around efficiency.",
+      "body": "Air-to-water heat-pump systems for heating, cooling and hot water, with selected R290 models delivering outlet water up to 80 C.",
+      "primaryCta": "Explore the system",
+      "secondaryCta": "Talk to our team",
+      "imageAlt": "GOLD high-temperature air-to-water heat pump in a premium technical setting"
+    },
+    "proof": [
+      {
+        "value": "Up to 80 C",
+        "label": "Outlet water temperature",
+        "note": "Selected R290 series"
+      },
+      {
+        "value": "Up to 4.33",
+        "label": "Rated COP",
+        "note": "Model and test-condition dependent"
+      },
+      {
+        "value": "8-22 kW",
+        "label": "Heating-capacity range",
+        "note": "R290 series: 8, 12, 16 and 22 kW"
+      },
+      {
+        "value": "GWP 3",
+        "label": "R290 refrigerant",
+        "note": "Natural refrigerant with low climate impact"
+      }
+    ],
+    "systemIntro": {
+      "eyebrow": "One integrated system",
+      "title": "Move heat into your building instead of creating it from fuel.",
+      "body": "The heat pump captures energy from outdoor air and transfers it to the water circuit. Full-inverter control continuously adjusts the compressor, fan and circulation package to match demand.",
+      "steps": [
+        "Capture energy from outdoor air",
+        "Raise its temperature through the refrigerant circuit",
+        "Transfer heat to the building water system",
+        "Modulate output as operating conditions change"
+      ]
+    },
+    "benefits": {
+      "title": "Designed as a complete heating and cooling platform.",
+      "items": [
+        {
+          "title": "High-temperature capability",
+          "body": "Selected R290 models provide outlet water up to 80 C for demanding hydronic applications."
+        },
+        {
+          "title": "Full-inverter control",
+          "body": "Variable-speed components adapt output to system demand for smoother, more efficient operation."
+        },
+        {
+          "title": "Integrated circulation package",
+          "body": "The current 80 C line includes an inverter circulation pump and expansion tank inside the unit."
+        },
+        {
+          "title": "Lower-impact refrigerant",
+          "body": "The R290 series uses a refrigerant listed with a global-warming potential of 3."
+        }
+      ]
+    },
+    "technical": {
+      "eyebrow": "High-temperature heat-pump platform",
+      "title": "80 C R290 Full DC Inverter Heat Pump",
+      "body": "A high-temperature platform combining a Panasonic full-inverter compressor, Danfoss plate heat exchanger and EEV, smart control and an integrated circulation package. Capacity is selected around each project's operating needs.",
+      "items": [
+        "Panasonic full-inverter compressor",
+        "Danfoss plate heat exchanger and EEV",
+        "Wi-Fi control and LCD controller",
+        "Heating capacities: 8, 12, 16 and 22 kW",
+        "Built-in inverter circulation pump",
+        "Built-in expansion tank"
+      ],
+      "cta": "Download the catalog"
+    },
+    "smartControl": {
+      "eyebrow": "Smart control",
+      "title": "Clear control, right where you need it.",
+      "body": "LCD control and Wi-Fi access make it easier to set operating modes, adjust temperatures and follow system status.",
+      "imageAlt": "GOLD heat-pump system LCD controller"
+    },
+    "aboutTeaser": {
+      "eyebrow": "Gold Group",
+      "title": "Heating and cooling experience in Syria since 2008.",
+      "body": "From product selection to system planning and installation support, Gold Group works to turn technical equipment into a coordinated, practical solution.",
+      "cta": "About Gold Group"
+    },
+    "productsTeaser": {
+      "eyebrow": "Beyond the heat pump",
+      "title": "The components that complete the system.",
+      "body": "Hot-water cylinders, buffer tanks, expansion tanks and circulation pumps selected around the needs of the complete installation.",
+      "cta": "View our products"
+    },
+    "solutions": {
+      "eyebrow": "System guides",
+      "title": "Start with the application, then select the equipment.",
+      "body": "Explore how heat pumps and hydronic underfloor heating fit into a complete building system before choosing capacities and components.",
+      "heatPumpsCta": "Explore heat pumps",
+      "underfloorHeatingCta": "Explore underfloor heating"
+    },
+    "cta": {
+      "title": "Planning a heating or hot-water project?",
+      "body": "Share the building type, area and required water temperature. Our team will help identify the right system direction.",
+      "button": "Contact Gold Group"
+    }
+  },
+  "about": {
+    "eyebrow": "About Gold Group",
+    "title": "Local project knowledge, connected to modern heating technology.",
+    "intro": "Gold Group has worked in heating and cooling in Syria since 2008. The company focuses on heat-pump systems and the supporting equipment needed to deliver reliable comfort and hot water.",
+    "story": "Our role is not limited to supplying a machine. We help connect capacity, water temperature, building distribution, circulation and storage into one coherent system direction, then coordinate the selected solution with project requirements.",
+    "values": [
+      {
+        "title": "System thinking",
+        "body": "We look at the complete water and air-side system, not only the headline capacity of one unit."
+      },
+      {
+        "title": "Clear selection",
+        "body": "Specifications and project conditions should be understandable before equipment is ordered."
+      },
+      {
+        "title": "Efficiency with context",
+        "body": "Performance claims are tied to models, temperatures and stated test conditions."
+      },
+      {
+        "title": "Long-term support",
+        "body": "Product supply is supported by installation coordination, commissioning guidance and after-sales communication."
+      }
+    ],
+    "cta": "Discuss your project"
+  },
+  "products": {
+    "eyebrow": "Our Products",
+    "title": "System quality starts with every component.",
+    "intro": "At Gold Group, system performance is not built by one device alone. We select the heat pump, storage, circulation, pipework and accessories as one coordinated system matched to the project.",
+    "imageAlt": "GOLD hot-water cylinder, buffer tank, expansion tank and circulation pump",
+    "categories": [
+      {
+        "id": "hot-water-cylinders",
+        "name": "Hot-water cylinders",
+        "summary": "Store and deliver domestic hot water while working with the heat source and the building's demand profile.",
+        "selection": ["Storage volume", "Coil configuration", "Connection layout", "Insulation and installation space"]
+      },
+      {
+        "id": "buffer-tanks",
+        "name": "Buffer tanks",
+        "summary": "Add thermal volume and hydraulic stability to help the heat-pump system operate smoothly.",
+        "selection": ["System water volume", "Heat-pump capacity", "Hydraulic separation", "Available plant-room space"]
+      },
+      {
+        "id": "expansion-tanks",
+        "name": "Expansion tanks",
+        "summary": "Manage water-volume change as temperature varies and help maintain safe system pressure.",
+        "selection": ["System volume", "Temperature range", "Pre-charge pressure", "Maximum working pressure"]
+      },
+      {
+        "id": "circulation-pumps",
+        "name": "Circulation pumps",
+        "summary": "Move water through heating, cooling and domestic hot-water circuits at the required flow and head.",
+        "selection": ["Design flow", "Required head", "Control mode", "Pipe and circuit characteristics"]
+      }
+    ],
+    "catalogCta": "Download product catalog",
+    "contactCta": "Ask for product selection"
+  },
+  "solutions": {
+    "heatPumps": {
+      "slug": "heat-pumps",
+      "eyebrow": "Air-to-water heat pumps",
+      "title": "A heat-pump system shaped around the building, water circuit and climate.",
+      "intro": "An air-to-water heat pump transfers energy from outdoor air into a building's water system. Correct selection connects the unit with the real heating and cooling loads, required water temperatures, emitters, circulation and controls.",
+      "overview": {
+        "title": "One platform for heating, cooling and hot water.",
+        "body": "Depending on the selected model and system design, a heat pump can supply space heating, chilled or cooled water, and domestic hot-water storage. The hydraulic circuit and controls determine how these applications operate together."
+      },
+      "applicationsTitle": "Where the system can contribute",
+      "applications": [
+        { "title": "Space heating", "body": "Supplies warm water to compatible emitters such as underfloor circuits, fan coils or appropriately selected radiators." },
+        { "title": "Cooling", "body": "Selected reversible systems can supply cooled water to suitable terminal units and a correctly designed condensate strategy." },
+        { "title": "Domestic hot water", "body": "Works with a correctly sized hot-water cylinder, heat exchanger arrangement and control sequence." }
+      ],
+      "seriesTitle": "GOLD heat-pump series",
+      "seriesBody": "The current GOLD range includes two air-to-water platforms. Exact performance depends on the selected model and operating conditions.",
+      "series": [
+        { "title": "R290 high-temperature series", "body": "Full-inverter models in 8, 12, 16 and 22 kW heating capacities, with outlet water up to 80 C." },
+        { "title": "R32 full-inverter series", "body": "Models in 8, 12.5, 16 and 22 kW heating capacities, with outlet water up to 60 C and cabinet configuration varying by capacity." }
+      ],
+      "factorsTitle": "Inputs used to frame the right selection",
+      "factorsIntro": "Capacity alone is not enough. A useful project review starts from the building and the operating conditions.",
+      "factors": [
+        { "title": "Design heat load", "body": "The building's calculated demand at local winter design conditions." },
+        { "title": "Climate", "body": "Outdoor design temperatures and the seasonal conditions in the project location." },
+        { "title": "Required water temperature", "body": "The supply temperature needed by the selected emitters and domestic hot-water strategy." },
+        { "title": "Hydraulic design", "body": "Flow rates, pressure loss, buffer volume, separation and circulation requirements." },
+        { "title": "Emitters", "body": "Underfloor loops, fan coils, radiators or other water-side terminal equipment." },
+        { "title": "Controls", "body": "Zones, sensors, operating priorities and the coordination of heating, cooling and hot water." }
+      ],
+      "closingTitle": "The product and the water system must be selected together.",
+      "closingBody": "Gold Group can review the building type, area, location, required temperatures and distribution method to help define the appropriate next technical step.",
+      "primaryCta": "View heat-pump products",
+      "secondaryCta": "Discuss a project"
+    },
+    "underfloorHeating": {
+      "slug": "underfloor-heating",
+      "eyebrow": "Hydronic underfloor heating",
+      "title": "Low-temperature comfort begins below the finished floor.",
+      "intro": "Hydronic underfloor heating circulates warm water through pipe loops embedded within the floor construction. The large active surface can distribute heat evenly when the building load, insulation, layout, flow and controls are designed as one system.",
+      "overview": {
+        "title": "A water-based heating system, not only a pipe layout.",
+        "body": "The floor build-up becomes the heat emitter. Pipe spacing, circuit lengths, water temperature, floor finish and room-by-room demand influence the final layout and operating response."
+      },
+      "applicationsTitle": "How the system is coordinated",
+      "applications": [
+        { "title": "Heat source", "body": "A correctly selected heat pump can supply the low-temperature water commonly used by hydronic floor circuits." },
+        { "title": "Distribution", "body": "Manifolds divide the system into balanced loops with suitable flow rates and circuit lengths." },
+        { "title": "Room control", "body": "Zoning, thermostats and actuators coordinate room demand without losing sight of minimum flow and heat-source operation." }
+      ],
+      "seriesTitle": "Integration with a heat pump",
+      "seriesBody": "Underfloor heating can be a strong match for an air-to-water heat pump because it generally works with lower supply-water temperatures than many traditional emitters. The heat pump, buffer strategy, circulation and controls still need to be selected around the actual project.",
+      "series": [
+        { "title": "Steady water temperature", "body": "Weather compensation and suitable controls can adjust supply temperature as outdoor conditions change." },
+        { "title": "Coordinated circulation", "body": "Pump selection, manifold pressure loss and zone operation must maintain the intended flow through active circuits." }
+      ],
+      "factorsTitle": "Design inputs that shape the floor system",
+      "factorsIntro": "The final design should follow calculated room loads and the actual floor construction rather than a single standard spacing rule.",
+      "factors": [
+        { "title": "Building heat load", "body": "Room-by-room demand defines the heat output required from each floor area." },
+        { "title": "Insulation", "body": "Building-envelope and below-pipe insulation influence losses, response and required output." },
+        { "title": "Pipe spacing and layout", "body": "Spacing, loop pattern, circuit length and edge zones respond to room demand and geometry." },
+        { "title": "Floor construction", "body": "Screed depth, floor finish and material resistance affect heat transfer and response time." },
+        { "title": "Supply-water temperature", "body": "The design temperature must suit the calculated output, floor limits and selected heat source." },
+        { "title": "Zoning and controls", "body": "Manifolds, actuators, thermostats, sensors and circulation logic coordinate individual areas." }
+      ],
+      "closingTitle": "Begin with the building plan and heating load.",
+      "closingBody": "Share the project location, floor plans, construction, insulation and intended heat source so the system direction can be reviewed before equipment and pipe quantities are finalized.",
+      "primaryCta": "View system products",
+      "secondaryCta": "Discuss underfloor heating"
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact Gold Group",
+    "title": "Start with the building. We will help frame the system.",
+    "intro": "Tell us the building type, area, location, required water temperature and intended heating or cooling distribution. These details help us begin with the right questions.",
+    "phoneLabel": "Mobile",
+    "phone": "0948529207",
+    "landlineLabel": "Landline",
+    "landline": "011 233 4005",
+    "emailLabel": "Email",
+    "email": "sk.group@windowslive.com",
+    "locationLabel": "Location",
+    "location": "Marota City, Damascus, Syria",
+    "form": {
+      "name": "Name",
+      "phone": "Phone",
+      "email": "Email",
+      "project": "Project type",
+      "message": "Project details",
+      "submit": "Send enquiry"
+    }
+  },
+  "footer": {
+    "summary": "Heat-pump, heating, cooling and hot-water system solutions across all Syrian governorates.",
+    "copyright": "Gold Group. All rights reserved."
+  }
+}
