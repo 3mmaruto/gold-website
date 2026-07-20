@@ -1,4 +1,5 @@
 import { FiSearch, FiX } from "react-icons/fi";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 import Button from "../components/Button";
 import CatalogProductCard from "../components/CatalogProductCard";
@@ -25,9 +26,18 @@ export default function ProductsPage({ params }) {
   const content = getContent(locale);
   const ui = getUi(locale);
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get("q") ?? "";
-  const category = searchParams.get("category") ?? "all";
-  const page = searchParams.get("page") ?? "1";
+  const [hasHydrated, setHasHydrated] = useState(false);
+
+  useEffect(() => {
+    setHasHydrated(true);
+  }, []);
+
+  // Static pre-rendering does not receive a request query string. Keep the
+  // first browser render identical to the generated HTML, then apply URL state
+  // after hydration so direct links with filters do not trigger React #418.
+  const query = hasHydrated ? (searchParams.get("q") ?? "") : "";
+  const category = hasHydrated ? (searchParams.get("category") ?? "all") : "all";
+  const page = hasHydrated ? (searchParams.get("page") ?? "1") : "1";
   const catalog = queryCatalog({ locale, query, category, page });
 
   function updateParams(updates) {
