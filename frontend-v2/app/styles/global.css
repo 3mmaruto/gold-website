@@ -293,7 +293,8 @@ html[dir="rtl"] .direction-arrow {
   gap: clamp(0.8rem, 1.5vw, 1.55rem);
 }
 
-.desktop-nav a {
+.desktop-nav > a,
+.solutions-nav-trigger {
   position: relative;
   padding-block: 1.7rem;
   color: rgba(255, 255, 255, 0.72);
@@ -301,7 +302,8 @@ html[dir="rtl"] .direction-arrow {
   font-weight: 650;
 }
 
-.desktop-nav a::after {
+.desktop-nav > a::after,
+.solutions-nav-trigger::after {
   position: absolute;
   inset-block-end: -1px;
   inset-inline: 0;
@@ -312,14 +314,106 @@ html[dir="rtl"] .direction-arrow {
   transition: transform 180ms ease;
 }
 
-.desktop-nav a:hover,
-.desktop-nav a.active {
+.desktop-nav > a:hover,
+.desktop-nav > a.active,
+.solutions-nav-trigger:hover,
+.solutions-nav-trigger.active,
+.solutions-nav-trigger[aria-expanded="true"] {
   color: #fff;
 }
 
-.desktop-nav a.active::after,
-.desktop-nav a:hover::after {
+.desktop-nav > a.active::after,
+.desktop-nav > a:hover::after,
+.solutions-nav-trigger.active::after,
+.solutions-nav-trigger[aria-expanded="true"]::after,
+.solutions-nav-trigger:hover::after {
   transform: scaleX(1);
+}
+
+.solutions-nav {
+  position: relative;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+}
+
+.solutions-nav-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+}
+
+.solutions-nav-trigger svg {
+  transition: transform 180ms ease;
+}
+
+.solutions-nav-trigger[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.solutions-popover {
+  position: absolute;
+  z-index: 20;
+  inset-block-start: calc(100% - 0.35rem);
+  inset-inline-start: 50%;
+  display: grid;
+  width: min(360px, calc(100vw - 2rem));
+  padding: 0.65rem;
+  gap: 0.45rem;
+  border: 1px solid rgba(7, 20, 38, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.24);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(-8px);
+  visibility: hidden;
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+}
+
+html[dir="rtl"] .solutions-popover {
+  transform: translateX(50%) translateY(-8px);
+}
+
+.solutions-popover.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+  visibility: visible;
+}
+
+html[dir="rtl"] .solutions-popover.is-open {
+  transform: translateX(50%) translateY(0);
+}
+
+.solutions-popover a {
+  display: grid;
+  padding: 1rem;
+  gap: 0.35rem;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  color: var(--navy);
+  text-align: start;
+}
+
+.solutions-popover a:hover,
+.solutions-popover a:focus-visible,
+.solutions-popover a.active {
+  border-color: rgba(199, 154, 43, 0.28);
+  background: var(--ivory);
+}
+
+.solutions-popover a strong {
+  font-size: 0.9rem;
+}
+
+.solutions-popover a span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.55;
 }
 
 .header-actions {
@@ -366,7 +460,8 @@ html[dir="rtl"] .direction-arrow {
 }
 
 .mobile-nav.is-open {
-  max-height: 420px;
+  max-height: min(78vh, 720px);
+  overflow-y: auto;
   border-block-start: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -387,6 +482,80 @@ html[dir="rtl"] .direction-arrow {
 .mobile-nav a span {
   color: var(--gold);
   font-size: 0.72rem;
+}
+
+.mobile-solutions {
+  border-block-end: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.mobile-solutions-trigger {
+  display: grid;
+  width: 100%;
+  min-height: 3.7rem;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.1rem;
+  text-align: start;
+}
+
+.mobile-solutions-trigger > span {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.mobile-solutions-trigger svg {
+  transition: transform 180ms ease;
+}
+
+.mobile-solutions-trigger[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.mobile-solutions.has-active-child .mobile-solutions-trigger strong {
+  color: var(--gold-light);
+}
+
+.mobile-solutions-links {
+  display: grid;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 220ms ease, opacity 180ms ease, padding 220ms ease;
+}
+
+.mobile-solutions-links.is-open {
+  max-height: 320px;
+  padding-block-end: 0.8rem;
+  opacity: 1;
+}
+
+.mobile-solutions-links a {
+  display: grid;
+  padding-block: 0.8rem;
+  padding-inline-start: 2.55rem;
+  gap: 0.2rem;
+  border-block: 0;
+  border-inline-start: 2px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.9rem;
+}
+
+.mobile-solutions-links a.active {
+  border-inline-start-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.mobile-solutions-links small {
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .skip-link {
@@ -694,7 +863,11 @@ html[lang="ar"] .home-hero-copy h1 {
   display: block;
   color: var(--gold-light);
   font-size: clamp(1.65rem, 3vw, 2.7rem);
-  line-height: 1;
+  line-height: 1.08;
+}
+
+html[lang="ar"] .proof-item strong {
+  line-height: 1.25;
 }
 
 .proof-item p {
@@ -1152,6 +1325,97 @@ html[lang="ar"] .solution-next-panel h2 {
   border-radius: 999px;
 }
 
+.planning-process-section {
+  padding-block: clamp(5rem, 9vw, 8rem);
+  background: #fff;
+}
+
+.planning-process-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
+  gap: clamp(3rem, 7vw, 7rem);
+}
+
+.planning-process-media {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 32px;
+  background: var(--navy);
+  box-shadow: var(--shadow);
+}
+
+.planning-process-picture,
+.planning-process-image {
+  width: 100%;
+  height: 100%;
+}
+
+.planning-process-image {
+  object-fit: cover;
+}
+
+.planning-process-copy h2,
+.energy-management-copy h2 {
+  max-width: 15ch;
+  margin-block-start: 0.8rem;
+  color: var(--navy);
+  font-size: clamp(2.2rem, 4.8vw, 4.8rem);
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+}
+
+html[lang="ar"] .planning-process-copy h2,
+html[lang="ar"] .energy-management-copy h2 {
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.planning-process-copy > p:not(.eyebrow),
+.energy-management-copy > p:not(.eyebrow) {
+  max-width: 58ch;
+  margin-block-start: 1.25rem;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+}
+
+.planning-process-steps {
+  display: grid;
+  margin-block-start: 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.planning-process-steps li {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 1rem;
+  padding-block: 1.15rem;
+  border-block-start: 1px solid var(--line);
+}
+
+.planning-process-steps li:last-child {
+  border-block-end: 1px solid var(--line);
+}
+
+.planning-process-steps > li > span {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.planning-process-steps h3 {
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+.planning-process-steps p {
+  margin-block-start: 0.4rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
 .solution-applications {
   background: #fff;
 }
@@ -1198,6 +1462,133 @@ html[lang="ar"] .solution-next-panel h2 {
 .solution-factor-grid p {
   margin-block-start: 0.9rem;
   color: var(--muted);
+}
+
+.energy-management-section {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(5rem, 9vw, 8rem);
+  background:
+    radial-gradient(circle at 88% 15%, rgba(20, 121, 209, 0.17), transparent 30%),
+    radial-gradient(circle at 8% 100%, rgba(199, 154, 43, 0.1), transparent 34%),
+    var(--graphite);
+  color: #fff;
+}
+
+.energy-management-section::before {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 54px 54px;
+  content: "";
+  pointer-events: none;
+}
+
+.energy-management-grid {
+  position: relative;
+  display: grid;
+  align-items: center;
+  grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(3rem, 7vw, 7rem);
+}
+
+.energy-management-copy h2 {
+  color: #fff;
+}
+
+.energy-management-copy > p:not(.eyebrow) {
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.energy-management-copy > strong {
+  display: block;
+  max-width: 52ch;
+  margin-block-start: 1.5rem;
+  padding-inline-start: 1rem;
+  border-inline-start: 2px solid var(--gold);
+  color: var(--gold-light);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.energy-management-visual {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  background: rgba(7, 20, 38, 0.72);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.energy-management-visual svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.energy-line-grid {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 1;
+}
+
+.energy-line-track,
+.energy-line-flow {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.energy-line-track {
+  stroke: rgba(255, 255, 255, 0.13);
+  stroke-width: 13;
+}
+
+.energy-line-flow {
+  stroke: var(--gold);
+  stroke-width: 4;
+}
+
+.energy-management-visual circle {
+  fill: var(--navy);
+  stroke: var(--gold-light);
+  stroke-width: 4;
+}
+
+.energy-management-steps {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  list-style: none;
+}
+
+.energy-management-steps li {
+  min-height: 180px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.energy-management-steps span {
+  color: var(--gold-light);
+  font-size: 0.68rem;
+}
+
+.energy-management-steps h3 {
+  margin-block-start: 2.1rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.energy-management-steps p {
+  margin-block-start: 0.65rem;
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 0.78rem;
 }
 
 .solution-series-section {
@@ -2678,6 +3069,8 @@ html[lang="ar"] .catalog-product-body h2 {
 
   .system-layout,
   .solution-overview-grid,
+  .planning-process-grid,
+  .energy-management-grid,
   .solution-series-grid,
   .solution-next-panel,
   .product-solution-grid,
@@ -2690,6 +3083,14 @@ html[lang="ar"] .catalog-product-body h2 {
 
   .smart-control-copy {
     max-width: 700px;
+  }
+
+  .planning-process-copy {
+    order: -1;
+  }
+
+  .planning-process-media {
+    width: 100%;
   }
 
   .smart-control-visual {
@@ -2843,6 +3244,7 @@ html[lang="ar"] .catalog-product-body h2 {
   .solutions-preview-grid,
   .solution-application-grid,
   .solution-factor-grid,
+  .energy-management-steps,
   .technical-specs,
   .values-grid,
   .catalog-grid,
@@ -2994,6 +3396,10 @@ html[lang="ar"] .catalog-product-body h2 {
   .solution-application-grid article,
   .solution-factor-grid article {
     min-height: 260px;
+  }
+
+  .energy-management-steps li {
+    min-height: auto;
   }
 
   .footer-brand {

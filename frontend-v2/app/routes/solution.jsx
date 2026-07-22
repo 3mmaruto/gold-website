@@ -27,6 +27,83 @@ const solutionMap = {
 
 const applicationIcons = [FiHome, FiDroplet, FiSliders];
 const factorIcons = [FiActivity, FiWind, FiThermometer, FiLayers, FiGrid, FiSliders];
+const planningAsset = {
+  base: "/media/solutions/gold-underfloor-planning-v1",
+  fallback: "/media/solutions/gold-underfloor-planning-v1.png",
+  width: 1448,
+  height: 1086,
+  widths: [480, 768, 1200],
+};
+
+function PlanningProcess({ content }) {
+  if (!content) return null;
+
+  return (
+    <section className="planning-process-section">
+      <div className="container planning-process-grid">
+        <div className="planning-process-media" data-reveal>
+          <ResponsivePicture
+            source={planningAsset}
+            alt={content.imageAlt}
+            className="planning-process-picture"
+            imgClassName="planning-process-image"
+            sizes="(max-width: 820px) 100vw, 54vw"
+          />
+        </div>
+        <div className="planning-process-copy" data-reveal>
+          <p className="eyebrow">{content.eyebrow}</p>
+          <h2>{content.title}</h2>
+          <p>{content.intro}</p>
+          <ol className="planning-process-steps">
+            {content.steps.map((step, index) => (
+              <li key={step.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div><h3>{step.title}</h3><p>{step.body}</p></div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EnergyManagement({ content }) {
+  if (!content) return null;
+
+  return (
+    <section className="energy-management-section">
+      <div className="container energy-management-grid">
+        <div className="energy-management-copy" data-reveal>
+          <p className="eyebrow">{content.eyebrow}</p>
+          <h2>{content.title}</h2>
+          <p>{content.body}</p>
+          <strong>{content.closing}</strong>
+        </div>
+        <div className="energy-management-visual" data-reveal>
+          <svg viewBox="0 0 640 260" role="img" aria-label={content.eyebrow}>
+            <path className="energy-line-grid" d="M56 46H584M56 130H584M56 214H584" />
+            <path className="energy-line-track" d="M56 58H228V118H402V192H584" />
+            <path className="energy-line-flow" d="M56 58H228V118H402V192H584" />
+            <circle cx="56" cy="58" r="8" />
+            <circle cx="228" cy="118" r="8" />
+            <circle cx="402" cy="192" r="8" />
+            <circle cx="584" cy="192" r="8" />
+          </svg>
+          <ol className="energy-management-steps">
+            {content.steps.map((step, index) => (
+              <li key={step.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export function meta({ params }) {
   const page = solutionMap[params.solution];
@@ -95,6 +172,8 @@ export default function SolutionPage({ params }) {
         </div>
       </section>
 
+      <PlanningProcess content={solution.planningProcess} />
+
       <Section className="solution-applications" title={solution.applicationsTitle}>
         <div className="solution-application-grid">
           {solution.applications.map((item, index) => {
@@ -110,6 +189,8 @@ export default function SolutionPage({ params }) {
           })}
         </div>
       </Section>
+
+      <EnergyManagement content={solution.energyManagement} />
 
       <section className="solution-series-section">
         <div className="container solution-series-grid">
