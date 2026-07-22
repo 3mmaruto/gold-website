@@ -86,7 +86,7 @@ export default function HomePage({ params }) {
           {content.home.proof.map((item, index) => (
             <div key={item.label} className="proof-item" data-reveal>
               <span className="proof-number">0{index + 1}</span>
-              <strong dir="ltr">{item.value}</strong>
+              <strong dir={/^[\s\dA-Za-z.·%°–-]+$/.test(item.value) ? "ltr" : undefined}>{item.value}</strong>
               <p>{item.label}</p>
               <small>{item.note}</small>
             </div>

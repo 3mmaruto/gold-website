@@ -3,14 +3,11 @@ import { Link } from "react-router";
 import BrandLogo from "./BrandLogo";
 
 export default function SiteFooter({ locale, content, ui }) {
-  const nav = [
-    [content.navigation.home, `/${locale}/`],
-    [content.navigation.heatPumps, `/${locale}/heat-pumps/`],
-    [content.navigation.underfloorHeating, `/${locale}/underfloor-heating/`],
-    [content.navigation.products, `/${locale}/products/`],
-    [content.navigation.about, `/${locale}/about/`],
-    [content.navigation.contact, `/${locale}/contact/`],
-  ];
+  const nav = content.navigation.menu.flatMap((item) =>
+    item.children
+      ? item.children.map((child) => [child.label, `/${locale}/${child.path}`])
+      : [[item.label, `/${locale}/${item.path}`]],
+  );
 
   return (
     <footer className="site-footer">

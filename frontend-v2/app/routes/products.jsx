@@ -174,7 +174,7 @@ export default function ProductsPage({ params }) {
             ))}
           </div>
         ) : (
-          <div className="catalog-empty" id="catalog-results" data-reveal>
+          <div className="catalog-empty" id="catalog-results">
             <FiSearch aria-hidden="true" />
             <h2>{ui.emptyTitle}</h2>
             <p>{ui.emptyBody}</p>

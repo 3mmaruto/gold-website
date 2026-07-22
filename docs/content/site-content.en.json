@@ -14,7 +14,31 @@
     "about": "About Us",
     "products": "Our Products",
     "contact": "Contact Us",
-    "languageLabel": "العربية"
+    "languageLabel": "العربية",
+    "menu": [
+      { "id": "home", "label": "Home", "path": "" },
+      {
+        "id": "solutions",
+        "label": "Solutions",
+        "children": [
+          {
+            "id": "heatPumps",
+            "label": "Heat Pumps",
+            "description": "Air-to-water systems for heating, cooling and domestic hot water.",
+            "path": "heat-pumps/"
+          },
+          {
+            "id": "underfloorHeating",
+            "label": "Underfloor Heating",
+            "description": "Hydronic floor systems planned around the building and heat source.",
+            "path": "underfloor-heating/"
+          }
+        ]
+      },
+      { "id": "products", "label": "Our Products", "path": "products/" },
+      { "id": "about", "label": "About Us", "path": "about/" },
+      { "id": "contact", "label": "Contact Us", "path": "contact/" }
+    ]
   },
   "seo": {
     "home": {
@@ -27,7 +51,7 @@
     },
     "products": {
       "title": "Heat Pumps & Hydronic Products in Syria | GOLD",
-      "description": "Explore GOLD R290 and R32 heat-pump series, hot-water cylinders, buffer and expansion tanks, and circulation pumps for integrated systems in Syria."
+      "description": "Explore GOLD heat pumps, hot-water cylinders, tanks, circulation pumps, stainless-steel pipes and hydronic accessories for integrated systems in Syria."
     },
     "contact": {
       "title": "Contact Gold Group | HVAC Solutions in Damascus",
@@ -63,9 +87,9 @@
         "note": "Model and test-condition dependent"
       },
       {
-        "value": "8-22 kW",
-        "label": "Heating-capacity range",
-        "note": "R290 series: 8, 12, 16 and 22 kW"
+        "value": "8–50 kW",
+        "label": "Heating capacity range",
+        "note": "Multiple capacities for different project needs"
       },
       {
         "value": "GWP 3",
@@ -221,10 +245,21 @@
       },
       "applicationsTitle": "Where the system can contribute",
       "applications": [
-        { "title": "Space heating", "body": "Supplies warm water to compatible emitters such as underfloor circuits, fan coils or appropriately selected radiators." },
+        { "title": "Space heating", "body": "Supplies compatible hydronic distribution such as underfloor circuits, fan-coil units and other water-side terminal equipment designed for the required supply temperature." },
         { "title": "Cooling", "body": "Selected reversible systems can supply cooled water to suitable terminal units and a correctly designed condensate strategy." },
         { "title": "Domestic hot water", "body": "Works with a correctly sized hot-water cylinder, heat exchanger arrangement and control sequence." }
       ],
+      "energyManagement": {
+        "eyebrow": "Inverter energy management",
+        "title": "Power that follows demand, not fixed maximum-output operation.",
+        "body": "Full-inverter control raises output when heating demand is high, then progressively reduces compressor, fan and circulation speed as the system approaches its target temperature. Electrical input therefore varies within each model's operating range according to building load, outdoor conditions and required supply-water temperature instead of remaining fixed at one output level.",
+        "closing": "The result is smarter control of electrical input for the useful heat transferred into the building.",
+        "steps": [
+          { "title": "Respond to demand", "body": "Output rises during start-up or when the thermal load increases." },
+          { "title": "Approach the target", "body": "Component speed reduces progressively as system temperature stabilizes." },
+          { "title": "Maintain balance", "body": "The system modulates within the range required by real operating conditions." }
+        ]
+      },
       "seriesTitle": "GOLD heat-pump series",
       "seriesBody": "The current GOLD range includes two air-to-water platforms. Exact performance depends on the selected model and operating conditions.",
       "series": [
@@ -238,7 +273,7 @@
         { "title": "Climate", "body": "Outdoor design temperatures and the seasonal conditions in the project location." },
         { "title": "Required water temperature", "body": "The supply temperature needed by the selected emitters and domestic hot-water strategy." },
         { "title": "Hydraulic design", "body": "Flow rates, pressure loss, buffer volume, separation and circulation requirements." },
-        { "title": "Emitters", "body": "Underfloor loops, fan coils, radiators or other water-side terminal equipment." },
+        { "title": "Heat-distribution equipment", "body": "Underfloor circuits, fan-coil units and compatible water-side terminal equipment selected for the system operating temperatures." },
         { "title": "Controls", "body": "Zones, sensors, operating priorities and the coordination of heating, cooling and hot water." }
       ],
       "closingTitle": "The product and the water system must be selected together.",
@@ -254,6 +289,17 @@
       "overview": {
         "title": "A water-based heating system, not only a pipe layout.",
         "body": "The floor build-up becomes the heat emitter. Pipe spacing, circuit lengths, water temperature, floor finish and room-by-room demand influence the final layout and operating response."
+      },
+      "planningProcess": {
+        "eyebrow": "From plan to installation",
+        "title": "Every circuit begins with a considered decision before the floor is covered.",
+        "intro": "Whether the underfloor network already exists or is included in GOLD Group's scope, review begins with the building plans, calculated load, floor build-up and control zones so the distribution network can be coordinated with the heat source.",
+        "imageAlt": "Illustrative hydronic underfloor-heating loop plan connected to a central manifold",
+        "steps": [
+          { "title": "Study the inputs", "body": "Review room loads, insulation, floor construction, manifold position and required control zones." },
+          { "title": "Plan the circuits", "body": "Coordinate pipe spacing, loop length, routing and edge zones for each space." },
+          { "title": "Install and verify", "body": "Coordinate connections, pressure-test the circuits and document their routes before completing the floor build-up." }
+        ]
       },
       "applicationsTitle": "How the system is coordinated",
       "applications": [
