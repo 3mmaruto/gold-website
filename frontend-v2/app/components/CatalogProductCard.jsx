@@ -14,7 +14,6 @@ export default function CatalogProductCard({ product, index, locale, ui }) {
       id={product.id}
       className={`catalog-product-card ${expanded ? "is-expanded" : ""}`}
       data-category={product.category}
-      data-reveal
     >
       <div className="catalog-product-media">
         <ResponsivePicture

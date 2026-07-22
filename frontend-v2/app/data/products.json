@@ -7,7 +7,8 @@
     { "id": "hot-water-cylinders", "label": { "ar": "أسطوانات المياه الساخنة", "en": "Hot-water cylinders" } },
     { "id": "buffer-tanks", "label": { "ar": "خزانات الدعم", "en": "Buffer tanks" } },
     { "id": "expansion-tanks", "label": { "ar": "خزانات التمدد", "en": "Expansion tanks" } },
-    { "id": "circulation-pumps", "label": { "ar": "مضخات التدوير", "en": "Circulation pumps" } }
+    { "id": "circulation-pumps", "label": { "ar": "مضخات التدوير", "en": "Circulation pumps" } },
+    { "id": "pipes-accessories", "label": { "ar": "الأنابيب والإكسسوارات", "en": "Pipes & accessories" } }
   ],
   "products": [
     {
@@ -24,14 +25,14 @@
       },
       "images": [
         {
-          "base": "/media/products/generated/gold-heat-pump-r290-80c-series-v1",
-          "fallback": "/media/products/generated/gold-heat-pump-r290-80c-series-v1.png",
+          "base": "/media/products/generated/gold-heat-pump-r290-80c-dual-fan-v2",
+          "fallback": "/media/products/generated/gold-heat-pump-r290-80c-dual-fan-v2.png",
           "width": 1448,
           "height": 1086,
           "widths": [480, 768, 1200],
           "alt": {
-            "ar": "مضخة غولد الحرارية من سلسلة R290 عالية الحرارة حتى 80 درجة",
-            "en": "GOLD R290 high-temperature heat-pump series up to 80 C"
+            "ar": "جهاز مضخة حرارية غولد من سلسلة R290 عالية الحرارة بهيكل مزدوج المروحة",
+            "en": "GOLD R290 high-temperature heat pump in a dual-fan cabinet"
           }
         }
       ],
@@ -225,6 +226,94 @@
       "highlights": {
         "ar": ["التدفق التصميمي", "ارتفاع الضخ المطلوب", "نمط التحكم", "خصائص الأنابيب والدارة"],
         "en": ["Design flow", "Required head", "Control mode", "Pipe and circuit characteristics"]
+      }
+    },
+    {
+      "id": "hydronic-system-accessories",
+      "slug": "hydronic-system-accessories",
+      "category": "pipes-accessories",
+      "name": {
+        "ar": "إكسسوارات الأنظمة المائية",
+        "en": "Hydronic system accessories"
+      },
+      "summary": {
+        "ar": "إكسسوارات ووصلات نحاسية عالية الجودة لاستكمال توصيلات المنظومة وتنظيم دارات المياه بصورة موثوقة.",
+        "en": "High-quality brass accessories and connection fittings for completing system pipework and coordinating water circuits."
+      },
+      "images": [
+        {
+          "base": "/media/products/generated/gold-hydronic-accessories-v1",
+          "fallback": "/media/products/generated/gold-hydronic-accessories-v1.png",
+          "width": 1448,
+          "height": 1086,
+          "widths": [480, 768, 1200],
+          "alt": {
+            "ar": "مجموعة إكسسوارات ووصلات نحاسية للأنظمة المائية",
+            "en": "Brass accessories and connection fittings for hydronic systems"
+          }
+        }
+      ],
+      "specs": [
+        { "label": { "ar": "الخامة", "en": "Material" }, "value": { "ar": "نحاس", "en": "Brass" } },
+        { "label": { "ar": "الاستخدام", "en": "Purpose" }, "value": { "ar": "توصيل وتنظيم دارات المياه", "en": "Water-circuit connection and control" } }
+      ],
+      "highlights": {
+        "ar": [
+          "جودة الخامة والتشطيب",
+          "دقة التصنيع وإحكام التوصيلات",
+          "اختيار القطعة وفق وظيفة الدارة",
+          "التوافق مع ضغط وحرارة التشغيل المطلوبة"
+        ],
+        "en": [
+          "Material and finishing quality",
+          "Manufacturing precision and secure connections",
+          "Component selection for each circuit function",
+          "Compatibility with required operating pressure and temperature"
+        ]
+      }
+    },
+    {
+      "id": "flexible-corrugated-stainless-pipes",
+      "slug": "flexible-corrugated-stainless-pipes",
+      "category": "pipes-accessories",
+      "name": {
+        "ar": "أنابيب ستانلس ستيل مرنة",
+        "en": "Flexible stainless-steel pipes"
+      },
+      "summary": {
+        "ar": "أنابيب ستانلس ستيل مموجة وعالية الجودة لتوصيلات الأنظمة المائية، بأقطار متعددة تناسب متطلبات الدارة.",
+        "en": "High-quality corrugated stainless-steel pipes for hydronic system connections, available in multiple diameters for different circuit requirements."
+      },
+      "images": [
+        {
+          "base": "/media/products/generated/gold-corrugated-stainless-pipes-v1",
+          "fallback": "/media/products/generated/gold-corrugated-stainless-pipes-v1.png",
+          "width": 1448,
+          "height": 1086,
+          "widths": [480, 768, 1200],
+          "alt": {
+            "ar": "لفات أنابيب ستانلس ستيل مموجة ومرنة للأنظمة المائية",
+            "en": "Coils of flexible corrugated stainless-steel pipe for hydronic systems"
+          }
+        }
+      ],
+      "specs": [
+        { "label": { "ar": "الخامة", "en": "Material" }, "value": { "ar": "ستانلس ستيل", "en": "Stainless steel" } },
+        { "label": { "ar": "الأقطار المتاحة", "en": "Available diameters" }, "value": "15 · 20 · 25 mm" }
+      ],
+      "highlights": {
+        "ar": [
+          "مرونة تساعد في تنفيذ مسارات التوصيل",
+          "خامة ستانلس ستيل عالية الجودة",
+          "التوافق مع الوصلات المناسبة",
+          "اختيار القطر وفق التدفق ومتطلبات الدارة"
+        ],
+        "en": [
+          "Flexible routing for system connections",
+          "High-quality stainless-steel construction",
+          "Compatibility with the appropriate fittings",
+          "Diameter selection according to flow and circuit requirements"
+        ]
       }
     }
   ]
