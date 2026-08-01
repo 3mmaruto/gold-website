@@ -7,6 +7,7 @@ export default [
     route("about", "./routes/about.jsx"),
     route("products", "./routes/products.jsx"),
     route("contact", "./routes/contact.jsx"),
+    route("manufacturer-documents", "./routes/manufacturer-documents.jsx"),
     route(":solution", "./routes/solution.jsx"),
   ]),
 ];

@@ -54,7 +54,7 @@ These values must not be generalized to every Gold product line without a matchi
 
 ## Target outcome
 
-The production website contains six localized page families in both languages:
+The production website contains seven localized page families in both languages:
 
 - Home
 - About Us
@@ -62,5 +62,6 @@ The production website contains six localized page families in both languages:
 - Contact Us
 - Heat Pumps
 - Underfloor Heating
+- Quality & Manufacturer Documents
 
-Together with the `/` language-selection page, the build pre-renders 13 routes. The homepage centers the heat-pump system and links to useful solution guides rather than exposing proprietary manufacturing detail.
+Together with the `/` language-selection page, the build pre-renders 15 routes. The homepage centers the heat-pump system and links to useful solution guides rather than exposing proprietary manufacturing detail. The manufacturer-document library is linked from About and the footer without crowding the primary header.

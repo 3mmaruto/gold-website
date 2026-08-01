@@ -19,8 +19,10 @@ Maintain the completed Gold Group website in `frontend-v2/`. The original scaffo
   - `/`
   - `/ar/`, `/ar/about/`, `/ar/products/`, `/ar/contact/`
   - `/ar/heat-pumps/`, `/ar/underfloor-heating/`
+  - `/ar/manufacturer-documents/`
   - `/en/`, `/en/about/`, `/en/products/`, `/en/contact/`
   - `/en/heat-pumps/`, `/en/underfloor-heating/`
+  - `/en/manufacturer-documents/`
 - Use no runtime server (`ssr: false`) and configure the GitHub Pages build output correctly.
 - Share components across locales. Do not duplicate page component trees.
 - Use valid UTF-8 content from `docs/content/site-content.en.json` and `docs/content/site-content.ar.json` as the initial content source.
@@ -41,6 +43,7 @@ Maintain the completed Gold Group website in `frontend-v2/`. The original scaffo
 - About: company story since 2008, system-level approach, values, project support.
 - Products: hot-water cylinders, buffer tanks, expansion tanks, circulation pumps. Hover/focus/tap reveal must show purpose and selection criteria from the content JSON.
 - Contact: verified contact information and an honest frontend-only contact flow. Do not show a false success message without a real endpoint.
+- Manufacturer documents: four approved source records with exact holders, identifiers, dates and visible source-extent disclosures. Keep patents separate from Gold Group ownership and product-conformity claims.
 
 ## Internationalization
 

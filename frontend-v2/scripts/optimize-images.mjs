@@ -27,6 +27,7 @@ const generatedDirectories = [
   "public/media/products/generated",
   "public/media/solutions",
   "public/media/technology",
+  "public/media/manufacturer-documents",
 ];
 
 for (const directory of generatedDirectories) {
