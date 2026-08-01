@@ -8,6 +8,10 @@ export default function SiteFooter({ locale, content, ui }) {
       ? item.children.map((child) => [child.label, `/${locale}/${child.path}`])
       : [[item.label, `/${locale}/${item.path}`]],
   );
+  nav.push([
+    content.navigation.manufacturerDocuments,
+    `/${locale}/manufacturer-documents/`,
+  ]);
 
   return (
     <footer className="site-footer">

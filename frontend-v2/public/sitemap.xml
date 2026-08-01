@@ -32,6 +32,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gold-group-hvac.com/" />
   </url>
   <url>
+    <loc>https://gold-group-hvac.com/ar/manufacturer-documents/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://gold-group-hvac.com/ar/manufacturer-documents/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gold-group-hvac.com/en/manufacturer-documents/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gold-group-hvac.com/" />
+  </url>
+  <url>
+    <loc>https://gold-group-hvac.com/en/manufacturer-documents/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://gold-group-hvac.com/ar/manufacturer-documents/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gold-group-hvac.com/en/manufacturer-documents/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gold-group-hvac.com/" />
+  </url>
+  <url>
     <loc>https://gold-group-hvac.com/ar/products/</loc>
     <xhtml:link rel="alternate" hreflang="ar" href="https://gold-group-hvac.com/ar/products/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://gold-group-hvac.com/en/products/" />
