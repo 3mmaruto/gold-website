@@ -16,14 +16,14 @@ The legacy hash router has been replaced by React Router framework mode with sta
 /ar/contact/       Arabic contact
 /ar/heat-pumps/    Arabic air-to-water heat-pump guide
 /ar/underfloor-heating/ Arabic hydronic underfloor-heating guide
-/ar/manufacturer-documents/ Arabic manufacturer-document library
+/ar/manufacturer-documents/ Arabic quality-document request page
 /en/               English home
 /en/about/         English about
 /en/products/      English products
 /en/contact/       English contact
 /en/heat-pumps/    English air-to-water heat-pump guide
 /en/underfloor-heating/ English hydronic underfloor-heating guide
-/en/manufacturer-documents/ English manufacturer-document library
+/en/manufacturer-documents/ English quality-document request page
 ```
 
 The language switch maps equivalent routes, for example `/ar/products/` to `/en/products/`.
@@ -57,9 +57,9 @@ Add JSON-LD for:
 - `WebSite` on home;
 - `BreadcrumbList` on internal pages;
 - product-category content only when the visible page supports it.
-- conservative `CollectionPage`, `ItemList`, and `CreativeWork` data for the visible manufacturer-document library.
+- conservative page-level data only when it matches visible content; private quality records are not represented as public `CreativeWork` items.
 
-Do not add review ratings, prices, availability, or certifications unless the page visibly contains verified source data. Manufacturer patents must not be attached to the Gold Group `Organization` schema or represented as product conformity certificates.
+Do not add review ratings, prices, availability, or certifications unless the page visibly contains verified source data. Private or source-specific records must not be attached to the Gold Group `Organization` schema or represented as public product certifications.
 
 ## Sitemap and robots
 
