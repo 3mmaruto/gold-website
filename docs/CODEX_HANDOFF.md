@@ -43,7 +43,7 @@ Maintain the completed Gold Group website in `frontend-v2/`. The original scaffo
 - About: company story since 2008, system-level approach, values, project support.
 - Products: hot-water cylinders, buffer tanks, expansion tanks, circulation pumps. Hover/focus/tap reveal must show purpose and selection criteria from the content JSON.
 - Contact: verified contact information and an honest frontend-only contact flow. Do not show a false success message without a real endpoint.
-- Manufacturer documents: four approved source records with exact holders, identifiers, dates and visible source-extent disclosures. Keep patents separate from Gold Group ownership and product-conformity claims.
+- Quality documents: a public text-only request page. Do not expose supplier identities, document identifiers, certificate previews, downloadable source files, or procurement relationships. Direct document requests to the official company email.
 
 ## Internationalization
 

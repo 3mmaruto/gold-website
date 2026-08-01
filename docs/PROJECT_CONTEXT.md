@@ -62,6 +62,6 @@ The production website contains seven localized page families in both languages:
 - Contact Us
 - Heat Pumps
 - Underfloor Heating
-- Quality & Manufacturer Documents
+- Quality Documents
 
-Together with the `/` language-selection page, the build pre-renders 15 routes. The homepage centers the heat-pump system and links to useful solution guides rather than exposing proprietary manufacturing detail. The manufacturer-document library is linked from About and the footer without crowding the primary header.
+Together with the `/` language-selection page, the build pre-renders 15 routes. The homepage centers the heat-pump system and links to useful solution guides rather than exposing proprietary manufacturing detail. The quality-document page explains that model- and project-specific records are available through a formal email request; it does not publish supplier identities, document identifiers, previews, or source files.

@@ -2,12 +2,10 @@ import { FiCheckCircle, FiCompass, FiLayers, FiTool } from "react-icons/fi";
 import Button from "../components/Button";
 import CtaPanel from "../components/CtaPanel";
 import JsonLd from "../components/JsonLd";
-import ManufacturerDocumentCard from "../components/ManufacturerDocumentCard";
 import PageHero from "../components/PageHero";
 import SeoLinks from "../components/SeoLinks";
 import Section from "../components/Section";
 import { getContent } from "../lib/content";
-import { getManufacturerDocuments } from "../lib/manufacturer-documents";
 import { breadcrumbsJsonLd, buildMeta } from "../lib/seo";
 
 export function meta({ params }) {
@@ -19,7 +17,6 @@ const valueIcons = [FiLayers, FiCompass, FiCheckCircle, FiTool];
 export default function AboutPage({ params }) {
   const locale = params.locale;
   const content = getContent(locale);
-  const documents = getManufacturerDocuments(locale).slice(0, 3);
 
   return (
     <>
@@ -85,24 +82,14 @@ export default function AboutPage({ params }) {
       </section>
 
       <Section
-        className="manufacturer-teaser-section"
-        eyebrow={content.about.manufacturerDocuments.eyebrow}
-        title={content.about.manufacturerDocuments.title}
-        body={content.about.manufacturerDocuments.body}
+        className="quality-documents-teaser"
+        eyebrow={content.about.qualityDocuments.eyebrow}
+        title={content.about.qualityDocuments.title}
+        body={content.about.qualityDocuments.body}
       >
-        <div className="manufacturer-teaser-grid">
-          {documents.map((document) => (
-            <ManufacturerDocumentCard
-              key={document.id}
-              document={document}
-              labels={content.manufacturerDocuments.labels}
-              compact
-            />
-          ))}
-        </div>
-        <div className="manufacturer-teaser-action" data-reveal>
+        <div className="quality-documents-action" data-reveal>
           <Button to={`/${locale}/manufacturer-documents/`} variant="dark">
-            {content.about.manufacturerDocuments.cta}
+            {content.about.qualityDocuments.cta}
           </Button>
         </div>
       </Section>

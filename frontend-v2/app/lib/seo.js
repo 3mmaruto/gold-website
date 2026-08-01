@@ -9,7 +9,7 @@ const pagePath = {
   about: "about/",
   products: "products/",
   contact: "contact/",
-  manufacturerDocuments: "manufacturer-documents/",
+  qualityDocuments: "manufacturer-documents/",
   heatPumps: "heat-pumps/",
   underfloorHeating: "underfloor-heating/",
 };
@@ -132,7 +132,6 @@ export function websiteJsonLd(locale) {
     inLanguage: locale,
   };
 }
-
 export function breadcrumbsJsonLd(locale, page, label) {
   const content = getContent(locale);
   return {
@@ -176,43 +175,4 @@ export function categoryListJsonLd(locale) {
       },
     })),
   };
-}
-
-export function manufacturerDocumentsJsonLd(locale, documents, pageContent) {
-  const url = absoluteUrl(locale, "manufacturerDocuments");
-  const listId = `${url}#manufacturer-document-list`;
-
-  return [
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      name: pageContent.title,
-      description: pageContent.intro,
-      url,
-      inLanguage: locale,
-      mainEntity: { "@id": listId },
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "@id": listId,
-      name: pageContent.libraryTitle,
-      numberOfItems: documents.length,
-      itemListElement: documents.map((document, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        item: {
-          "@type": "CreativeWork",
-          name: document.title,
-          description: document.summary,
-          identifier: [document.patentNumber, document.publicationNumber],
-          inLanguage: "zh-CN",
-          datePublished: document.grantPublicationDate,
-          encodingFormat: "application/pdf",
-          url: `${productionOrigin}${document.pdf}`,
-          thumbnailUrl: `${productionOrigin}${document.preview.fallback}`,
-        },
-      })),
-    },
-  ];
 }

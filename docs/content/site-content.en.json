@@ -14,7 +14,7 @@
     "about": "About Us",
     "products": "Our Products",
     "contact": "Contact Us",
-    "manufacturerDocuments": "Quality & Manufacturer Documents",
+    "qualityDocuments": "Quality Documents",
     "languageLabel": "العربية",
     "menu": [
       { "id": "home", "label": "Home", "path": "" },
@@ -66,9 +66,9 @@
       "title": "Hydronic Underfloor Heating Systems in Syria | GOLD",
       "description": "Explore hydronic underfloor heating, heat-pump integration, pipe layout, zoning, water temperature and the project inputs needed for a coordinated system."
     },
-    "manufacturerDocuments": {
-      "title": "Heat-Pump Manufacturer Documents & Patents | GOLD",
-      "description": "Review source-specific HONMOOK/Hanmook manufacturer patent documents for heat-pump and heat-exchanger technologies, with exact identifiers, holders and publication dates."
+    "qualityDocuments": {
+      "title": "Quality & Technical Documents | Gold Group",
+      "description": "Request available quality, conformity and technical documentation for the relevant model and project through Gold Group's official email."
     }
   },
   "home": {
@@ -203,11 +203,11 @@
       }
     ],
     "cta": "Discuss your project",
-    "manufacturerDocuments": {
-      "eyebrow": "Quality and traceability",
-      "title": "See the manufacturer documents behind selected technical work.",
-      "body": "A source-specific library records the named rights holder, exact patent identifiers and grant-publication dates without presenting patents as product conformity certificates.",
-      "cta": "Review manufacturer documents"
+    "qualityDocuments": {
+      "eyebrow": "Quality and documentation",
+      "title": "Quality and technical documents are available by model and project.",
+      "body": "Available documents can be requested formally by email after identifying the model and intended application.",
+      "cta": "Request quality documents"
     }
   },
   "products": {
@@ -340,56 +340,31 @@
       "secondaryCta": "Discuss underfloor heating"
     }
   },
-  "manufacturerDocuments": {
-    "eyebrow": "Traceable manufacturer documentation",
-    "title": "Quality starts with clear, source-specific evidence.",
-    "intro": "Review a selected set of patent documents supplied for the HONMOOK/Hanmook manufacturing source behind relevant heat-pump technologies. Each record is presented with its named holder, identifiers and dates, without turning a patent into a product conformity claim.",
-    "heroStat": "selected manufacturer patent records",
-    "provenanceLabel": "How to read this document library",
-    "provenance": [
+  "qualityDocuments": {
+    "eyebrow": "Quality and technical documentation",
+    "title": "The right documentation for the relevant model and project.",
+    "intro": "Gold Group maintains quality, conformity and technical documentation that varies by model and intended application. To keep each document within its proper scope, requests are reviewed formally for the relevant project or equipment.",
+    "sectionEyebrow": "Available documentation",
+    "sectionTitle": "Quality, conformity and technical files as needed.",
+    "sectionBody": "Depending on the model and its scope, available records may include quality and conformity documents and related technical data. These files are not published for public download and are shared when appropriate after the request is reviewed.",
+    "features": [
       {
-        "title": "Named source",
-        "body": "Every record retains the holder named in the original document."
+        "title": "Model-specific",
+        "body": "Available documentation varies according to the requested model and component."
       },
       {
-        "title": "Exact identifiers",
-        "body": "Patent and grant-publication numbers are shown without marketing substitutions."
+        "title": "Project context",
+        "body": "We review the intended application and technical requirements before identifying the relevant documents."
       },
       {
-        "title": "Original record",
-        "body": "The Chinese-language PDF remains the authoritative source."
+        "title": "Formal email request",
+        "body": "Send the model, project summary and requested document type to our official email."
       }
     ],
-    "libraryEyebrow": "Selected source documents",
-    "libraryTitle": "Manufacturer patent records, presented within their exact scope.",
-    "libraryIntro": "The collection separates utility-model inventions from industrial designs and makes the supplied document extent visible on every record.",
-    "labels": {
-      "rightsHolder": "Rights holder",
-      "patentNumber": "Patent number",
-      "publicationNumber": "Grant publication",
-      "applicationDate": "Application date",
-      "grantPublicationDate": "Grant-publication date",
-      "sourceLanguage": "Original language",
-      "chinese": "Chinese",
-      "openPdf": "Open original PDF",
-      "completeDocument": "Complete supplied document",
-      "firstPageScan": "Manufacturer-supplied first-page scan",
-      "completeDocumentShort": "Complete document",
-      "firstPageScanShort": "First-page scan"
-    },
-    "scope": {
-      "eyebrow": "Reading the evidence correctly",
-      "title": "A patent documents an invention or design, not blanket product certification.",
-      "paragraphs": [
-        "These records name Hanmook Technology (Guangdong) Co., Ltd. as rights holder. They do not state that Gold Group owns the patents or that all GOLD products hold product-conformity certification.",
-        "Dates are shown only as application dates and grant-publication dates, not as statements of current legal validity. The Chinese-language PDF is the authoritative source.",
-        "Three supplied PDFs contain the first page only and visibly reference a continuation page that was not supplied. Those records are labeled as first-page scans throughout this library."
-      ]
-    },
     "cta": {
-      "title": "Need to review a document within a project context?",
-      "body": "Share the model, application and project requirements so our team can connect the available manufacturer information with the right technical discussion.",
-      "button": "Contact Gold Group"
+      "title": "Request the relevant documents for your project.",
+      "body": "Email the model, a short project description and the type of document required.",
+      "button": "Request by email"
     }
   },
   "contact": {

@@ -9,7 +9,7 @@ export default function SiteFooter({ locale, content, ui }) {
       : [[item.label, `/${locale}/${item.path}`]],
   );
   nav.push([
-    content.navigation.manufacturerDocuments,
+    content.navigation.qualityDocuments,
     `/${locale}/manufacturer-documents/`,
   ]);
 

@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-export default function CtaPanel({ title, body, button, to, secondary, secondaryHref }) {
+export default function CtaPanel({ title, body, button, to, href, secondary, secondaryHref }) {
   return (
     <section className="cta-section">
       <div className="container">
@@ -11,7 +11,7 @@ export default function CtaPanel({ title, body, button, to, secondary, secondary
             <p>{body}</p>
           </div>
           <div className="cta-actions">
-            <Button to={to}>{button}</Button>
+            <Button to={to} href={href}>{button}</Button>
             {secondary ? <Button href={secondaryHref} variant="ghost">{secondary}</Button> : null}
           </div>
         </div>
