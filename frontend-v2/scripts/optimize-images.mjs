@@ -25,6 +25,7 @@ const jobs = [
 
 const generatedDirectories = [
   "public/media/products/generated",
+  "public/media/products/sk-series",
   "public/media/solutions",
   "public/media/technology",
 ];

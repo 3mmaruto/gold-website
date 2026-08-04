@@ -6,6 +6,7 @@ import CatalogProductCard from "../components/CatalogProductCard";
 import CtaPanel from "../components/CtaPanel";
 import JsonLd from "../components/JsonLd";
 import PageHero from "../components/PageHero";
+import ProductProfileLinks from "../components/ProductProfileLinks";
 import ResponsivePicture from "../components/ResponsivePicture";
 import SeoLinks from "../components/SeoLinks";
 import Section from "../components/Section";
@@ -95,6 +96,8 @@ export default function ProductsPage({ params }) {
           </div>
         </div>
       </section>
+
+      <ProductProfileLinks locale={locale} />
 
       <Section
         className="catalog-section"
