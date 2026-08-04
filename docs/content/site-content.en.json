@@ -36,7 +36,31 @@
           }
         ]
       },
-      { "id": "products", "label": "Our Products", "path": "products/" },
+      {
+        "id": "products",
+        "label": "Our Products",
+        "path": "products/",
+        "children": [
+          {
+            "id": "allProducts",
+            "label": "All products",
+            "description": "Explore GOLD heat pumps and hydronic system components.",
+            "path": "products/"
+          },
+          {
+            "id": "sk22",
+            "label": "GOLD SK22 · 22 kW",
+            "description": "R410A DC-inverter heat pump with two electrical supply options.",
+            "path": "products/sk22/"
+          },
+          {
+            "id": "sk30",
+            "label": "GOLD SK30 · 30 kW",
+            "description": "Higher-capacity R410A heat pump with three-phase supply.",
+            "path": "products/sk30/"
+          }
+        ]
+      },
       { "id": "about", "label": "About Us", "path": "about/" },
       { "id": "contact", "label": "Contact Us", "path": "contact/" }
     ]

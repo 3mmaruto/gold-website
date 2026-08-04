@@ -14,7 +14,6 @@ import Button from "../components/Button";
 import CtaPanel from "../components/CtaPanel";
 import JsonLd from "../components/JsonLd";
 import PageHero from "../components/PageHero";
-import ProductProfileLinks from "../components/ProductProfileLinks";
 import ResponsivePicture from "../components/ResponsivePicture";
 import SeoLinks from "../components/SeoLinks";
 import Section from "../components/Section";
@@ -172,8 +171,6 @@ export default function SolutionPage({ params }) {
           )}
         </div>
       </section>
-
-      {isHeatPump ? <ProductProfileLinks locale={locale} compact /> : null}
 
       <PlanningProcess content={solution.planningProcess} />
 

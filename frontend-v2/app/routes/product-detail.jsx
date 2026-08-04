@@ -3,7 +3,6 @@ import {
   FiCpu,
   FiDroplet,
   FiMaximize2,
-  FiShield,
   FiWifi,
 } from "react-icons/fi";
 import { Link, Navigate } from "react-router";
@@ -73,13 +72,6 @@ function TechnicalProfile({ product }) {
           ))}
         </dl>
 
-        <aside className="product-source-note" data-reveal>
-          <FiShield aria-hidden="true" />
-          <div>
-            <strong>{product.sourceLabel}</strong>
-            <p>{product.sourceNote}</p>
-          </div>
-        </aside>
       </div>
     </section>
   );
@@ -129,7 +121,7 @@ export default function ProductDetailPage({ params }) {
             </div>
 
             <div className="product-detail-hero-media" data-reveal>
-              <span className="product-detail-drawing-label" dir="ltr">SUPPORT GUIDE · {product.model}</span>
+              <span className="product-detail-drawing-label" dir="ltr">GOLD PRODUCT · {product.model}</span>
               <ResponsivePicture
                 source={product.image}
                 alt={product.imageAlt}
@@ -160,7 +152,7 @@ export default function ProductDetailPage({ params }) {
             </aside>
           </div>
           <div className="product-system-media" data-reveal>
-            <span className="technical-figure-label" dir="ltr">HYDRONIC SYSTEM · GUIDE FIGURE</span>
+            <span className="technical-figure-label" dir="ltr">HYDRONIC SYSTEM · APPLICATION</span>
             <ResponsivePicture
               source={product.hydronicImage}
               alt={product.hydronicAlt}

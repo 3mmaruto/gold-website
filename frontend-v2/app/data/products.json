@@ -58,6 +58,79 @@
       "models": ["8 kW", "12 kW", "16 kW", "22 kW"]
     },
     {
+      "id": "gold-sk-r410a-series",
+      "slug": "gold-sk-r410a-series",
+      "category": "heat-pumps",
+      "name": {
+        "ar": "سلسلة GOLD SK R410A",
+        "en": "GOLD SK R410A Series"
+      },
+      "summary": {
+        "ar": "مضخات حرارية هواء إلى ماء بإنفرتر DC باستطاعتي 22 و30 كيلوواط، مصممة للتكامل مع دارات التدفئة المائية ووحدات الفان كويل.",
+        "en": "DC-inverter air-to-water heat pumps in 22 and 30 kW capacities, designed for integration with hydronic heating and fan-coil circuits."
+      },
+      "images": [
+        {
+          "base": "/media/products/sk-series/gold-sk22-product-render-v2",
+          "fallback": "/media/products/sk-series/gold-sk22-product-render-v2.png",
+          "width": 1448,
+          "height": 1086,
+          "widths": [480, 768, 1200],
+          "label": { "ar": "SK22 · 22 كيلوواط", "en": "SK22 · 22 kW" },
+          "alt": {
+            "ar": "مضخة GOLD SK22 الحرارية باستطاعة 22 كيلوواط",
+            "en": "GOLD SK22 22 kW air-to-water heat pump"
+          }
+        },
+        {
+          "base": "/media/products/sk-series/gold-sk30-product-render-v2",
+          "fallback": "/media/products/sk-series/gold-sk30-product-render-v2.png",
+          "width": 1448,
+          "height": 1086,
+          "widths": [480, 768, 1200],
+          "label": { "ar": "SK30 · 30 كيلوواط", "en": "SK30 · 30 kW" },
+          "alt": {
+            "ar": "مضخة GOLD SK30 الحرارية باستطاعة 30 كيلوواط",
+            "en": "GOLD SK30 30 kW air-to-water heat pump"
+          }
+        }
+      ],
+      "specs": [
+        { "label": { "ar": "غاز التبريد", "en": "Refrigerant" }, "value": "R410A" },
+        { "label": { "ar": "الاستطاعات", "en": "Capacities" }, "value": "22 · 30 kW" },
+        { "label": { "ar": "التحكم", "en": "Control" }, "value": "LCD · Wi-Fi" }
+      ],
+      "highlights": {
+        "ar": [
+          "تقنية DC Inverter للتحكم المرن بالتشغيل",
+          "تكامل مع دارات التدفئة الأرضية ووحدات الفان كويل",
+          "واجهة تحكم LCD واتصال Wi-Fi عبر Smart Life",
+          "خيارات تغذية أحادية وثلاثية الطور بحسب الموديل"
+        ],
+        "en": [
+          "DC Inverter technology for flexible operation",
+          "Integration with underfloor-heating and fan-coil circuits",
+          "LCD control and Wi-Fi connectivity through Smart Life",
+          "Single-phase and three-phase supply options by model"
+        ]
+      },
+      "models": ["SK22 · 22 kW", "SK30 · 30 kW"],
+      "modelLinks": [
+        {
+          "model": "SK22",
+          "capacity": "22 kW",
+          "path": "products/sk22/",
+          "label": { "ar": "عرض صفحة SK22", "en": "View SK22" }
+        },
+        {
+          "model": "SK30",
+          "capacity": "30 kW",
+          "path": "products/sk30/",
+          "label": { "ar": "عرض صفحة SK30", "en": "View SK30" }
+        }
+      ]
+    },
+    {
       "id": "r32-full-inverter-series",
       "slug": "r32-full-inverter-series",
       "category": "heat-pumps",

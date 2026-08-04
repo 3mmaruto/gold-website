@@ -2408,6 +2408,17 @@ html[lang="ar"] .page-hero-copy h1 {
   transition: transform 500ms cubic-bezier(.2, .7, .2, 1);
 }
 
+.catalog-product-card.has-model-pages .catalog-product-media {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.16), transparent 42%),
+    var(--navy);
+}
+
+.catalog-product-card.has-model-pages .catalog-product-image {
+  object-fit: contain;
+  padding: clamp(1rem, 3vw, 2.2rem);
+}
+
 .catalog-product-card:hover .catalog-product-image,
 .catalog-product-card:focus-within .catalog-product-image {
   transform: scale(1.025);
@@ -2470,6 +2481,11 @@ html[lang="ar"] .page-hero-copy h1 {
 
 .catalog-product-variant-image {
   object-fit: cover;
+}
+
+.catalog-product-card.has-model-pages .catalog-product-variant-image {
+  object-fit: contain;
+  background: #fff;
 }
 
 .catalog-product-variant span {
@@ -2541,6 +2557,59 @@ html[lang="ar"] .catalog-product-body h2 {
   color: var(--navy);
   font-size: 0.76rem;
   line-height: 1.35;
+}
+
+.catalog-model-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-block-start: 1rem;
+}
+
+.catalog-model-links > a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 70px;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--navy);
+  color: #fff;
+  transition: border-color 180ms ease, transform 180ms ease, background 180ms ease;
+}
+
+.catalog-model-links > a:hover,
+.catalog-model-links > a:focus-visible {
+  border-color: var(--gold);
+  background: #10243c;
+  transform: translateY(-2px);
+}
+
+.catalog-model-links > a > span {
+  display: grid;
+  min-width: 0;
+}
+
+.catalog-model-links small {
+  color: rgba(255, 255, 255, 0.56);
+  font-size: 0.58rem;
+}
+
+.catalog-model-links strong {
+  margin-block-start: 0.15rem;
+  font-size: 0.86rem;
+}
+
+.catalog-model-links b {
+  color: var(--gold-light);
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+
+.catalog-model-links svg {
+  color: var(--gold-light);
 }
 
 .catalog-product-reveal {
@@ -2690,125 +2759,7 @@ html[lang="ar"] .catalog-product-body h2 {
   font-size: clamp(1.8rem, 3.5vw, 3.2rem);
 }
 
-/* Model profiles and product technical dossiers */
-.model-profiles-section {
-  padding-block: clamp(4.5rem, 8vw, 7rem);
-  background:
-    linear-gradient(135deg, rgba(20, 121, 209, 0.045), transparent 42%),
-    #eceeea;
-}
-
-.model-profiles-section.is-compact {
-  border-block: 1px solid rgba(7, 20, 38, 0.08);
-  background: #f2efe6;
-}
-
-.model-profiles-layout {
-  display: grid;
-  align-items: center;
-  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
-  gap: clamp(2.5rem, 6vw, 6rem);
-}
-
-.model-profiles-heading h2 {
-  max-width: 13ch;
-  color: var(--navy);
-  font-size: clamp(2.2rem, 4.5vw, 4.2rem);
-  letter-spacing: -0.045em;
-  line-height: 1.04;
-}
-
-html[lang="ar"] .model-profiles-heading h2 {
-  letter-spacing: -0.025em;
-  line-height: 1.2;
-}
-
-.model-profiles-heading > p:last-child {
-  max-width: 52ch;
-  margin-block-start: 1.2rem;
-  color: var(--muted);
-}
-
-.model-profile-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.model-profile-card {
-  display: grid;
-  min-width: 0;
-  overflow: hidden;
-  grid-template-columns: minmax(100px, 0.72fr) minmax(0, 1fr);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
-  background: var(--navy);
-  color: #fff;
-  box-shadow: 0 18px 45px rgba(7, 20, 38, 0.13);
-  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
-}
-
-.model-profile-card:hover,
-.model-profile-card:focus-visible {
-  border-color: var(--gold);
-  box-shadow: 0 24px 52px rgba(7, 20, 38, 0.21);
-  transform: translateY(-3px);
-}
-
-.model-profile-media {
-  min-height: 210px;
-  overflow: hidden;
-  background: #fff;
-}
-
-.model-profile-picture,
-.model-profile-image {
-  width: 100%;
-  height: 100%;
-}
-
-.model-profile-image {
-  object-fit: cover;
-  object-position: center;
-  mix-blend-mode: multiply;
-  filter: grayscale(1) contrast(1.08);
-}
-
-.model-profile-copy {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1.25rem;
-}
-
-.model-profile-copy small {
-  color: rgba(255, 255, 255, 0.58);
-  font-size: 0.67rem;
-}
-
-.model-profile-copy > strong {
-  margin-block-start: 0.3rem;
-  color: var(--gold-light);
-  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
-  line-height: 1;
-}
-
-.model-profile-copy b {
-  margin-block-start: 0.95rem;
-  font-size: 0.92rem;
-}
-
-.model-profile-copy > span:last-child {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin-block-start: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.68rem;
-  font-weight: 700;
-}
-
+/* Product technical dossiers */
 .product-detail-hero {
   position: relative;
   overflow: hidden;
@@ -2912,7 +2863,7 @@ html[lang="ar"] .product-detail-hero-copy h1 {
   padding: clamp(2rem, 4vw, 3.4rem);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 30px 6px 30px 6px;
-  background: #fbfaf6;
+  background: #071426;
   box-shadow: 0 40px 90px rgba(0, 0, 0, 0.28);
 }
 
@@ -2930,15 +2881,13 @@ html[lang="ar"] .product-detail-hero-copy h1 {
 .product-detail-image {
   object-fit: contain;
   object-position: center;
-  mix-blend-mode: multiply;
-  filter: grayscale(1) contrast(1.08);
 }
 
 .product-detail-drawing-label,
 .product-detail-drawing-index {
   position: absolute;
   z-index: 1;
-  color: rgba(7, 20, 38, 0.55);
+  color: rgba(255, 255, 255, 0.66);
   font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -2952,7 +2901,7 @@ html[lang="ar"] .product-detail-hero-copy h1 {
 .product-detail-drawing-index {
   inset-block-end: 1rem;
   inset-inline-end: 1.3rem;
-  color: var(--red);
+  color: var(--gold-light);
 }
 
 .product-detail-proof {
@@ -3103,34 +3052,6 @@ html[lang="ar"] .product-detail-hero-copy h1 {
   font-size: 0.62rem;
 }
 
-.product-source-note {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.15rem 1.3rem;
-  border: 1px solid rgba(199, 154, 43, 0.35);
-  border-radius: 16px;
-  background: rgba(199, 154, 43, 0.08);
-}
-
-.product-source-note svg {
-  flex: none;
-  margin-block-start: 0.2rem;
-  color: var(--gold);
-  font-size: 1.25rem;
-}
-
-.product-source-note strong {
-  color: var(--navy);
-  font-size: 0.8rem;
-}
-
-.product-source-note p {
-  margin-block-start: 0.25rem;
-  color: var(--muted);
-  font-size: 0.8rem;
-}
-
 .product-system-section,
 .product-dimensions-section,
 .product-control-section,
@@ -3230,12 +3151,6 @@ html[lang="ar"] .product-related-card h2 {
 .product-dimensions-picture,
 .product-dimensions-image {
   width: 100%;
-}
-
-.product-system-image,
-.product-dimensions-image {
-  mix-blend-mode: multiply;
-  filter: grayscale(1) contrast(1.04);
 }
 
 .product-dimensions-section {
@@ -3792,7 +3707,6 @@ html[lang="ar"] .product-support-card h3 {
 
   .system-layout,
   .solution-overview-grid,
-  .model-profiles-layout,
   .product-detail-hero-layout,
   .product-system-layout,
   .product-dimensions-layout,
@@ -3807,10 +3721,6 @@ html[lang="ar"] .product-support-card h3 {
   .story-grid,
   .contact-layout {
     grid-template-columns: 1fr;
-  }
-
-  .model-profiles-heading {
-    max-width: 720px;
   }
 
   .product-detail-hero-layout {
@@ -4002,24 +3912,11 @@ html[lang="ar"] .product-support-card h3 {
   .technical-specs,
   .values-grid,
   .catalog-grid,
-  .model-profile-grid,
   .product-electrical-options,
   .product-spec-grid,
   .form-row,
   .footer-grid {
     grid-template-columns: 1fr;
-  }
-
-  .model-profiles-section {
-    padding-block: 4.4rem;
-  }
-
-  .model-profile-card {
-    grid-template-columns: minmax(118px, 0.72fr) minmax(0, 1fr);
-  }
-
-  .model-profile-media {
-    min-height: 190px;
   }
 
   .product-detail-hero-layout {
@@ -4223,6 +4120,10 @@ html[lang="ar"] .product-support-card h3 {
   .catalog-product-specs > div:first-child:last-child,
   .catalog-product-specs > div:nth-child(3) {
     grid-column: 1 / -1;
+  }
+
+  .catalog-model-links {
+    grid-template-columns: 1fr;
   }
 
   .catalog-product-actions {

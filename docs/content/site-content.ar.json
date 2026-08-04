@@ -36,7 +36,31 @@
           }
         ]
       },
-      { "id": "products", "label": "منتجاتنا", "path": "products/" },
+      {
+        "id": "products",
+        "label": "منتجاتنا",
+        "path": "products/",
+        "children": [
+          {
+            "id": "allProducts",
+            "label": "جميع المنتجات",
+            "description": "استعرض مضخات غولد الحرارية ومكونات الأنظمة المائية.",
+            "path": "products/"
+          },
+          {
+            "id": "sk22",
+            "label": "GOLD SK22 · 22 kW",
+            "description": "مضخة حرارية R410A بإنفرتر DC وخياري تغذية كهربائية.",
+            "path": "products/sk22/"
+          },
+          {
+            "id": "sk30",
+            "label": "GOLD SK30 · 30 kW",
+            "description": "مضخة حرارية R410A باستطاعة أكبر وتغذية ثلاثية الطور.",
+            "path": "products/sk30/"
+          }
+        ]
+      },
       { "id": "about", "label": "من نحن", "path": "about/" },
       { "id": "contact", "label": "تواصل معنا", "path": "contact/" }
     ]
