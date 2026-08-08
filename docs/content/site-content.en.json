@@ -48,14 +48,26 @@
             "path": "products/"
           },
           {
+            "id": "r290Sk16",
+            "label": "GOLD R290 SK16 · 16 kW",
+            "description": "Full-inverter heat pump with outlet water up to 80 C.",
+            "path": "products/r290-sk16/"
+          },
+          {
+            "id": "r290Sk22",
+            "label": "GOLD R290 SK22 · 22 kW",
+            "description": "High-temperature full-inverter model with two supply options.",
+            "path": "products/r290-sk22/"
+          },
+          {
             "id": "sk22",
-            "label": "GOLD SK22 · 22 kW",
+            "label": "GOLD R410A SK22 · 22 kW",
             "description": "R410A DC-inverter heat pump with two electrical supply options.",
             "path": "products/sk22/"
           },
           {
             "id": "sk30",
-            "label": "GOLD SK30 · 30 kW",
+            "label": "GOLD R410A SK30 · 30 kW",
             "description": "Higher-capacity R410A heat pump with three-phase supply.",
             "path": "products/sk30/"
           }

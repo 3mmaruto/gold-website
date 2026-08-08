@@ -105,13 +105,13 @@ export default function ProductDetailPage({ params }) {
             <span aria-hidden="true">/</span>
             <Link to={`/${locale}/products/`}>{product.breadcrumbs.products}</Link>
             <span aria-hidden="true">/</span>
-            <strong aria-current="page">{product.model}</strong>
+            <strong aria-current="page" dir="ltr">{product.displayModel}</strong>
           </nav>
 
           <div className="product-detail-hero-layout">
             <div className="product-detail-hero-copy" data-reveal>
               <p className="eyebrow">{product.eyebrow}</p>
-              <p className="product-model-mark" dir="ltr">{product.model}</p>
+              <p className="product-model-mark" dir="ltr">{product.displayModel}</p>
               <h1>{product.title}</h1>
               <p className="product-detail-intro">{product.intro}</p>
               <div className="product-detail-actions">
@@ -121,7 +121,7 @@ export default function ProductDetailPage({ params }) {
             </div>
 
             <div className="product-detail-hero-media" data-reveal>
-              <span className="product-detail-drawing-label" dir="ltr">GOLD PRODUCT · {product.model}</span>
+              <span className="product-detail-drawing-label" dir="ltr">GOLD PRODUCT · {product.displayModel}</span>
               <ResponsivePicture
                 source={product.image}
                 alt={product.imageAlt}
@@ -130,7 +130,7 @@ export default function ProductDetailPage({ params }) {
                 sizes="(max-width: 820px) 88vw, 45vw"
                 priority
               />
-              <span className="product-detail-drawing-index" aria-hidden="true">R410A / DC</span>
+              <span className="product-detail-drawing-index" dir="ltr" aria-hidden="true">{product.drawingIndex}</span>
             </div>
           </div>
 
@@ -167,7 +167,7 @@ export default function ProductDetailPage({ params }) {
       <section className="product-dimensions-section">
         <div className="container product-dimensions-layout">
           <div className="product-dimensions-media" data-reveal>
-            <span className="technical-figure-label" dir="ltr">SK22 / SK30 · DIMENSIONS</span>
+            <span className="technical-figure-label" dir="ltr">{product.dimensionsFigureLabel}</span>
             <ResponsivePicture
               source={product.dimensionsImage}
               alt={product.dimensionsAlt}
@@ -217,7 +217,7 @@ export default function ProductDetailPage({ params }) {
             <p>{related.intro}</p>
           </div>
           <Link to={`/${locale}/products/${related.slug}/`} className="product-related-link" prefetch="intent">
-            <span dir="ltr">{related.model} · {related.proof[0].value}</span>
+            <span dir="ltr">{related.displayModel} · {related.proof[0].value}</span>
             <strong>{product.relatedCta} ↗</strong>
           </Link>
         </div>

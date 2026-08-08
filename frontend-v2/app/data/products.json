@@ -55,7 +55,21 @@
           "Built-in inverter circulation pump and expansion tank"
         ]
       },
-      "models": ["8 kW", "12 kW", "16 kW", "22 kW"]
+      "models": ["8 kW", "12 kW", "16 kW", "22 kW"],
+      "modelLinks": [
+        {
+          "model": "R290 SK16",
+          "capacity": "16 kW",
+          "path": "products/r290-sk16/",
+          "label": { "ar": "عرض صفحة R290 SK16", "en": "View R290 SK16" }
+        },
+        {
+          "model": "R290 SK22",
+          "capacity": "22 kW",
+          "path": "products/r290-sk22/",
+          "label": { "ar": "عرض صفحة R290 SK22", "en": "View R290 SK22" }
+        }
+      ]
     },
     {
       "id": "gold-sk-r410a-series",
@@ -117,13 +131,13 @@
       "models": ["SK22 · 22 kW", "SK30 · 30 kW"],
       "modelLinks": [
         {
-          "model": "SK22",
+          "model": "R410A SK22",
           "capacity": "22 kW",
           "path": "products/sk22/",
           "label": { "ar": "عرض صفحة SK22", "en": "View SK22" }
         },
         {
-          "model": "SK30",
+          "model": "R410A SK30",
           "capacity": "30 kW",
           "path": "products/sk30/",
           "label": { "ar": "عرض صفحة SK30", "en": "View SK30" }
