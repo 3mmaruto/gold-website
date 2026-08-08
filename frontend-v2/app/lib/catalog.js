@@ -41,6 +41,10 @@ export function getCatalog(locale) {
       value: localized(spec.value, safeLocale),
     })),
     highlights: product.highlights[safeLocale] ?? [],
+    modelLinks: (product.modelLinks ?? []).map((link) => ({
+      ...link,
+      label: localized(link.label, safeLocale),
+    })),
   }));
 
   return {
@@ -71,6 +75,7 @@ export function queryCatalog({ locale, query = "", category = "all", page = 1 })
       ...product.specs.flatMap((spec) => [spec.label, spec.value]),
       ...product.highlights,
       ...(product.models ?? []),
+      ...product.modelLinks.flatMap((link) => [link.model, link.capacity]),
     ].join(" "));
 
     return searchableText.includes(normalizedQuery);
@@ -87,7 +92,7 @@ export function queryCatalog({ locale, query = "", category = "all", page = 1 })
   const start = showPagination ? (currentPage - 1) * catalog.pageSize : 0;
   const visibleProducts = showPagination
     ? filteredProducts.slice(start, start + catalog.pageSize)
-    : filteredProducts.slice(0, catalog.pageSize);
+    : filteredProducts;
 
   return {
     ...catalog,

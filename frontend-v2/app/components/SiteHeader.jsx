@@ -12,59 +12,76 @@ function itemPath(locale, item) {
   return `/${locale}/${item.path}`;
 }
 
+function groupIsActive(group, locale, pathname) {
+  return group.children.some((item) => pathname === itemPath(locale, item));
+}
+
 export default function SiteHeader({ locale, content, ui }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
-  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [desktopGroupOpen, setDesktopGroupOpen] = useState(null);
+  const [mobileGroupOpen, setMobileGroupOpen] = useState(null);
   const { pathname } = useLocation();
   const otherLocale = oppositeLocale(locale);
   const homePath = `/${locale}/`;
   const menu = content.navigation.menu;
-  const solutionsGroup = menu.find((item) => item.id === "solutions");
-  const primaryItems = menu.filter((item) => item.id !== "solutions");
-  const solutionsActive = solutionsGroup.children.some(
-    (item) => pathname === itemPath(locale, item),
-  );
-  const solutionsButtonRef = useRef(null);
-  const solutionsMenuRef = useRef(null);
   const menuToggleRef = useRef(null);
+  const solutionsButtonRef = useRef(null);
+  const productsButtonRef = useRef(null);
+  const mobileSolutionsButtonRef = useRef(null);
+  const mobileProductsButtonRef = useRef(null);
+  const solutionsMenuRef = useRef(null);
+  const productsMenuRef = useRef(null);
+  const buttonRefs = {
+    solutions: solutionsButtonRef,
+    products: productsButtonRef,
+  };
+  const menuRefs = {
+    solutions: solutionsMenuRef,
+    products: productsMenuRef,
+  };
+  const mobileButtonRefs = {
+    solutions: mobileSolutionsButtonRef,
+    products: mobileProductsButtonRef,
+  };
 
-  function solutionLinks() {
-    return [...(solutionsMenuRef.current?.querySelectorAll("a") ?? [])];
+  function groupLinks(groupId) {
+    return [...(menuRefs[groupId]?.current?.querySelectorAll("a") ?? [])];
   }
 
-  function closeSolutions({ restoreFocus = false } = {}) {
-    setSolutionsOpen(false);
-    if (restoreFocus) solutionsButtonRef.current?.focus();
+  function closeDesktopGroup({ restoreFocus = false } = {}) {
+    const closingGroup = desktopGroupOpen;
+    setDesktopGroupOpen(null);
+    if (restoreFocus && closingGroup) buttonRefs[closingGroup]?.current?.focus();
   }
 
-  function focusSolution(position = "first") {
+  function focusGroupLink(groupId, position = "first") {
     requestAnimationFrame(() => {
-      const links = solutionLinks();
+      const links = groupLinks(groupId);
       const link = position === "last" ? links.at(-1) : links[0];
       link?.focus();
     });
   }
 
-  function handleSolutionsButtonKeyDown(event) {
-    if (["Enter", " ", "ArrowDown", "ArrowUp"].includes(event.key)) {
+  function handleGroupButtonKeyDown(event, groupId) {
+    if (["ArrowDown", "ArrowUp"].includes(event.key)) {
       event.preventDefault();
-      setSolutionsOpen(true);
-      focusSolution(event.key === "ArrowUp" ? "last" : "first");
+      setDesktopGroupOpen(groupId);
+      focusGroupLink(groupId, event.key === "ArrowUp" ? "last" : "first");
     }
-    if (event.key === "Escape" && solutionsOpen) {
+
+    if (event.key === "Escape" && desktopGroupOpen === groupId) {
       event.preventDefault();
-      closeSolutions({ restoreFocus: true });
+      closeDesktopGroup({ restoreFocus: true });
     }
   }
 
-  function handleSolutionLinkKeyDown(event) {
-    const links = solutionLinks();
+  function handleGroupLinkKeyDown(event, groupId) {
+    const links = groupLinks(groupId);
     const index = links.indexOf(event.currentTarget);
 
     if (event.key === "Escape") {
       event.preventDefault();
-      closeSolutions({ restoreFocus: true });
+      closeDesktopGroup({ restoreFocus: true });
       return;
     }
 
@@ -83,29 +100,26 @@ export default function SiteHeader({ locale, content, ui }) {
 
   function closeMobileMenu({ restoreFocus = false } = {}) {
     setMobileOpen(false);
-    setMobileSolutionsOpen(false);
+    setMobileGroupOpen(null);
     if (restoreFocus) menuToggleRef.current?.focus();
   }
 
   useEffect(() => {
     setMobileOpen(false);
-    setMobileSolutionsOpen(false);
-    setSolutionsOpen(false);
+    setMobileGroupOpen(null);
+    setDesktopGroupOpen(null);
   }, [pathname]);
 
   useEffect(() => {
-    if (!solutionsOpen) return undefined;
+    if (!desktopGroupOpen) return undefined;
+    const activeMenuRef = menuRefs[desktopGroupOpen];
 
     function handleOutsidePointer(event) {
-      if (!solutionsMenuRef.current?.contains(event.target)) {
-        closeSolutions();
-      }
+      if (!activeMenuRef?.current?.contains(event.target)) closeDesktopGroup();
     }
 
     function handleFocusOutside(event) {
-      if (!solutionsMenuRef.current?.contains(event.target)) {
-        closeSolutions();
-      }
+      if (!activeMenuRef?.current?.contains(event.target)) closeDesktopGroup();
     }
 
     document.addEventListener("pointerdown", handleOutsidePointer);
@@ -114,13 +128,17 @@ export default function SiteHeader({ locale, content, ui }) {
       document.removeEventListener("pointerdown", handleOutsidePointer);
       document.removeEventListener("focusin", handleFocusOutside);
     };
-  }, [solutionsOpen]);
+  }, [desktopGroupOpen]);
 
   useEffect(() => {
     function handleEscape(event) {
       if (event.key !== "Escape") return;
-      if (solutionsOpen) {
-        closeSolutions({ restoreFocus: true });
+      if (desktopGroupOpen) {
+        closeDesktopGroup({ restoreFocus: true });
+      } else if (mobileGroupOpen) {
+        const closingGroup = mobileGroupOpen;
+        setMobileGroupOpen(null);
+        requestAnimationFrame(() => mobileButtonRefs[closingGroup]?.current?.focus());
       } else if (mobileOpen) {
         closeMobileMenu({ restoreFocus: true });
       }
@@ -128,7 +146,7 @@ export default function SiteHeader({ locale, content, ui }) {
 
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
-  }, [mobileOpen, solutionsOpen]);
+  }, [desktopGroupOpen, mobileGroupOpen, mobileOpen]);
 
   useEffect(() => {
     if (!mobileOpen) return undefined;
@@ -152,65 +170,59 @@ export default function SiteHeader({ locale, content, ui }) {
         </Link>
 
         <nav className="desktop-nav" aria-label={content.navigation.home}>
-          <NavLink
-            to={itemPath(locale, primaryItems[0])}
-            end
-            className={({ isActive }) => (isActive ? "active" : undefined)}
-            prefetch="intent"
-          >
-            {primaryItems[0].label}
-          </NavLink>
-
-          <div className="solutions-nav" ref={solutionsMenuRef}>
-            <button
-              ref={solutionsButtonRef}
-              type="button"
-              className={`solutions-nav-trigger ${solutionsActive ? "active" : ""}`}
-              aria-expanded={solutionsOpen}
-              aria-controls="desktop-solutions-menu"
-              aria-haspopup="true"
-              onFocus={(event) => {
-                if (event.currentTarget.matches(":focus-visible")) setSolutionsOpen(true);
-              }}
-              onClick={() => setSolutionsOpen((value) => !value)}
-              onKeyDown={handleSolutionsButtonKeyDown}
-            >
-              <span>{solutionsGroup.label}</span>
-              <FiChevronDown aria-hidden="true" />
-            </button>
-            <div
-              id="desktop-solutions-menu"
-              className={`solutions-popover ${solutionsOpen ? "is-open" : ""}`}
-              aria-hidden={!solutionsOpen}
-            >
-              {solutionsGroup.children.map((item) => (
+          {menu.map((item) => {
+            if (!item.children) {
+              return (
                 <NavLink
                   key={item.id}
                   to={itemPath(locale, item)}
+                  end={item.id === "home"}
                   className={({ isActive }) => (isActive ? "active" : undefined)}
-                  tabIndex={solutionsOpen ? 0 : -1}
-                  onKeyDown={handleSolutionLinkKeyDown}
-                  onClick={() => closeSolutions()}
                   prefetch="intent"
                 >
-                  <strong>{item.label}</strong>
-                  <span>{item.description}</span>
+                  {item.label}
                 </NavLink>
-              ))}
-            </div>
-          </div>
+              );
+            }
 
-          {primaryItems.slice(1).map((item) => {
-            const to = itemPath(locale, item);
+            const open = desktopGroupOpen === item.id;
+            const active = groupIsActive(item, locale, pathname);
             return (
-              <NavLink
-                key={item.id}
-                to={to}
-                className={({ isActive }) => (isActive ? "active" : undefined)}
-                prefetch="intent"
-              >
-                {item.label}
-              </NavLink>
+              <div className="solutions-nav" ref={menuRefs[item.id]} key={item.id}>
+                <button
+                  ref={buttonRefs[item.id]}
+                  type="button"
+                  className={`solutions-nav-trigger ${active ? "active" : ""}`}
+                  aria-expanded={open}
+                  aria-controls={`desktop-${item.id}-menu`}
+                  onClick={() => setDesktopGroupOpen((value) => (value === item.id ? null : item.id))}
+                  onKeyDown={(event) => handleGroupButtonKeyDown(event, item.id)}
+                >
+                  <span>{item.label}</span>
+                  <FiChevronDown aria-hidden="true" />
+                </button>
+                <div
+                  id={`desktop-${item.id}-menu`}
+                  className={`solutions-popover ${open ? "is-open" : ""}`}
+                  aria-hidden={!open}
+                >
+                  {item.children.map((child) => (
+                    <NavLink
+                      key={child.id}
+                      to={itemPath(locale, child)}
+                      end={child.id === "allProducts"}
+                      className={({ isActive }) => (isActive ? "active" : undefined)}
+                      tabIndex={open ? 0 : -1}
+                      onKeyDown={(event) => handleGroupLinkKeyDown(event, item.id)}
+                      onClick={() => closeDesktopGroup()}
+                      prefetch="intent"
+                    >
+                      <strong>{child.label}</strong>
+                      <span>{child.description}</span>
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
             );
           })}
         </nav>
@@ -231,7 +243,10 @@ export default function SiteHeader({ locale, content, ui }) {
             aria-label={mobileOpen ? ui.closeMenu : ui.menu}
             aria-expanded={mobileOpen}
             aria-controls="mobile-navigation"
-            onClick={() => setMobileOpen((value) => !value)}
+            onClick={() => {
+              if (mobileOpen) closeMobileMenu();
+              else setMobileOpen(true);
+            }}
           >
             {mobileOpen ? <FiX aria-hidden="true" /> : <FiMenu aria-hidden="true" />}
           </button>
@@ -245,58 +260,60 @@ export default function SiteHeader({ locale, content, ui }) {
         aria-hidden={!mobileOpen}
       >
         <div className="container mobile-nav-inner">
-          <NavLink
-            to={itemPath(locale, primaryItems[0])}
-            end
-            tabIndex={mobileOpen ? 0 : -1}
-            onClick={() => closeMobileMenu()}
-          >
-            <span>01</span>
-            {primaryItems[0].label}
-          </NavLink>
-
-          <div className={`mobile-solutions ${solutionsActive ? "has-active-child" : ""}`}>
-            <button
-              type="button"
-              className="mobile-solutions-trigger"
-              aria-expanded={mobileSolutionsOpen}
-              aria-controls="mobile-solutions-links"
-              tabIndex={mobileOpen ? 0 : -1}
-              onClick={() => setMobileSolutionsOpen((value) => !value)}
-            >
-              <span>02</span>
-              <strong>{solutionsGroup.label}</strong>
-              <FiChevronDown aria-hidden="true" />
-            </button>
-            <div
-              id="mobile-solutions-links"
-              className={`mobile-solutions-links ${mobileSolutionsOpen ? "is-open" : ""}`}
-            >
-              {solutionsGroup.children.map((item) => (
+          {menu.map((item, index) => {
+            if (!item.children) {
+              return (
                 <NavLink
                   key={item.id}
                   to={itemPath(locale, item)}
-                  tabIndex={mobileOpen && mobileSolutionsOpen ? 0 : -1}
+                  end={item.id === "home"}
+                  tabIndex={mobileOpen ? 0 : -1}
                   onClick={() => closeMobileMenu()}
                 >
-                  <strong>{item.label}</strong>
-                  <small>{item.description}</small>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  {item.label}
                 </NavLink>
-              ))}
-            </div>
-          </div>
+              );
+            }
 
-          {primaryItems.slice(1).map((item, index) => (
-            <NavLink
-              key={item.id}
-              to={itemPath(locale, item)}
-              tabIndex={mobileOpen ? 0 : -1}
-              onClick={() => closeMobileMenu()}
-            >
-              <span>{String(index + 3).padStart(2, "0")}</span>
-              {item.label}
-            </NavLink>
-          ))}
+            const open = mobileGroupOpen === item.id;
+            const active = groupIsActive(item, locale, pathname);
+            return (
+              <div className={`mobile-solutions ${active ? "has-active-child" : ""}`} key={item.id}>
+                <button
+                  ref={mobileButtonRefs[item.id]}
+                  type="button"
+                  className="mobile-solutions-trigger"
+                  aria-expanded={open}
+                  aria-controls={`mobile-${item.id}-links`}
+                  tabIndex={mobileOpen ? 0 : -1}
+                  onClick={() => setMobileGroupOpen((value) => (value === item.id ? null : item.id))}
+                >
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{item.label}</strong>
+                  <FiChevronDown aria-hidden="true" />
+                </button>
+                <div
+                  id={`mobile-${item.id}-links`}
+                  className={`mobile-solutions-links ${open ? "is-open" : ""}`}
+                  aria-hidden={!open}
+                >
+                  {item.children.map((child) => (
+                    <NavLink
+                      key={child.id}
+                      to={itemPath(locale, child)}
+                      end={child.id === "allProducts"}
+                      tabIndex={mobileOpen && open ? 0 : -1}
+                      onClick={() => closeMobileMenu()}
+                    >
+                      <strong>{child.label}</strong>
+                      <small>{child.description}</small>
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </nav>
     </header>

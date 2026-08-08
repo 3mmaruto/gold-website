@@ -36,7 +36,43 @@
           }
         ]
       },
-      { "id": "products", "label": "منتجاتنا", "path": "products/" },
+      {
+        "id": "products",
+        "label": "منتجاتنا",
+        "path": "products/",
+        "children": [
+          {
+            "id": "allProducts",
+            "label": "جميع المنتجات",
+            "description": "استعرض مضخات غولد الحرارية ومكونات الأنظمة المائية.",
+            "path": "products/"
+          },
+          {
+            "id": "r290Sk16",
+            "label": "GOLD R290 SK16 · 16 kW",
+            "description": "مضخة حرارية بإنفرتر كامل وماء خروج حتى 80 درجة مئوية.",
+            "path": "products/r290-sk16/"
+          },
+          {
+            "id": "r290Sk22",
+            "label": "GOLD R290 SK22 · 22 kW",
+            "description": "موديل عالي الحرارة بإنفرتر كامل وخياري تغذية كهربائية.",
+            "path": "products/r290-sk22/"
+          },
+          {
+            "id": "sk22",
+            "label": "GOLD R410A SK22 · 22 kW",
+            "description": "مضخة حرارية R410A بإنفرتر DC وخياري تغذية كهربائية.",
+            "path": "products/sk22/"
+          },
+          {
+            "id": "sk30",
+            "label": "GOLD R410A SK30 · 30 kW",
+            "description": "مضخة حرارية R410A باستطاعة أكبر وتغذية ثلاثية الطور.",
+            "path": "products/sk30/"
+          }
+        ]
+      },
       { "id": "about", "label": "من نحن", "path": "about/" },
       { "id": "contact", "label": "تواصل معنا", "path": "contact/" }
     ]

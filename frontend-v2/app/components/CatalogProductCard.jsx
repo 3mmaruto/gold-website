@@ -12,7 +12,7 @@ export default function CatalogProductCard({ product, index, locale, ui }) {
   return (
     <article
       id={product.id}
-      className={`catalog-product-card ${expanded ? "is-expanded" : ""}`}
+      className={`catalog-product-card ${product.modelLinks.length ? "has-model-pages" : ""} ${expanded ? "is-expanded" : ""}`}
       data-category={product.category}
     >
       <div className="catalog-product-media">
@@ -54,6 +54,21 @@ export default function CatalogProductCard({ product, index, locale, ui }) {
             </div>
           ))}
         </div>
+
+        {product.modelLinks.length ? (
+          <nav className="catalog-model-links" aria-label={ui.modelPages}>
+            {product.modelLinks.map((modelLink) => (
+              <Link key={modelLink.model} to={`/${locale}/${modelLink.path}`} prefetch="intent">
+                <span>
+                  <small>{modelLink.label}</small>
+                  <strong dir="ltr">{modelLink.model}</strong>
+                </span>
+                <b dir="ltr">{modelLink.capacity}</b>
+                <FiArrowUpRight aria-hidden="true" />
+              </Link>
+            ))}
+          </nav>
+        ) : null}
 
         <div className="catalog-product-reveal" id={detailsId}>
           <strong>{ui.productHighlights}</strong>
