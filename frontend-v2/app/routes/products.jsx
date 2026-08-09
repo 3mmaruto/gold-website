@@ -77,7 +77,7 @@ export default function ProductsPage({ params }) {
         pageLabel={content.navigation.products}
       />
 
-      <section className="product-banner-section">
+      <div className="product-banner-section">
         <div className="container">
           <div className="product-banner" data-reveal>
             <ResponsivePicture
@@ -94,7 +94,7 @@ export default function ProductsPage({ params }) {
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <Section
         className="catalog-section"
@@ -104,7 +104,7 @@ export default function ProductsPage({ params }) {
         <div className="catalog-toolbar" data-reveal>
           <label className="catalog-search">
             <span>{ui.searchProducts}</span>
-            <div>
+            <span className="catalog-search-control">
               <FiSearch aria-hidden="true" />
               <input
                 type="search"
@@ -122,7 +122,7 @@ export default function ProductsPage({ params }) {
                   <FiX aria-hidden="true" />
                 </button>
               ) : null}
-            </div>
+            </span>
           </label>
 
           <fieldset className="catalog-filter-chips">

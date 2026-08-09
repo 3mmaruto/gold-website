@@ -13,6 +13,10 @@ The legacy hash router has been replaced by React Router framework mode with sta
 /ar/               Arabic home
 /ar/about/         Arabic about
 /ar/products/      Arabic products
+/ar/products/r290-sk16/ Arabic R290 SK16 product profile
+/ar/products/r290-sk22/ Arabic R290 SK22 product profile
+/ar/products/sk22/ Arabic SK22 product profile
+/ar/products/sk30/ Arabic SK30 product profile
 /ar/contact/       Arabic contact
 /ar/heat-pumps/    Arabic air-to-water heat-pump guide
 /ar/underfloor-heating/ Arabic hydronic underfloor-heating guide
@@ -20,6 +24,10 @@ The legacy hash router has been replaced by React Router framework mode with sta
 /en/               English home
 /en/about/         English about
 /en/products/      English products
+/en/products/r290-sk16/ English R290 SK16 product profile
+/en/products/r290-sk22/ English R290 SK22 product profile
+/en/products/sk22/ English SK22 product profile
+/en/products/sk30/ English SK30 product profile
 /en/contact/       English contact
 /en/heat-pumps/    English air-to-water heat-pump guide
 /en/underfloor-heating/ English hydronic underfloor-heating guide
@@ -30,7 +38,7 @@ The language switch maps equivalent routes, for example `/ar/products/` to `/en/
 
 ## Rendering requirements
 
-- Pre-render all 15 paths at build time.
+- Pre-render all 23 paths at build time.
 - Serve meaningful localized HTML before hydration.
 - Use `ssr: false` with explicit static pre-render paths if following React Router framework mode.
 - Build output must be deployable to GitHub Pages with the existing custom domain.

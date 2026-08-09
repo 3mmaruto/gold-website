@@ -46,7 +46,7 @@ export default function CatalogProductCard({ product, index, locale, ui }) {
         <h2>{product.name}</h2>
         <p className="catalog-product-summary">{product.summary}</p>
 
-        <div className="catalog-product-specs" aria-label={ui.essentialSpecs}>
+        <div className="catalog-product-specs" role="group" aria-label={ui.essentialSpecs}>
           {product.specs.map((spec) => (
             <div key={`${spec.label}-${spec.value}`}>
               <span>{spec.label}</span>

@@ -2267,7 +2267,7 @@ html[lang="ar"] .page-hero-copy h1 {
   font-weight: 750;
 }
 
-.catalog-search > div {
+.catalog-search-control {
   display: grid;
   align-items: center;
   grid-template-columns: auto 1fr auto;
@@ -2280,7 +2280,7 @@ html[lang="ar"] .page-hero-copy h1 {
   transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.catalog-search > div:focus-within {
+.catalog-search-control:focus-within {
   border-color: var(--blue);
   box-shadow: 0 0 0 3px rgba(20, 121, 209, 0.1);
 }
@@ -2980,7 +2980,7 @@ html[lang="ar"] .product-detail-hero-copy h1 {
   gap: 0.75rem;
 }
 
-.product-electrical-options article {
+.product-electrical-options > div {
   display: grid;
   min-height: 150px;
   align-content: center;
@@ -3046,10 +3046,16 @@ html[lang="ar"] .product-detail-hero-copy h1 {
   line-height: 1.35;
 }
 
+.product-spec-grid dd > span {
+  display: block;
+}
+
 .product-spec-grid small {
+  display: block;
   margin-block-start: 0.45rem;
   color: var(--muted);
   font-size: 0.62rem;
+  font-weight: 400;
 }
 
 .product-system-section,
@@ -3969,7 +3975,7 @@ html[lang="ar"] .product-support-card h3 {
     padding: 0.8rem;
   }
 
-  .product-electrical-options article,
+  .product-electrical-options > div,
   .product-spec-grid > div {
     min-height: 132px;
   }

@@ -25,7 +25,7 @@ export function meta({ params }) {
 
 function ProofStrip({ items, label }) {
   return (
-    <div className="product-detail-proof" aria-label={label}>
+    <div className="product-detail-proof" role="group" aria-label={label}>
       {items.map((item, index) => (
         <div key={item.label}>
           <span>{String(index + 1).padStart(2, "0")}</span>
@@ -53,11 +53,11 @@ function TechnicalProfile({ product }) {
           </div>
           <div className="product-electrical-options">
             {product.electrical.map((option) => (
-              <article key={option.supply}>
+              <div key={option.supply}>
                 <small>{option.label}</small>
                 <strong dir="ltr">{option.supply}</strong>
                 <span dir="ltr">{option.current}</span>
-              </article>
+              </div>
             ))}
           </div>
         </div>
@@ -66,8 +66,10 @@ function TechnicalProfile({ product }) {
           {product.specs.map((spec) => (
             <div key={spec.label} data-reveal>
               <dt>{spec.label}</dt>
-              <dd dir="ltr">{spec.value}</dd>
-              {spec.note ? <small>{spec.note}</small> : null}
+              <dd>
+                <span dir="ltr">{spec.value}</span>
+                {spec.note ? <small dir="auto">{spec.note}</small> : null}
+              </dd>
             </div>
           ))}
         </dl>

@@ -174,7 +174,7 @@ export default function HomePage({ params }) {
             <p className="eyebrow">{content.home.smartControl.eyebrow}</p>
             <h2>{content.home.smartControl.title}</h2>
             <p>{content.home.smartControl.body}</p>
-            <div className="smart-control-signals" aria-label={content.home.smartControl.eyebrow}>
+            <div className="smart-control-signals" role="group" aria-label={content.home.smartControl.eyebrow}>
               <span><FiMonitor aria-hidden="true" /> LCD</span>
               <span><FiWifi aria-hidden="true" /> Wi-Fi</span>
             </div>

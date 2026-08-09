@@ -3,8 +3,8 @@
 ## Scope and safety
 
 - This repository is `3mmaruto/gold-website`.
-- The active development branch is `redesign/static-frontend-upgrade` until the user explicitly changes it.
-- `main` is the deployed production branch. Do not merge into, force-update, push to, or delete `main` without explicit user approval.
+- `main` is the deployed production branch. Start maintenance work on a short-lived feature branch based on the current `main`.
+- Do not merge into, force-update, push directly to, or delete `main` without explicit user approval. Use a reviewed pull request for production changes.
 - The new application root is `frontend-v2/`.
 - The legacy root HTML/CSS/JS site was removed during the approved production migration. Use Git history only if an old URL or claim must be audited; do not restore its template or people imagery.
 - The sibling directory `../gold/` contains raw company material. Treat it as read-only unless the user explicitly requests a deliverable there.
