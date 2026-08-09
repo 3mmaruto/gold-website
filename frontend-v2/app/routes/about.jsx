@@ -70,7 +70,7 @@ export default function AboutPage({ params }) {
         </div>
       </Section>
 
-      <section className="approach-band">
+      <div className="approach-band">
         <div className="container approach-grid">
           {(locale === "ar"
             ? ["اختيار المنتج", "تخطيط النظام", "دعم التركيب", "تنسيق ما بعد البيع"]
@@ -79,7 +79,7 @@ export default function AboutPage({ params }) {
             <div key={item} data-reveal><span>0{index + 1}</span><strong>{item}</strong></div>
           ))}
         </div>
-      </section>
+      </div>
 
       <Section
         className="quality-documents-teaser"

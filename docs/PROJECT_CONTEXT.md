@@ -1,15 +1,14 @@
 # Gold Group Website Project Context
 
-Updated: 2026-07-20
+Updated: 2026-08-09
 
 ## Repository state
 
 - Remote: `https://github.com/3mmaruto/gold-website`
 - Default/deployed branch: `main`
-- Redesign branch: `redesign/static-frontend-upgrade`
-- Local checkout is on the redesign branch.
-- Remote comparison: the redesign branch is one commit ahead of `main` and zero commits behind.
-- `main` remains the current production source until v2 is fully approved.
+- Production release baseline: `v1.0.0`.
+- Maintenance changes start from current `main`, use a short-lived feature branch, and reach production through a pull request.
+- The earlier redesign branch is retained only as history; it is no longer the active development baseline.
 
 ## Workspace layout
 
@@ -54,7 +53,7 @@ These values must not be generalized to every Gold product line without a matchi
 
 ## Target outcome
 
-The production website contains seven localized page families in both languages:
+The production website contains eleven localized routes in each language:
 
 - Home
 - About Us
@@ -63,5 +62,9 @@ The production website contains seven localized page families in both languages:
 - Heat Pumps
 - Underfloor Heating
 - Quality Documents
+- R290 SK16 product profile
+- R290 SK22 product profile
+- SK22 product profile
+- SK30 product profile
 
-Together with the `/` language-selection page, the build pre-renders 15 routes. The homepage centers the heat-pump system and links to useful solution guides rather than exposing proprietary manufacturing detail. The quality-document page explains that model- and project-specific records are available through a formal email request; it does not publish supplier identities, document identifiers, previews, or source files.
+Together with the `/` language-selection page, the build pre-renders 23 routes. The homepage centers the heat-pump system and links to useful solution guides rather than exposing proprietary manufacturing detail. The quality-document page explains that model- and project-specific records are available through a formal email request; it does not publish supplier identities, document identifiers, previews, or source files.

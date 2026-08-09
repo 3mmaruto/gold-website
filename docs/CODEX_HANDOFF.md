@@ -18,9 +18,13 @@ Maintain the completed Gold Group website in `frontend-v2/`. The original scaffo
 - Produce pre-rendered static HTML for:
   - `/`
   - `/ar/`, `/ar/about/`, `/ar/products/`, `/ar/contact/`
+  - `/ar/products/r290-sk16/`, `/ar/products/r290-sk22/`
+  - `/ar/products/sk22/`, `/ar/products/sk30/`
   - `/ar/heat-pumps/`, `/ar/underfloor-heating/`
   - `/ar/manufacturer-documents/`
   - `/en/`, `/en/about/`, `/en/products/`, `/en/contact/`
+  - `/en/products/r290-sk16/`, `/en/products/r290-sk22/`
+  - `/en/products/sk22/`, `/en/products/sk30/`
   - `/en/heat-pumps/`, `/en/underfloor-heating/`
   - `/en/manufacturer-documents/`
 - Use no runtime server (`ssr: false`) and configure the GitHub Pages build output correctly.

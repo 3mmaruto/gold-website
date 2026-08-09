@@ -2,9 +2,11 @@
 
 Production marketing website for GOLD / Gold Group, built with React Router framework mode and statically pre-rendered for GitHub Pages.
 
+Current stable release: `v1.0.0` (2026-08-09). The release establishes the first formally versioned production baseline for future maintenance and content expansion.
+
 ## Application
 
-The only production application is `frontend-v2/`. It provides Arabic RTL and English LTR route families, a data-driven product catalog, bilingual solution guides, localized metadata, canonical and `hreflang` links, JSON-LD, responsive AVIF/WebP media, `sitemap.xml`, and `robots.txt`.
+The only production application is `frontend-v2/`. It provides 23 pre-rendered routes: the language entry page plus 11 Arabic RTL and 11 English LTR pages. These include the corporate pages, solution guides, product catalog, four model-specific product profiles, localized metadata, canonical and `hreflang` links, JSON-LD, responsive AVIF/WebP media, `sitemap.xml`, and `robots.txt`.
 
 The root `/` is the language-selection and `x-default` page. Localized pages live under `/ar/` and `/en/`.
 
