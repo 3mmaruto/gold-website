@@ -406,7 +406,7 @@
   "contact": {
     "eyebrow": "Contact Gold Group",
     "title": "Start with the building. We will help frame the system.",
-    "intro": "Tell us the building type, area, location, required water temperature and intended heating or cooling distribution. These details help us begin with the right questions.",
+    "intro": "Share your name, phone number, project address and approximate area. Gold Group will follow up to help define the suitable heating and cooling system.",
     "phoneLabel": "Mobile",
     "phone": "0948529207",
     "landlineLabel": "Landline",
@@ -416,12 +416,15 @@
     "locationLabel": "Location",
     "location": "Marota City, Damascus, Syria",
     "form": {
+      "eyebrow": "Project information",
+      "title": "Share the essentials.",
       "name": "Name",
       "phone": "Phone",
-      "email": "Email",
-      "project": "Project type",
-      "message": "Project details",
-      "submit": "Send enquiry"
+      "address": "Project address",
+      "area": "Approximate project area",
+      "areaUnit": "m²",
+      "sendEmail": "Send by email",
+      "sendWhatsapp": "Send via WhatsApp"
     }
   },
   "footer": {

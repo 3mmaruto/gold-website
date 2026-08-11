@@ -1,4 +1,5 @@
 import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa6";
 import JsonLd from "../components/JsonLd";
 import PageHero from "../components/PageHero";
 import SeoLinks from "../components/SeoLinks";
@@ -8,6 +9,8 @@ import { breadcrumbsJsonLd, buildMeta } from "../lib/seo";
 export function meta({ params }) {
   return buildMeta(params.locale, "contact");
 }
+
+const WHATSAPP_NUMBER = "963948529207";
 
 export default function ContactPage({ params }) {
   const locale = params.locale;
@@ -22,13 +25,18 @@ export default function ContactPage({ params }) {
       "",
       `${content.contact.form.name}: ${data.get("name")}`,
       `${content.contact.form.phone}: ${data.get("phone")}`,
-      `${content.contact.form.email}: ${data.get("email") || "-"}`,
-      `${content.contact.form.project}: ${data.get("project")}`,
-      "",
-      `${content.contact.form.message}:`,
-      data.get("message"),
+      `${content.contact.form.address}: ${data.get("address")}`,
+      `${content.contact.form.area}: ${data.get("area")} ${content.contact.form.areaUnit}`,
     ];
-    window.location.href = `mailto:${content.contact.email}?subject=${encodeURIComponent(ui.formSubject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+    const message = lines.join("\n");
+    const channel = event.nativeEvent.submitter?.value;
+
+    if (channel === "whatsapp") {
+      window.location.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      return;
+    }
+
+    window.location.href = `mailto:${content.contact.email}?subject=${encodeURIComponent(ui.formSubject)}&body=${encodeURIComponent(message)}`;
   }
 
   const contactItems = [
@@ -78,8 +86,8 @@ export default function ContactPage({ params }) {
             <div className="form-heading">
               <span>01</span>
               <div>
-                <p className="eyebrow">{locale === "ar" ? "تفاصيل المشروع" : "Project details"}</p>
-                <h2>{locale === "ar" ? "أرسل المعلومات الأساسية." : "Share the essentials."}</h2>
+                <p className="eyebrow">{content.contact.form.eyebrow}</p>
+                <h2>{content.contact.form.title}</h2>
               </div>
             </div>
             <label>
@@ -92,25 +100,24 @@ export default function ContactPage({ params }) {
                 <input name="phone" type="tel" autoComplete="tel" dir="ltr" required />
               </label>
               <label>
-                <span>{content.contact.form.email} <small>({ui.optional})</small></span>
-                <input name="email" type="email" autoComplete="email" dir="ltr" />
+                <span>{content.contact.form.area}</span>
+                <input name="area" type="number" inputMode="decimal" min="1" step="0.1" dir="ltr" required />
               </label>
             </div>
             <label>
-              <span>{content.contact.form.project}</span>
-              <select name="project" required defaultValue="">
-                <option value="" disabled>—</option>
-                {ui.projectOptions.map((option) => <option key={option}>{option}</option>)}
-              </select>
+              <span>{content.contact.form.address}</span>
+              <input name="address" autoComplete="street-address" required />
             </label>
-            <label>
-              <span>{content.contact.form.message}</span>
-              <textarea name="message" rows="6" required />
-            </label>
-            <button className="button button--primary form-submit" type="submit">
-              <span>{content.contact.form.submit}</span><span className="direction-arrow" aria-hidden="true">↗</span>
-            </button>
-            <p className="form-note">{ui.contactNote}</p>
+            <div className="form-actions">
+              <button className="button button--primary form-submit" type="submit" name="channel" value="email">
+                <FiMail aria-hidden="true" />
+                <span>{content.contact.form.sendEmail}</span>
+              </button>
+              <button className="button button--whatsapp form-submit" type="submit" name="channel" value="whatsapp">
+                <FaWhatsapp aria-hidden="true" />
+                <span>{content.contact.form.sendWhatsapp}</span>
+              </button>
+            </div>
           </form>
         </div>
       </section>

@@ -3493,15 +3493,29 @@ html[lang="ar"] .product-support-card h3 {
 
 .form-submit {
   width: 100%;
-  margin-block-start: 1.5rem;
   border: 0;
 }
 
-.form-note {
-  margin-block-start: 0.9rem;
-  color: var(--muted);
-  font-size: 0.76rem;
-  text-align: center;
+.form-actions {
+  display: grid;
+  margin-block-start: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.form-submit svg {
+  flex: none;
+  font-size: 1.15rem;
+}
+
+.button--whatsapp {
+  background: #167c4d;
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(22, 124, 77, 0.18);
+}
+
+.button--whatsapp:hover {
+  background: #116a41;
 }
 
 /* Footer */
@@ -3921,6 +3935,7 @@ html[lang="ar"] .product-support-card h3 {
   .product-electrical-options,
   .product-spec-grid,
   .form-row,
+  .form-actions,
   .footer-grid {
     grid-template-columns: 1fr;
   }
