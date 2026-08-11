@@ -2,6 +2,26 @@
 
 All notable production releases of the Gold Group corporate website are documented here.
 
+## [1.0.1] - 2026-08-11
+
+### Added
+
+- Direct WhatsApp project enquiries from the bilingual contact form, with the visitor's name, phone, location, and project area prepared in the message.
+- A direct WhatsApp contact action in the site-wide footer.
+- Bilingual BUILDEX 2025 and 2026 participation records on the quality and documentation page, with responsive AVIF/WebP media.
+
+### Changed
+
+- Simplified the contact form to the four details needed for an initial enquiry: name, phone, location, and area.
+- Retained email as an alternative enquiry channel while removing unnecessary implementation wording from the public form.
+- Grouped product links inside an accessible, keyboard-compatible footer disclosure so future product additions do not make the footer excessively tall.
+- Refined the quality-page copy around documented technical areas, field experience, product evaluation, and Gold Group's professional exhibition presence without publishing private supplier identity.
+
+### Security and privacy
+
+- WhatsApp and email actions open the visitor's chosen application; the static website does not store or submit enquiry data to an external form backend.
+- No supplier names, factory identifiers, patent identifiers, or private source documents are published by this release.
+
 ## [1.0.0] - 2026-08-09
 
 ### Added

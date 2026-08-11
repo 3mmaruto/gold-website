@@ -29,6 +29,7 @@ const generatedDirectories = [
   "public/media/products/sk-series",
   "public/media/solutions",
   "public/media/technology",
+  "public/media/company-events",
 ];
 
 for (const directory of generatedDirectories) {
@@ -36,7 +37,10 @@ for (const directory of generatedDirectories) {
   const entries = await fs.readdir(absoluteDirectory, { withFileTypes: true });
 
   for (const entry of entries) {
-    if (!entry.isFile() || path.extname(entry.name).toLowerCase() !== ".png") continue;
+    if (
+      !entry.isFile()
+      || ![".png", ".jpg", ".jpeg"].includes(path.extname(entry.name).toLowerCase())
+    ) continue;
     jobs.push({
       source: path.posix.join(directory.replaceAll("\\", "/"), entry.name),
       widths: [480, 768, 1200],

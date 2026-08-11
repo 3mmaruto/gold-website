@@ -1,12 +1,12 @@
 # Gold Group Website Project Context
 
-Updated: 2026-08-09
+Updated: 2026-08-11
 
 ## Repository state
 
 - Remote: `https://github.com/3mmaruto/gold-website`
 - Default/deployed branch: `main`
-- Production release baseline: `v1.0.0`.
+- Production release baseline: `v1.0.1`.
 - Maintenance changes start from current `main`, use a short-lived feature branch, and reach production through a pull request.
 - The earlier redesign branch is retained only as history; it is no longer the active development baseline.
 
@@ -67,4 +67,4 @@ The production website contains eleven localized routes in each language:
 - SK22 product profile
 - SK30 product profile
 
-Together with the `/` language-selection page, the build pre-renders 23 routes. The homepage centers the heat-pump system and links to useful solution guides rather than exposing proprietary manufacturing detail. The quality-document page explains that model- and project-specific records are available through a formal email request; it does not publish supplier identities, document identifiers, previews, or source files.
+Together with the `/` language-selection page, the build pre-renders 23 routes. The homepage centers the heat-pump system and links to useful solution guides rather than exposing proprietary manufacturing detail. The quality and documentation page describes relevant technical areas, supports formal document requests, and publishes Gold Group's own BUILDEX 2025 and 2026 participation records. It does not publish supplier identities, factory details, document identifiers, or private source files.

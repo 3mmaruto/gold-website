@@ -2,7 +2,7 @@
 
 Production marketing website for GOLD / Gold Group, built with React Router framework mode and statically pre-rendered for GitHub Pages.
 
-Current stable release: `v1.0.0` (2026-08-09). The release establishes the first formally versioned production baseline for future maintenance and content expansion.
+Current stable release: `v1.0.1` (2026-08-11). This maintenance release improves direct customer contact, keeps the growing product navigation compact, and expands the public quality page with Gold Group's documented BUILDEX participation.
 
 ## Application
 
