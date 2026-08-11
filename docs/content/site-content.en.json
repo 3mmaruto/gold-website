@@ -14,7 +14,7 @@
     "about": "About Us",
     "products": "Our Products",
     "contact": "Contact Us",
-    "qualityDocuments": "Quality Documents",
+    "qualityDocuments": "Quality & Documentation",
     "languageLabel": "العربية",
     "menu": [
       { "id": "home", "label": "Home", "path": "" },
@@ -103,8 +103,8 @@
       "description": "Explore hydronic underfloor heating, heat-pump integration, pipe layout, zoning, water temperature and the project inputs needed for a coordinated system."
     },
     "qualityDocuments": {
-      "title": "Quality & Technical Documents | Gold Group",
-      "description": "Request available quality, conformity and technical documentation for the relevant model and project through Gold Group's official email."
+      "title": "Quality Documents & BUILDEX Participation | Gold Group",
+      "description": "Explore selected technical documentation areas and Gold Group's participation in the BUILDEX international exhibition in 2025 and 2026."
     }
   },
   "home": {
@@ -142,12 +142,7 @@
       "eyebrow": "One integrated system",
       "title": "Move heat into your building instead of creating it from fuel.",
       "body": "The heat pump captures energy from outdoor air and transfers it to the water circuit. Full-inverter control continuously adjusts the compressor, fan and circulation package to match demand.",
-      "steps": [
-        "Capture energy from outdoor air",
-        "Raise its temperature through the refrigerant circuit",
-        "Transfer heat to the building water system",
-        "Modulate output as operating conditions change"
-      ]
+      "steps": ["Capture energy from outdoor air", "Raise its temperature through the refrigerant circuit", "Transfer heat to the building water system", "Modulate output as operating conditions change"]
     },
     "benefits": {
       "title": "Designed as a complete heating and cooling platform.",
@@ -174,14 +169,7 @@
       "eyebrow": "High-temperature heat-pump platform",
       "title": "80 C R290 Full DC Inverter Heat Pump",
       "body": "A high-temperature platform combining a Panasonic full-inverter compressor, Danfoss plate heat exchanger and EEV, smart control and an integrated circulation package. Capacity is selected around each project's operating needs.",
-      "items": [
-        "Panasonic full-inverter compressor",
-        "Danfoss plate heat exchanger and EEV",
-        "Wi-Fi control and LCD controller",
-        "Heating capacities: 8, 12, 16 and 22 kW",
-        "Built-in inverter circulation pump",
-        "Built-in expansion tank"
-      ],
+      "items": ["Panasonic full-inverter compressor", "Danfoss plate heat exchanger and EEV", "Wi-Fi control and LCD controller", "Heating capacities: 8, 12, 16 and 22 kW", "Built-in inverter circulation pump", "Built-in expansion tank"],
       "cta": "Download the catalog"
     },
     "smartControl": {
@@ -292,9 +280,18 @@
       },
       "applicationsTitle": "Where the system can contribute",
       "applications": [
-        { "title": "Space heating", "body": "Supplies compatible hydronic distribution such as underfloor circuits, fan-coil units and other water-side terminal equipment designed for the required supply temperature." },
-        { "title": "Cooling", "body": "Selected reversible systems can supply cooled water to suitable terminal units and a correctly designed condensate strategy." },
-        { "title": "Domestic hot water", "body": "Works with a correctly sized hot-water cylinder, heat exchanger arrangement and control sequence." }
+        {
+          "title": "Space heating",
+          "body": "Supplies compatible hydronic distribution such as underfloor circuits, fan-coil units and other water-side terminal equipment designed for the required supply temperature."
+        },
+        {
+          "title": "Cooling",
+          "body": "Selected reversible systems can supply cooled water to suitable terminal units and a correctly designed condensate strategy."
+        },
+        {
+          "title": "Domestic hot water",
+          "body": "Works with a correctly sized hot-water cylinder, heat exchanger arrangement and control sequence."
+        }
       ],
       "energyManagement": {
         "eyebrow": "Inverter energy management",
@@ -302,26 +299,59 @@
         "body": "Full-inverter control raises output when heating demand is high, then progressively reduces compressor, fan and circulation speed as the system approaches its target temperature. Electrical input therefore varies within each model's operating range according to building load, outdoor conditions and required supply-water temperature instead of remaining fixed at one output level.",
         "closing": "The result is smarter control of electrical input for the useful heat transferred into the building.",
         "steps": [
-          { "title": "Respond to demand", "body": "Output rises during start-up or when the thermal load increases." },
-          { "title": "Approach the target", "body": "Component speed reduces progressively as system temperature stabilizes." },
-          { "title": "Maintain balance", "body": "The system modulates within the range required by real operating conditions." }
+          {
+            "title": "Respond to demand",
+            "body": "Output rises during start-up or when the thermal load increases."
+          },
+          {
+            "title": "Approach the target",
+            "body": "Component speed reduces progressively as system temperature stabilizes."
+          },
+          {
+            "title": "Maintain balance",
+            "body": "The system modulates within the range required by real operating conditions."
+          }
         ]
       },
       "seriesTitle": "GOLD heat-pump series",
       "seriesBody": "The current GOLD range includes two air-to-water platforms. Exact performance depends on the selected model and operating conditions.",
       "series": [
-        { "title": "R290 high-temperature series", "body": "Full-inverter models in 8, 12, 16 and 22 kW heating capacities, with outlet water up to 80 C." },
-        { "title": "R32 full-inverter series", "body": "Models in 8, 12.5, 16 and 22 kW heating capacities, with outlet water up to 60 C and cabinet configuration varying by capacity." }
+        {
+          "title": "R290 high-temperature series",
+          "body": "Full-inverter models in 8, 12, 16 and 22 kW heating capacities, with outlet water up to 80 C."
+        },
+        {
+          "title": "R32 full-inverter series",
+          "body": "Models in 8, 12.5, 16 and 22 kW heating capacities, with outlet water up to 60 C and cabinet configuration varying by capacity."
+        }
       ],
       "factorsTitle": "Inputs used to frame the right selection",
       "factorsIntro": "Capacity alone is not enough. A useful project review starts from the building and the operating conditions.",
       "factors": [
-        { "title": "Design heat load", "body": "The building's calculated demand at local winter design conditions." },
-        { "title": "Climate", "body": "Outdoor design temperatures and the seasonal conditions in the project location." },
-        { "title": "Required water temperature", "body": "The supply temperature needed by the selected emitters and domestic hot-water strategy." },
-        { "title": "Hydraulic design", "body": "Flow rates, pressure loss, buffer volume, separation and circulation requirements." },
-        { "title": "Heat-distribution equipment", "body": "Underfloor circuits, fan-coil units and compatible water-side terminal equipment selected for the system operating temperatures." },
-        { "title": "Controls", "body": "Zones, sensors, operating priorities and the coordination of heating, cooling and hot water." }
+        {
+          "title": "Design heat load",
+          "body": "The building's calculated demand at local winter design conditions."
+        },
+        {
+          "title": "Climate",
+          "body": "Outdoor design temperatures and the seasonal conditions in the project location."
+        },
+        {
+          "title": "Required water temperature",
+          "body": "The supply temperature needed by the selected emitters and domestic hot-water strategy."
+        },
+        {
+          "title": "Hydraulic design",
+          "body": "Flow rates, pressure loss, buffer volume, separation and circulation requirements."
+        },
+        {
+          "title": "Heat-distribution equipment",
+          "body": "Underfloor circuits, fan-coil units and compatible water-side terminal equipment selected for the system operating temperatures."
+        },
+        {
+          "title": "Controls",
+          "body": "Zones, sensors, operating priorities and the coordination of heating, cooling and hot water."
+        }
       ],
       "closingTitle": "The product and the water system must be selected together.",
       "closingBody": "Gold Group can review the building type, area, location, required temperatures and distribution method to help define the appropriate next technical step.",
@@ -343,32 +373,74 @@
         "intro": "Whether the underfloor network already exists or is included in GOLD Group's scope, review begins with the building plans, calculated load, floor build-up and control zones so the distribution network can be coordinated with the heat source.",
         "imageAlt": "Illustrative hydronic underfloor-heating loop plan connected to a central manifold",
         "steps": [
-          { "title": "Study the inputs", "body": "Review room loads, insulation, floor construction, manifold position and required control zones." },
-          { "title": "Plan the circuits", "body": "Coordinate pipe spacing, loop length, routing and edge zones for each space." },
-          { "title": "Install and verify", "body": "Coordinate connections, pressure-test the circuits and document their routes before completing the floor build-up." }
+          {
+            "title": "Study the inputs",
+            "body": "Review room loads, insulation, floor construction, manifold position and required control zones."
+          },
+          {
+            "title": "Plan the circuits",
+            "body": "Coordinate pipe spacing, loop length, routing and edge zones for each space."
+          },
+          {
+            "title": "Install and verify",
+            "body": "Coordinate connections, pressure-test the circuits and document their routes before completing the floor build-up."
+          }
         ]
       },
       "applicationsTitle": "How the system is coordinated",
       "applications": [
-        { "title": "Heat source", "body": "A correctly selected heat pump can supply the low-temperature water commonly used by hydronic floor circuits." },
-        { "title": "Distribution", "body": "Manifolds divide the system into balanced loops with suitable flow rates and circuit lengths." },
-        { "title": "Room control", "body": "Zoning, thermostats and actuators coordinate room demand without losing sight of minimum flow and heat-source operation." }
+        {
+          "title": "Heat source",
+          "body": "A correctly selected heat pump can supply the low-temperature water commonly used by hydronic floor circuits."
+        },
+        {
+          "title": "Distribution",
+          "body": "Manifolds divide the system into balanced loops with suitable flow rates and circuit lengths."
+        },
+        {
+          "title": "Room control",
+          "body": "Zoning, thermostats and actuators coordinate room demand without losing sight of minimum flow and heat-source operation."
+        }
       ],
       "seriesTitle": "Integration with a heat pump",
       "seriesBody": "Underfloor heating can be a strong match for an air-to-water heat pump because it generally works with lower supply-water temperatures than many traditional emitters. The heat pump, buffer strategy, circulation and controls still need to be selected around the actual project.",
       "series": [
-        { "title": "Steady water temperature", "body": "Weather compensation and suitable controls can adjust supply temperature as outdoor conditions change." },
-        { "title": "Coordinated circulation", "body": "Pump selection, manifold pressure loss and zone operation must maintain the intended flow through active circuits." }
+        {
+          "title": "Steady water temperature",
+          "body": "Weather compensation and suitable controls can adjust supply temperature as outdoor conditions change."
+        },
+        {
+          "title": "Coordinated circulation",
+          "body": "Pump selection, manifold pressure loss and zone operation must maintain the intended flow through active circuits."
+        }
       ],
       "factorsTitle": "Design inputs that shape the floor system",
       "factorsIntro": "The final design should follow calculated room loads and the actual floor construction rather than a single standard spacing rule.",
       "factors": [
-        { "title": "Building heat load", "body": "Room-by-room demand defines the heat output required from each floor area." },
-        { "title": "Insulation", "body": "Building-envelope and below-pipe insulation influence losses, response and required output." },
-        { "title": "Pipe spacing and layout", "body": "Spacing, loop pattern, circuit length and edge zones respond to room demand and geometry." },
-        { "title": "Floor construction", "body": "Screed depth, floor finish and material resistance affect heat transfer and response time." },
-        { "title": "Supply-water temperature", "body": "The design temperature must suit the calculated output, floor limits and selected heat source." },
-        { "title": "Zoning and controls", "body": "Manifolds, actuators, thermostats, sensors and circulation logic coordinate individual areas." }
+        {
+          "title": "Building heat load",
+          "body": "Room-by-room demand defines the heat output required from each floor area."
+        },
+        {
+          "title": "Insulation",
+          "body": "Building-envelope and below-pipe insulation influence losses, response and required output."
+        },
+        {
+          "title": "Pipe spacing and layout",
+          "body": "Spacing, loop pattern, circuit length and edge zones respond to room demand and geometry."
+        },
+        {
+          "title": "Floor construction",
+          "body": "Screed depth, floor finish and material resistance affect heat transfer and response time."
+        },
+        {
+          "title": "Supply-water temperature",
+          "body": "The design temperature must suit the calculated output, floor limits and selected heat source."
+        },
+        {
+          "title": "Zoning and controls",
+          "body": "Manifolds, actuators, thermostats, sensors and circulation logic coordinate individual areas."
+        }
       ],
       "closingTitle": "Begin with the building plan and heating load.",
       "closingBody": "Share the project location, floor plans, construction, insulation and intended heat source so the system direction can be reviewed before equipment and pipe quantities are finalized.",
@@ -377,30 +449,51 @@
     }
   },
   "qualityDocuments": {
-    "eyebrow": "Quality and technical documentation",
-    "title": "The right documentation for the relevant model and project.",
-    "intro": "Gold Group maintains quality, conformity and technical documentation that varies by model and intended application. To keep each document within its proper scope, requests are reviewed formally for the relevant project or equipment.",
-    "sectionEyebrow": "Available documentation",
-    "sectionTitle": "Quality, conformity and technical files as needed.",
-    "sectionBody": "Depending on the model and its scope, available records may include quality and conformity documents and related technical data. These files are not published for public download and are shared when appropriate after the request is reviewed.",
+    "eyebrow": "Quality and field experience",
+    "title": "Documented quality, shaped through field experience.",
+    "intro": "Gold Group combines technical documentation with years of testing and project experience. Its team evaluates products, shares operating feedback with development teams and contributes directly to improvements shaped around real project needs.",
+    "sectionEyebrow": "Documented technologies",
+    "sectionTitle": "Technical areas within heat-pump systems.",
+    "sectionBody": "Gold Group maintains technical and patent documentation related to heat exchange, air-source heat-pump systems and heat-pump unit design. Relevant documents can be requested formally according to the model and project requirements.",
     "features": [
       {
-        "title": "Model-specific",
-        "body": "Available documentation varies according to the requested model and component."
+        "title": "Condensing heat exchanger",
+        "body": "Technical patent documentation related to a condensing heat-exchanger design."
       },
       {
-        "title": "Project context",
-        "body": "We review the intended application and technical requirements before identifying the relevant documents."
+        "title": "Air-source hot-water and heating heat pump",
+        "body": "Technical patent documentation for a central air-source heat-pump system supporting hot water and heating."
       },
       {
-        "title": "Formal email request",
-        "body": "Send the model, project summary and requested document type to our official email."
+        "title": "Heat-pump unit designs",
+        "body": "Industrial-design documentation related to heat-pump cabinets and outdoor units."
       }
     ],
+    "exhibitions": {
+      "eyebrow": "Direct professional presence",
+      "title": "Gold Group at the BUILDEX international exhibition.",
+      "body": "Gold Group participates in leading specialist exhibitions to stay in direct contact with customers and partners, follow market needs and turn field experience into continuous product and solution development.",
+      "items": [
+        {
+          "meta": "BUILDEX 2025 · 22nd edition",
+          "title": "Gold Group at the BUILDEX international exhibition",
+          "body": "A certificate recognising Gold Group's contribution to the success of the 22nd International Exhibition for Construction in Damascus.",
+          "imageAlt": "Certificate awarded to Gold Group at the 22nd BUILDEX International Exhibition for Construction in Damascus in 2025",
+          "openLabel": "Open Gold Group's 2025 BUILDEX participation certificate"
+        },
+        {
+          "meta": "BUILDEX 2026 · 24th edition",
+          "title": "Continuing Gold Group's presence at BUILDEX",
+          "body": "A participation certificate for Gold Group Heating & Cooling System at the 24th International Exhibition for Construction in Damascus.",
+          "imageAlt": "Certificate awarded to Gold Group Heating and Cooling System at the 24th BUILDEX International Exhibition for Construction in Damascus in 2026",
+          "openLabel": "Open Gold Group's 2026 BUILDEX participation certificate"
+        }
+      ]
+    },
     "cta": {
-      "title": "Request the relevant documents for your project.",
-      "body": "Email the model, a short project description and the type of document required.",
-      "button": "Request by email"
+      "title": "Request the relevant technical documentation.",
+      "body": "Gold Group can provide available technical and quality documentation according to the model and project requirements.",
+      "button": "Request documents by email"
     }
   },
   "contact": {
@@ -429,6 +522,7 @@
   },
   "footer": {
     "summary": "Heat-pump, heating, cooling and hot-water system solutions across all Syrian governorates.",
+    "whatsapp": "Chat directly on WhatsApp",
     "copyright": "Gold Group. All rights reserved."
   }
 }

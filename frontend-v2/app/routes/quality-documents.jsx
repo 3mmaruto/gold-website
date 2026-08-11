@@ -1,7 +1,8 @@
-import { FiCheckCircle, FiFileText, FiMail } from "react-icons/fi";
+import { FiActivity, FiLayers, FiTool } from "react-icons/fi";
 import CtaPanel from "../components/CtaPanel";
 import JsonLd from "../components/JsonLd";
 import PageHero from "../components/PageHero";
+import ResponsivePicture from "../components/ResponsivePicture";
 import SeoLinks from "../components/SeoLinks";
 import Section from "../components/Section";
 import { getContent } from "../lib/content";
@@ -11,7 +12,26 @@ export function meta({ params }) {
   return buildMeta(params.locale, "qualityDocuments");
 }
 
-const featureIcons = [FiFileText, FiCheckCircle, FiMail];
+const featureIcons = [FiActivity, FiTool, FiLayers];
+
+const buildexAssets = [
+  {
+    base: "/media/company-events/gold-group-buildex-2025-participation-certificate",
+    fallback:
+      "/media/company-events/gold-group-buildex-2025-participation-certificate.jpeg",
+    width: 1280,
+    height: 884,
+    widths: [480, 768, 1200],
+  },
+  {
+    base: "/media/company-events/gold-group-buildex-2026-participation-certificate",
+    fallback:
+      "/media/company-events/gold-group-buildex-2026-participation-certificate.jpeg",
+    width: 1280,
+    height: 884,
+    widths: [480, 768, 1200],
+  },
+];
 
 export default function QualityDocumentsPage({ params }) {
   const locale = params.locale;
@@ -58,6 +78,41 @@ export default function QualityDocumentsPage({ params }) {
               </article>
             );
           })}
+        </div>
+      </Section>
+
+      <Section
+        id="buildex-participation"
+        className="quality-events-section"
+        eyebrow={page.exhibitions.eyebrow}
+        title={page.exhibitions.title}
+        body={page.exhibitions.body}
+      >
+        <div className="quality-event-grid">
+          {page.exhibitions.items.map((item, index) => (
+            <figure className="quality-event-card" key={item.meta} data-reveal>
+              <a
+                className="quality-event-media"
+                href={buildexAssets[index].fallback}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={item.openLabel}
+              >
+                <ResponsivePicture
+                  source={buildexAssets[index]}
+                  alt={item.imageAlt}
+                  className="quality-event-picture"
+                  imgClassName="quality-event-image"
+                  sizes="(max-width: 820px) calc(100vw - 2rem), 50vw"
+                />
+              </a>
+              <figcaption>
+                <span>{item.meta}</span>
+                <h2>{item.title}</h2>
+                <p>{item.body}</p>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </Section>
 
