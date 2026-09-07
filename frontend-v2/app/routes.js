@@ -2,7 +2,6 @@ import { index, route } from "@react-router/dev/routes";
 
 export default [
   index("./routes/landing.jsx"),
-  route(":locale/gold-lab", "./routes/gold-lab.jsx"),
   route(":locale", "./routes/locale-layout.jsx", [
     index("./routes/home.jsx"),
     route("about", "./routes/about.jsx"),

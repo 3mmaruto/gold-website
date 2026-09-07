@@ -11,8 +11,6 @@
     "optimize:images": "node scripts/optimize-images.mjs",
     "build": "npm run optimize:images && react-router build",
     "typecheck": "react-router typegen",
-    "test:gold-lab": "node --experimental-strip-types --test tests/gold-lab-model.test.mjs",
-    "test:gold-lab:build": "node --test tests/gold-lab-build.test.mjs",
     "preview": "vite preview --outDir build/client"
   },
   "dependencies": {
