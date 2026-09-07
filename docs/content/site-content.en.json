@@ -11,6 +11,7 @@
     "home": "Home",
     "heatPumps": "Heat Pumps",
     "underfloorHeating": "Underfloor Heating",
+    "goldLab": "Gold Lab",
     "about": "About Us",
     "products": "Our Products",
     "contact": "Contact Us",
@@ -33,6 +34,12 @@
             "label": "Underfloor Heating",
             "description": "Hydronic floor systems planned around the building and heat source.",
             "path": "underfloor-heating/"
+          },
+          {
+            "id": "goldLab",
+            "label": "Gold Lab",
+            "description": "Interactive heating-cost comparison under the same adjustable building conditions.",
+            "path": "gold-lab/"
           }
         ]
       },
@@ -105,6 +112,10 @@
     "qualityDocuments": {
       "title": "Quality Documents & BUILDEX Participation | Gold Group",
       "description": "Explore selected technical documentation areas and Gold Group's participation in the BUILDEX international exhibition in 2025 and 2026."
+    },
+    "goldLab": {
+      "title": "Gold Lab | Interactive Heating Cost Comparison",
+      "description": "Compare modeled 30-day energy use and heating cost for a GOLD heat pump and a diesel boiler under the same adjustable building conditions."
     }
   },
   "home": {

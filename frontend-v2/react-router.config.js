@@ -14,6 +14,7 @@ export default {
     "/ar/manufacturer-documents/",
     "/ar/heat-pumps/",
     "/ar/underfloor-heating/",
+    "/ar/gold-lab/",
     "/en/",
     "/en/about/",
     "/en/products/",
@@ -25,6 +26,7 @@ export default {
     "/en/manufacturer-documents/",
     "/en/heat-pumps/",
     "/en/underfloor-heating/",
+    "/en/gold-lab/",
   ],
   routeDiscovery: { mode: "initial" },
 };

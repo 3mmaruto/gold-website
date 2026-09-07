@@ -128,6 +128,18 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gold-group-hvac.com/" />
   </url>
   <url>
+    <loc>https://gold-group-hvac.com/ar/gold-lab/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://gold-group-hvac.com/ar/gold-lab/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gold-group-hvac.com/en/gold-lab/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gold-group-hvac.com/" />
+  </url>
+  <url>
+    <loc>https://gold-group-hvac.com/en/gold-lab/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://gold-group-hvac.com/ar/gold-lab/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gold-group-hvac.com/en/gold-lab/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gold-group-hvac.com/" />
+  </url>
+  <url>
     <loc>https://gold-group-hvac.com/ar/contact/</loc>
     <xhtml:link rel="alternate" hreflang="ar" href="https://gold-group-hvac.com/ar/contact/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://gold-group-hvac.com/en/contact/" />

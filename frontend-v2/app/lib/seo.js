@@ -11,6 +11,7 @@ const pagePath = {
   products: "products/",
   contact: "contact/",
   qualityDocuments: "manufacturer-documents/",
+  goldLab: "gold-lab/",
   heatPumps: "heat-pumps/",
   underfloorHeating: "underfloor-heating/",
 };
