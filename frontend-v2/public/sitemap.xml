@@ -139,4 +139,16 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://gold-group-hvac.com/en/contact/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://gold-group-hvac.com/" />
   </url>
+  <url>
+    <loc>https://gold-group-hvac.com/ar/products/hot-water-cylinders/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://gold-group-hvac.com/ar/products/hot-water-cylinders/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gold-group-hvac.com/en/products/hot-water-cylinders/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gold-group-hvac.com/" />
+  </url>
+  <url>
+    <loc>https://gold-group-hvac.com/en/products/hot-water-cylinders/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://gold-group-hvac.com/ar/products/hot-water-cylinders/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gold-group-hvac.com/en/products/hot-water-cylinders/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gold-group-hvac.com/" />
+  </url>
 </urlset>

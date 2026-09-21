@@ -70,6 +70,12 @@
             "label": "GOLD R410A SK30 · 30 kW",
             "description": "Higher-capacity R410A heat pump with three-phase supply.",
             "path": "products/sk30/"
+          },
+          {
+            "id": "hotWaterCylinders",
+            "label": "Hot-water cylinders",
+            "description": "Explore GOLD cylinders and the 120 and 200 L specifications.",
+            "path": "products/hot-water-cylinders/"
           }
         ]
       },
@@ -244,7 +250,7 @@
         "id": "hot-water-cylinders",
         "name": "Hot-water cylinders",
         "summary": "Store and deliver domestic hot water while working with the heat source and the building's demand profile.",
-        "selection": ["Storage volume", "Coil configuration", "Connection layout", "Insulation and installation space"]
+        "selection": ["Storage volume", "Jacket circuit compatibility", "Connection layout", "Insulation and installation space"]
       },
       {
         "id": "buffer-tanks",

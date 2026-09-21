@@ -261,7 +261,9 @@ export function categoryListJsonLd(locale) {
     description: product.summary,
     category: product.categoryLabel,
     image: `${productionOrigin}${product.images[0].fallback}`,
-    url: `${absoluteUrl(locale, "products")}#${product.id}`,
+    url: product.detailsPath
+      ? `${productionOrigin}/${locale}/${product.detailsPath}`
+      : `${absoluteUrl(locale, "products")}#${product.id}`,
   }));
   const modelItems = modelProfiles.map((product) => ({
     name: product.title,

@@ -1,0 +1,735 @@
+.water-cylinder-page {
+  --cylinder-muted: #5c6878;
+  background: #fff;
+}
+
+.water-cylinder-page section[id] {
+  scroll-margin-block-start: 7rem;
+}
+
+.cylinder-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.cylinder-hero {
+  overflow: hidden;
+  background: var(--navy);
+  color: #fff;
+}
+
+.cylinder-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.7rem;
+  padding-block: 1.1rem;
+  color: #b9c5d5;
+  font-size: 0.8rem;
+}
+
+.cylinder-breadcrumbs a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+.cylinder-breadcrumbs a:hover {
+  color: var(--gold-light);
+}
+
+.cylinder-breadcrumbs [aria-current] {
+  color: #fff;
+}
+
+.cylinder-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding-block-end: 2.5rem;
+}
+
+.cylinder-hero-copy {
+  padding-block: 2rem;
+}
+
+.water-cylinder-page .eyebrow {
+  color: #977117;
+}
+
+.cylinder-hero .eyebrow,
+.cylinder-capacities .eyebrow {
+  color: var(--gold-light);
+}
+
+.cylinder-hero h1 {
+  max-width: 13ch;
+  font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+
+html[lang="ar"] .cylinder-hero h1 {
+  max-width: 15ch;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+.cylinder-hero-intro {
+  max-width: 49ch;
+  margin-block-start: 1.6rem;
+  color: #c3cdd9;
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+}
+
+.cylinder-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin-block-start: 2rem;
+}
+
+.cylinder-text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  gap: 0.8rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.cylinder-text-link:hover {
+  color: var(--gold-light);
+}
+
+.cylinder-hero-signature {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-block-start: 3rem;
+  color: #d8b25b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  direction: ltr;
+  justify-content: flex-start;
+}
+
+.cylinder-hero-signature svg {
+  width: 24px;
+  height: 24px;
+}
+
+.cylinder-hero-signature span span {
+  margin-inline-start: 0.65rem;
+  padding-inline-start: 0.65rem;
+  border-inline-start: 1px solid #74603a;
+  color: #b9c5d5;
+  font-weight: 500;
+}
+
+.cylinder-hero-media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #27384b;
+  border-radius: 1.5rem;
+  background: #05080c;
+}
+
+.cylinder-hero-media picture {
+  width: 100%;
+}
+
+.cylinder-hero-media img {
+  width: 100%;
+  height: 530px;
+  object-fit: contain;
+}
+
+.cylinder-hero-media figcaption {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-block-start: 1px solid #27384b;
+  background: #0d1d2e;
+  color: #c4cfdd;
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+.cylinder-section-nav {
+  border-block-end: 1px solid var(--line);
+  background: var(--ivory);
+}
+
+.cylinder-section-nav > div {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.cylinder-section-nav a {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  border-inline-start: 1px solid var(--line);
+  color: var(--navy);
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+
+.cylinder-section-nav a:last-child {
+  border-inline-end: 1px solid var(--line);
+}
+
+.cylinder-section-nav a:hover {
+  background: #ece5d4;
+}
+
+.cylinder-section-nav a span {
+  color: #92702a;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.cylinder-section {
+  padding-block: clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.cylinder-section h2 {
+  max-width: 21ch;
+  color: var(--navy);
+  font-size: clamp(2rem, 3.6vw, 3.1rem);
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+}
+
+html[lang="ar"] .cylinder-section h2 {
+  letter-spacing: 0;
+  line-height: 1.35;
+}
+
+.cylinder-section-heading {
+  max-width: 760px;
+  margin-block-end: 2.5rem;
+}
+
+.cylinder-section-heading > p:last-child,
+.cylinder-construction-intro > p:not(.eyebrow) {
+  max-width: 60ch;
+  margin-block-start: 1.1rem;
+  color: var(--cylinder-muted);
+}
+
+.cylinder-construction-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: start;
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.cylinder-family-picture {
+  margin-block-start: 1.5rem;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.cylinder-family-picture img {
+  width: 100%;
+  max-height: 290px;
+  object-fit: cover;
+}
+
+.cylinder-feature-list article {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 1.5rem;
+  border-block-end: 1px solid var(--line);
+}
+
+.cylinder-feature-list article:first-child {
+  padding-block-start: 0;
+}
+
+.cylinder-feature-list article:last-child {
+  border: 0;
+  padding-block-end: 0;
+}
+
+.cylinder-feature-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid #ded3b9;
+  border-radius: 12px;
+  background: #fbf7ec;
+  color: #92702a;
+}
+
+.cylinder-feature-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.cylinder-feature-list h3 {
+  margin-block-end: 0.35rem;
+  color: var(--navy);
+  font-size: 1.12rem;
+}
+
+.cylinder-feature-list p {
+  color: var(--cylinder-muted);
+  font-size: 0.96rem;
+}
+
+.cylinder-technical {
+  border-block: 1px solid var(--line);
+  background: #f5f6f7;
+}
+
+.cylinder-technical-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  align-items: start;
+  gap: 2rem;
+}
+
+.cylinder-tables {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.cylinder-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.cylinder-spec-label {
+  width: 43%;
+}
+
+.cylinder-spec-table th,
+.cylinder-spec-table td {
+  padding: 1rem;
+  border-block-end: 1px solid #e3e7eb;
+  text-align: start;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+
+.cylinder-spec-table thead th {
+  background: var(--navy);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.cylinder-spec-table thead th:not(:first-child) {
+  color: var(--gold-light);
+}
+
+.cylinder-spec-table tbody th {
+  color: #39485a;
+  font-weight: 500;
+}
+
+.cylinder-spec-table td {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.cylinder-spec-table tbody tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.cylinder-spec-table small {
+  display: block;
+  margin-block-start: 0.4rem;
+  color: #636c79;
+  font-size: 0.75rem;
+}
+
+.cylinder-material-details summary {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background: #eee7d7;
+  color: var(--navy);
+  font-size: 0.9rem;
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+
+.cylinder-material-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.cylinder-material-details summary > span {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.cylinder-material-details[open] summary > span {
+  transform: rotate(45deg);
+}
+
+.cylinder-protection-note {
+  padding: 1.6rem;
+  border-inline-start: 3px solid var(--gold);
+  border-radius: 0.2rem 1rem 1rem 0.2rem;
+  background: #fff;
+}
+
+.cylinder-protection-note > svg {
+  width: 30px;
+  height: 30px;
+  margin-block-end: 1rem;
+  color: #987224;
+}
+
+.cylinder-protection-note h3 {
+  color: var(--navy);
+  font-size: 1.07rem;
+}
+
+.cylinder-protection-note p {
+  margin-block-start: 0.75rem;
+  color: var(--cylinder-muted);
+  font-size: 0.9rem;
+}
+
+.cylinder-connections-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: start;
+  gap: 2.5rem;
+}
+
+.cylinder-cutaway {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: #f6f8fa;
+}
+
+.cylinder-cutaway img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.cylinder-cutaway figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  padding: 1rem 1.25rem;
+  border-block-start: 1px solid var(--line);
+  background: #fff;
+  color: #5c6878;
+  font-size: 0.8rem;
+}
+
+.cylinder-cutaway figcaption a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--navy);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.cylinder-port-legend > h3 {
+  margin-block-end: 0.7rem;
+  color: var(--navy);
+  font-size: 1.15rem;
+}
+
+.cylinder-port-group {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  align-items: start;
+  gap: 1rem;
+  padding-block: 1.25rem;
+  border-block-end: 1px solid var(--line);
+}
+
+.cylinder-port-group:last-child {
+  border: 0;
+}
+
+.cylinder-port-group > bdi {
+  padding-block: 0.25rem;
+  border-radius: 0.4rem;
+  background: #e9f2f9;
+  color: #13436b;
+  font-weight: 700;
+  text-align: center;
+}
+
+.cylinder-port-group h4 {
+  margin: 0 0 0.4rem;
+  color: var(--navy);
+  font-size: 0.94rem;
+}
+
+.cylinder-port-group ul {
+  margin: 0;
+  padding-inline-start: 1.15rem;
+  color: var(--cylinder-muted);
+  font-size: 0.85rem;
+}
+
+.cylinder-port-group li + li {
+  margin-block-start: 0.35rem;
+}
+
+.cylinder-capacities {
+  background: var(--navy);
+  color: #fff;
+}
+
+.cylinder-capacities h2 {
+  max-width: none;
+  color: #fff;
+}
+
+.cylinder-capacity-list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0;
+  margin: 2.5rem 0 1.7rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cylinder-capacity-list li {
+  padding: 1rem;
+  border-inline-start: 1px solid #324359;
+  text-align: center;
+}
+
+.cylinder-capacity-list li:last-child {
+  border-inline-end: 1px solid #324359;
+}
+
+.cylinder-capacity-list strong {
+  display: block;
+  color: var(--gold-light);
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1.3;
+}
+
+.cylinder-capacity-list span {
+  color: #c4cfdd;
+  font-size: 0.85rem;
+}
+
+.cylinder-capacity-note {
+  max-width: 78ch;
+  color: #b9c5d5;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 960px) {
+  .cylinder-technical-layout,
+  .cylinder-connections-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cylinder-protection-note {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 0.5rem 1rem;
+  }
+
+  .cylinder-protection-note > svg {
+    grid-row: span 2;
+    margin: 0;
+  }
+
+  .cylinder-protection-note p {
+    margin: 0;
+  }
+
+  .cylinder-port-legend {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .cylinder-port-legend > h3 {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+
+  .cylinder-port-group {
+    display: block;
+    padding-block: 0;
+    border: 0;
+  }
+
+  .cylinder-port-group > bdi {
+    display: inline-block;
+    min-width: 70px;
+    margin-block-end: 0.75rem;
+  }
+
+  .cylinder-construction-layout {
+    gap: 2rem;
+  }
+
+  .cylinder-hero-media img {
+    height: 470px;
+  }
+}
+
+@media (max-width: 760px) {
+  .cylinder-hero-layout,
+  .cylinder-construction-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .cylinder-hero-layout {
+    padding-block-end: 2rem;
+  }
+
+  .cylinder-hero-copy {
+    padding-block: 1rem 0;
+  }
+
+  .cylinder-hero h1,
+  html[lang="ar"] .cylinder-hero h1 {
+    max-width: 14ch;
+    font-size: clamp(2.55rem, 9vw, 3.8rem);
+  }
+
+  .cylinder-hero-signature {
+    display: none;
+  }
+
+  .cylinder-hero-media {
+    width: min(100%, 430px);
+    margin-inline: auto;
+  }
+
+  .cylinder-hero-media img {
+    height: 390px;
+  }
+
+  .cylinder-section-nav > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cylinder-section-nav a {
+    min-height: 64px;
+    gap: 0.5rem;
+    padding: 0.65rem;
+    font-size: 0.78rem;
+  }
+
+  .cylinder-section-nav a:nth-child(even) {
+    border-inline-end: 1px solid var(--line);
+  }
+
+  .cylinder-section-nav a:nth-child(-n+2) {
+    border-block-end: 1px solid var(--line);
+  }
+
+  .cylinder-family-picture {
+    max-width: 460px;
+  }
+
+  .cylinder-family-picture img {
+    max-height: 260px;
+  }
+
+  .cylinder-port-legend {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .cylinder-port-group {
+    display: grid;
+    grid-template-columns: 70px minmax(0, 1fr);
+    padding-block: 1.25rem;
+    border-block-end: 1px solid var(--line);
+  }
+
+  .cylinder-spec-table {
+    font-size: 0.76rem;
+  }
+
+  .cylinder-spec-table th,
+  .cylinder-spec-table td {
+    padding: 0.8rem 0.55rem;
+  }
+
+  .cylinder-spec-table thead th {
+    font-size: 0.76rem;
+  }
+
+  .cylinder-spec-label {
+    width: 39%;
+  }
+
+  .cylinder-spec-table small {
+    font-size: 0.69rem;
+  }
+
+  .cylinder-protection-note {
+    padding: 1.25rem;
+  }
+
+  .cylinder-capacity-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 1rem;
+    margin-block-start: 2rem;
+  }
+
+  .cylinder-capacity-list li:nth-child(3) {
+    border-inline-end: 1px solid #324359;
+  }
+
+  .cylinder-capacity-list li {
+    padding: 0.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .water-cylinder-page *,
+  .water-cylinder-page *::before,
+  .water-cylinder-page *::after {
+    scroll-behavior: auto;
+    animation: none !important;
+    transition: none !important;
+  }
+}

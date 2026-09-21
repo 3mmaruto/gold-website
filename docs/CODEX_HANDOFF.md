@@ -1,5 +1,9 @@
 # Codex Implementation Handoff
 
+## Local cylinder addition — 2026-09-21
+
+See [WATER_CYLINDERS_HANDOFF.md](WATER_CYLINDERS_HANDOFF.md) for the bilingual cylinder page, source decisions, generated-asset provenance, responsive QA, and local-only integration boundary. This addition is isolated from the unfinished visitor-auth work; it has not been pushed or deployed.
+
 ## Objective and current state
 
 Maintain the completed Gold Group website in `frontend-v2/`. The original scaffold was replaced by a statically pre-rendered bilingual React Router application, a normalized product catalog, responsive media, and localized SEO. The legacy root template has been removed under the approved deployment plan.

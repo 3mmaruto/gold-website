@@ -2,17 +2,19 @@ import { useId, useState } from "react";
 import { FiArrowUpRight, FiCheck, FiPlus } from "react-icons/fi";
 import { Link } from "react-router";
 import ResponsivePicture from "./ResponsivePicture";
+import "../styles/catalog-cylinder.css";
 
 export default function CatalogProductCard({ product, index, locale, ui }) {
   const [expanded, setExpanded] = useState(false);
   const detailsId = useId();
   const primaryImage = product.images[0];
   const secondaryImage = product.images[1];
+  const hasDetailSpecs = product.detailSpecs.length > 0;
 
   return (
     <article
       id={product.id}
-      className={`catalog-product-card ${product.modelLinks.length ? "has-model-pages" : ""} ${expanded ? "is-expanded" : ""}`}
+      className={`catalog-product-card ${product.modelLinks.length ? "has-model-pages" : ""} ${hasDetailSpecs ? "has-cylinder-details" : ""} ${expanded ? "is-expanded" : ""}`}
       data-category={product.category}
     >
       <div className="catalog-product-media">
@@ -70,26 +72,57 @@ export default function CatalogProductCard({ product, index, locale, ui }) {
           </nav>
         ) : null}
 
-        <div className="catalog-product-reveal" id={detailsId}>
-          <strong>{ui.productHighlights}</strong>
-          <ul>
-            {product.highlights.map((highlight) => (
-              <li key={highlight}><FiCheck aria-hidden="true" /> {highlight}</li>
-            ))}
-          </ul>
-        </div>
+        {hasDetailSpecs ? (
+          <div className="catalog-cylinder-details">
+            <section className="catalog-cylinder-selection">
+              <h3>{ui.selectionCriteria}</h3>
+              <ul>
+                {product.highlights.map((highlight) => (
+                  <li key={highlight}><FiCheck aria-hidden="true" /> {highlight}</li>
+                ))}
+              </ul>
+            </section>
+            <section className="catalog-cylinder-technical">
+              <h3>{product.detailSpecsTitle}</h3>
+              <dl>
+                {product.detailSpecs.map((spec) => (
+                  <div key={spec.label}>
+                    <dt>{spec.label}</dt>
+                    <dd><bdi>{spec.value}</bdi></dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          </div>
+        ) : (
+          <div className="catalog-product-reveal" id={detailsId}>
+            <strong>{ui.productHighlights}</strong>
+            <ul>
+              {product.highlights.map((highlight) => (
+                <li key={highlight}><FiCheck aria-hidden="true" /> {highlight}</li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div className="catalog-product-actions">
-          <button
-            type="button"
-            className="catalog-detail-toggle"
-            aria-expanded={expanded}
-            aria-controls={detailsId}
-            onClick={() => setExpanded((value) => !value)}
-          >
-            <span>{expanded ? ui.hideDetails : ui.revealDetails}</span>
-            <FiPlus aria-hidden="true" />
-          </button>
+          {product.detailsPath ? (
+            <Link className="catalog-detail-toggle catalog-product-page-link" to={`/${locale}/${product.detailsPath}`} prefetch="intent">
+              <span>{product.detailsLabel}</span>
+              <FiArrowUpRight aria-hidden="true" />
+            </Link>
+          ) : (
+            <button
+              type="button"
+              className="catalog-detail-toggle"
+              aria-expanded={expanded}
+              aria-controls={detailsId}
+              onClick={() => setExpanded((value) => !value)}
+            >
+              <span>{expanded ? ui.hideDetails : ui.revealDetails}</span>
+              <FiPlus aria-hidden="true" />
+            </button>
+          )}
           <Link className="catalog-selection-link" to={`/${locale}/contact/?product=${product.slug}`}>
             <span>{ui.selectProduct}</span>
             <FiArrowUpRight aria-hidden="true" />

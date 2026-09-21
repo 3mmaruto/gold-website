@@ -207,6 +207,9 @@
       "id": "hot-water-cylinders",
       "slug": "hot-water-cylinders",
       "category": "hot-water-cylinders",
+      "detailsPath": "products/hot-water-cylinders/",
+      "detailsLabel": { "ar": "اكتشف الأسطوانة ومواصفاتها", "en": "Explore cylinder details" },
+      "detailSpecsTitle": { "ar": "مواصفات 120 و200 لتر", "en": "120 & 200 L specifications" },
       "name": { "ar": "أسطوانات المياه الساخنة", "en": "Hot-water cylinders" },
       "summary": {
         "ar": "حلول تخزين للمياه الساخنة تعمل بالتكامل مع مصدر الحرارة وحاجة المبنى.",
@@ -224,11 +227,18 @@
       ],
       "specs": [
         { "label": { "ar": "الوظيفة", "en": "Purpose" }, "value": { "ar": "تخزين المياه الساخنة", "en": "Hot-water storage" } },
-        { "label": { "ar": "أساس الاختيار", "en": "Selection basis" }, "value": { "ar": "الحجم وترتيب المبادلات", "en": "Volume and coil layout" } }
+        { "label": { "ar": "التبادل الحراري · 120 و200 لتر", "en": "Heat exchange · 120 & 200 L" }, "value": { "ar": "جاكيت مائي محيط بالخزان", "en": "Surrounding water jacket" } }
+      ],
+      "detailSpecs": [
+        { "label": { "ar": "البطانة الداخلية", "en": "Inner lining" }, "value": { "ar": "مينا", "en": "Enamel" } },
+        { "label": { "ar": "التسخين الكهربائي المساعد", "en": "Electric supplement" }, "value": "1500 W" },
+        { "label": { "ar": "التغذية الكهربائية", "en": "Power supply" }, "value": "220–240 V · 50 Hz" },
+        { "label": { "ar": "درجة الحماية", "en": "Protection rating" }, "value": "IPX4" },
+        { "label": { "ar": "ضغط العمل الداخلي", "en": "Inner working pressure" }, "value": { "ar": "120 لتر: 7 بار · 200 لتر: 10 بار", "en": "120 L: 7 bar · 200 L: 10 bar" } }
       ],
       "highlights": {
-        "ar": ["حجم التخزين", "ترتيب المبادلات", "أماكن التوصيلات", "العزل ومساحة التركيب"],
-        "en": ["Storage volume", "Coil configuration", "Connection layout", "Insulation and installation space"]
+        "ar": ["حجم التخزين", "توافق دارة الجاكيت", "أماكن التوصيلات", "العزل ومساحة التركيب"],
+        "en": ["Storage volume", "Jacket circuit compatibility", "Connection layout", "Insulation and installation space"]
       }
     },
     {

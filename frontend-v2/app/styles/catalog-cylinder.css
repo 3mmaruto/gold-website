@@ -1,0 +1,112 @@
+.catalog-product-card.has-cylinder-details .catalog-product-specs {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.catalog-cylinder-details {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1.1rem;
+  margin-block-start: 1.4rem;
+}
+
+.catalog-cylinder-details > section {
+  min-width: 0;
+}
+
+.catalog-cylinder-details h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.catalog-cylinder-selection ul {
+  display: grid;
+  margin-block: 0.7rem 0;
+  padding: 0;
+  gap: 0.55rem;
+  list-style: none;
+}
+
+.catalog-cylinder-selection li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.catalog-cylinder-selection svg {
+  flex: none;
+  margin-block-start: 0.25rem;
+  color: var(--gold);
+}
+
+.catalog-cylinder-technical {
+  border-inline-start: 1px solid var(--line);
+  padding-inline-start: 1.1rem;
+}
+
+.catalog-cylinder-technical dl {
+  display: grid;
+  gap: 0.5rem;
+  margin-block: 0.7rem 0;
+}
+
+.catalog-cylinder-technical dl > div {
+  display: grid;
+  gap: 0.05rem;
+}
+
+.catalog-cylinder-technical dt {
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.catalog-cylinder-technical dd {
+  margin: 0;
+  color: var(--navy);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.catalog-product-card.has-cylinder-details .catalog-product-actions {
+  flex-wrap: wrap;
+}
+
+.catalog-product-page-link,
+.catalog-product-card.has-cylinder-details .catalog-selection-link {
+  min-height: 44px;
+}
+
+.catalog-product-page-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+@media (max-width: 420px) {
+  .catalog-cylinder-details {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .catalog-cylinder-technical {
+    border-inline-start: 0;
+    border-block-start: 1px solid var(--line);
+    padding-inline-start: 0;
+    padding-block-start: 0.9rem;
+  }
+
+  .catalog-cylinder-technical dl {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.8rem;
+  }
+
+  .catalog-cylinder-technical dl > div:last-child {
+    grid-column: 1 / -1;
+  }
+}
