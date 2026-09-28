@@ -3,3 +3,6 @@ dist/
 build/
 .react-router/
 preview.*.log
+.env
+.env.*
+!.env.example

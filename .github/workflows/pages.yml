@@ -1,22 +1,35 @@
-name: Deploy to GitHub Pages
+name: Verify and deploy website
 
 on:
+  pull_request:
+    branches: [ main ]
   push:
     branches: [ main ]
   workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: "pages"
+  group: "pages-${{ github.event.pull_request.number || github.ref }}"
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    env:
+      # All values below are public build configuration, never secrets/tokens.
+      # Main publication fails closed until an explicit mode is approved.
+      GOLD_WEBSITE_RELEASE: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && 'true' || 'false' }}
+      GOLD_WEBSITE_RELEASE_INTAKE: ${{ vars.GOLD_WEBSITE_RELEASE_INTAKE }}
+      GOLD_WEBSITE_PUBLIC_ORIGIN: ${{ vars.GOLD_WEBSITE_PUBLIC_ORIGIN }}
+      VITE_GOLD_ERP_INTAKE_URL: ${{ vars.VITE_GOLD_ERP_INTAKE_URL }}
+      VITE_GOLD_TURNSTILE_SITE_KEY: ${{ vars.VITE_GOLD_TURNSTILE_SITE_KEY }}
+      VITE_GOLD_INTAKE_PDF_ENABLED: ${{ vars.VITE_GOLD_INTAKE_PDF_ENABLED || 'false' }}
+      VITE_GOLD_INTAKE_LOCAL_ONLY: 'false'
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -29,22 +42,34 @@ jobs:
           cache-dependency-path: frontend-v2/package-lock.json
 
       - name: Setup Pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/configure-pages@v6
 
       - name: Install dependencies
         working-directory: frontend-v2
         run: npm ci
 
+      - name: Verify guest intake and route types
+        working-directory: frontend-v2
+        run: |
+          npm run test:intake
+          npm run typecheck
+
       - name: Build static site
         working-directory: frontend-v2
         run: npm run build
 
       - name: Upload artifact
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v5
         with:
           path: frontend-v2/build/client
 
   deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

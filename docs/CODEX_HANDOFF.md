@@ -1,5 +1,14 @@
 # Codex Implementation Handoff
 
+## Website release preparation — 2026-09-28
+
+The user approved publishing the cylinder pages and the current contact UI with
+request submission explicitly unavailable until the ERP bridge is accepted.
+See [WEBSITE_RELEASE_2026-09-28.md](WEBSITE_RELEASE_2026-09-28.md) for scope and
+verification, and [ERP_INTAKE_HANDOFF.md](ERP_INTAKE_HANDOFF.md) for activation gates.
+Unfinished visitor authentication and retired Gold Lab routes are not included.
+Earlier local-only statements below describe the status on their recorded dates.
+
 ## Local cylinder addition — 2026-09-21
 
 See [WATER_CYLINDERS_HANDOFF.md](WATER_CYLINDERS_HANDOFF.md) for the bilingual cylinder page, source decisions, generated-asset provenance, responsive QA, and local-only integration boundary. This addition is isolated from the unfinished visitor-auth work; it has not been pushed or deployed.
