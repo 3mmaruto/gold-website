@@ -2,6 +2,7 @@ import { FiDroplet, FiLayers, FiShield, FiThermometer, FiZap } from "react-icons
 import { Link } from "react-router";
 import Button from "../components/Button";
 import CtaPanel from "../components/CtaPanel";
+import CylinderAnatomy from "../components/CylinderAnatomy";
 import JsonLd from "../components/JsonLd";
 import ResponsivePicture from "../components/ResponsivePicture";
 import SeoLinks from "../components/SeoLinks";
@@ -116,13 +117,13 @@ export default function WaterCylindersPage({ params }) {
       </nav>
 
       <section className="cylinder-section cylinder-construction" id="cylinder-construction" aria-labelledby="cylinder-construction-heading">
-        <div className="container cylinder-construction-layout">
+        <div className="container">
           <div className="cylinder-construction-intro">
             <p className="eyebrow">{construction.eyebrow}</p>
             <h2 id="cylinder-construction-heading">{construction.title}</h2>
             <p>{construction.intro}</p>
-            <ResponsivePicture source={product.assets.family} alt={construction.familyAlt} className="cylinder-family-picture" sizes="(max-width: 900px) 90vw, 35vw" />
           </div>
+          <CylinderAnatomy source={product.assets.insulation} content={product.anatomy.insulation} variant="insulation" locale={locale} />
           <div className="cylinder-feature-list">
             {construction.items.map((item) => {
               const Icon = featureIcons[item.icon];
@@ -163,11 +164,9 @@ export default function WaterCylindersPage({ params }) {
             <h2 id="cylinder-connections-heading">{connections.title}</h2>
             <p>{connections.intro}</p>
           </header>
+          <CylinderAnatomy source={product.assets.cutaway} content={product.anatomy.section} variant="section" locale={locale} />
+          <CylinderAnatomy source={product.assets.service} content={product.anatomy.service} variant="service" locale={locale} />
           <div className="cylinder-connections-layout">
-            <figure className="cylinder-cutaway">
-              <ResponsivePicture source={product.assets.cutaway} alt={connections.imageAlt} sizes="(max-width: 960px) 95vw, 62vw" />
-              <figcaption><span>{connections.figureNote}</span><a href={product.assets.cutaway.fallback} target="_blank" rel="noreferrer">{connections.openDrawing}<span aria-hidden="true"> ↗</span></a></figcaption>
-            </figure>
             <div className="cylinder-port-legend">
               <h3>{connections.legendTitle}</h3>
               {connections.groups.map((group) => <div className="cylinder-port-group" key={group.size}><bdi dir="ltr">{group.size}</bdi><div><h4>{group.title}</h4><ul>{group.ports.map((port) => <li key={port}>{port}</li>)}</ul></div></div>)}

@@ -102,6 +102,10 @@ for (const locale of ["ar", "en"]) {
   if (process.argv.includes("--built")) {
     const html = await read(`build/client${route}index.html`);
     assert.equal([...html.matchAll(/<h1(?:\s|>)/g)].length, 1, `${locale}: one h1`);
+    assert.equal([...html.matchAll(/class="cylinder-anatomy cylinder-anatomy--/g)].length, 3, `${locale}: three annotated technical images`);
+    assert.equal([...html.matchAll(/class="cylinder-callout cylinder-callout--/g)].length, 6, `${locale}: six readable HTML callouts`);
+    for (const source of Object.values(product.assets)) assert.ok(html.includes(source.fallback), `${locale}: every new visual is used`);
+    for (const anatomy of Object.values(product.anatomy)) for (const note of anatomy.notes) assert.ok(html.includes(note.value), `${locale}: technical value prerendered, not trapped in bitmap`);
     assert.match(html, new RegExp(`<html[^>]*lang="${locale}"`));
     assert.match(html, new RegExp(`<html[^>]*dir="${locale === "ar" ? "rtl" : "ltr"}"`));
     assert.ok(html.includes(`rel="canonical" href="https://gold-group-hvac.com${route}"`));

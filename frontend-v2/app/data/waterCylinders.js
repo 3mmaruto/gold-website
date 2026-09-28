@@ -2,24 +2,31 @@ export const waterCylinderSlug = "hot-water-cylinders";
 
 const assets = {
   photo: {
-    base: "/media/products/water-cylinders/gold-cylinder-photo",
-    fallback: "/media/products/water-cylinders/gold-cylinder-photo.jpg",
-    width: 960,
-    height: 1280,
+    base: "/media/products/water-cylinders/gold-cylinder-studio-v1",
+    fallback: "/media/products/water-cylinders/gold-cylinder-studio-v1.png",
+    width: 1122,
+    height: 1402,
     widths: [480, 768, 1200],
   },
   cutaway: {
-    base: "/media/products/water-cylinders/cylinder-cutaway-v3",
-    fallback: "/media/products/water-cylinders/cylinder-cutaway-v3.png",
+    base: "/media/products/water-cylinders/cylinder-section-studio-v1",
+    fallback: "/media/products/water-cylinders/cylinder-section-studio-v1.png",
     width: 1536,
     height: 1024,
     widths: [480, 768, 1200],
   },
-  family: {
-    base: "/media/products/generated/gold-hot-water-cylinders-v1",
-    fallback: "/media/products/generated/gold-hot-water-cylinders-v1.png",
-    width: 1448,
-    height: 1086,
+  insulation: {
+    base: "/media/products/water-cylinders/cylinder-insulation-studio-v1",
+    fallback: "/media/products/water-cylinders/cylinder-insulation-studio-v1.png",
+    width: 1536,
+    height: 1024,
+    widths: [480, 768, 1200],
+  },
+  service: {
+    base: "/media/products/water-cylinders/cylinder-service-studio-v1",
+    fallback: "/media/products/water-cylinders/cylinder-service-studio-v1.png",
+    width: 1536,
+    height: 1024,
     widths: [480, 768, 1200],
   },
 };
@@ -36,6 +43,32 @@ const translations = {
     breadcrumbs: { label: "مسار الصفحة", home: "الرئيسية", products: "المنتجات" },
     imageAlt: "أسطوانة مياه ساخنة بيضاء تحمل شعار تاج غولد",
     imageCaption: "أسطوانات GOLD للمياه الساخنة",
+    anatomy: {
+      insulation: {
+        alt: "تصور مكبّر لطبقات المينا والفولاذ والغلاف الحراري والعزل في جدار الأسطوانة",
+        caption: "تصور توضيحي مكبّر للطبقات؛ الألوان والسماكات المرسومة ليست مقياساً هندسياً.",
+        notes: [
+          { title: "العزل الحراري", value: "4 / 6", unit: "سم", detail: "4 سم لطراز 120 لتر؛ 6 سم لطراز 200 لتر، و5 سم عند الغلاف الحراري." },
+          { title: "طلاء المينا الداخلي", value: "0.15–0.5", unit: "مم", detail: "طبقة حماية على السطح الداخلي للخزان الفولاذي." },
+        ],
+      },
+      section: {
+        alt: "تصور مقطعي للأسطوانة يظهر التسخين الكهربائي داخل الخزان والغلاف الحراري المنفصل والعزل المحيط",
+        caption: "تصور توضيحي للبنية، وليس مخططاً تنفيذياً. تُراجع مواضع التوصيلات واتجاه التركيب في مخطط الموديل.",
+        notes: [
+          { title: "تسخين كهربائي مساند", value: "1500", unit: "واط", detail: "عنصر التسخين داخل الخزان · 220–240 فولت / 50 هرتز." },
+          { title: "الغلاف الحراري", value: "5", unit: "بار", detail: "ضغط عمل دارة الغلاف الحراري المنفصلة، في كلا الطرازين." },
+        ],
+      },
+      service: {
+        alt: "تصور لواجهة توصيلات الأسطوانة يوضح منفذ المياه الساخنة وقضيب المغنيسيوم وغطاء التسخين الكهربائي",
+        caption: "واجهة التوصيلات في رسم توضيحي؛ المقاسات الفنية موضحة أدناه.",
+        notes: [
+          { title: "مخرج المياه الساخنة", value: "G 3/4", detail: "منفذ مخصص لخروج المياه الساخنة من الخزان." },
+          { title: "قضيب المغنيسيوم", value: "G 1", detail: "منفذ الحماية الداخلية للمساعدة في مقاومة التآكل." },
+        ],
+      },
+    },
     contact: "اختر السعة مع فريقنا",
     technicalLink: "المواصفات التقنية",
     onThisPage: "في هذه الصفحة",
@@ -115,6 +148,32 @@ const translations = {
     breadcrumbs: { label: "Breadcrumb", home: "Home", products: "Products" },
     imageAlt: "White GOLD hot-water cylinder with the gold crown brand mark",
     imageCaption: "GOLD hot-water cylinders",
+    anatomy: {
+      insulation: {
+        alt: "Magnified illustration of enamel, steel, heat-exchange jacket and insulation in the cylinder wall",
+        caption: "Magnified illustrative layers; rendered colours and thicknesses are not to engineering scale.",
+        notes: [
+          { title: "Thermal insulation", value: "4 / 6", unit: "cm", detail: "4 cm on the 120 L model; 6 cm on the 200 L model, with 5 cm around the jacket." },
+          { title: "Inner enamel lining", value: "0.15–0.5", unit: "mm", detail: "A protective layer on the steel tank’s inner surface." },
+        ],
+      },
+      section: {
+        alt: "Cylinder cutaway illustration showing the electric element inside the tank, separate heat-exchange jacket and surrounding insulation",
+        caption: "Construction illustration, not an installation drawing. Refer to the model drawing for connection locations and installation orientation.",
+        notes: [
+          { title: "Electric backup", value: "1500", unit: "W", detail: "Heating element inside the tank · 220–240 V / 50 Hz." },
+          { title: "Heat-exchange jacket", value: "5", unit: "bar", detail: "Working pressure of the separate jacket circuit on both models." },
+        ],
+      },
+      service: {
+        alt: "Illustration of the cylinder service end showing the hot-water outlet, magnesium-anode port and electric-heater cover",
+        caption: "Illustrative service-end view; connection sizes are listed below.",
+        notes: [
+          { title: "Hot-water outlet", value: "G 3/4", detail: "Dedicated outlet for hot water from the storage tank." },
+          { title: "Magnesium anode", value: "G 1", detail: "Internal-protection port to help resist tank corrosion." },
+        ],
+      },
+    },
     contact: "Find your cylinder size",
     technicalLink: "Technical specifications",
     onThisPage: "On this page",

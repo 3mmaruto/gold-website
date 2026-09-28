@@ -1,5 +1,9 @@
 # Generated Website Assets
 
+## Cylinder cinematic series — 2026-09-28
+
+Four built-in ImageGen assets, source constraints, final prompts and progressive scroll annotations are recorded in [CYLINDER_CINEMATIC_MEDIA.md](CYLINDER_CINEMATIC_MEDIA.md). The verified specification tables remain unchanged.
+
 ## Hot-water cylinder cutaway — 2026-09-21
 
 The new illustrative cutaway, original product photograph, reference scope and three ImageGen refinement briefs are documented in [WATER_CYLINDERS_HANDOFF.md](WATER_CYLINDERS_HANDOFF.md#image-provenance-and-technical-treatment). Only the approved final cutaway and optimized web renditions are included in public assets; private source PDFs and rejected drafts are excluded.

@@ -53,11 +53,14 @@ jobs:
         working-directory: frontend-v2
         run: |
           npm run test:intake
+          npm run test:cylinders
           npm run typecheck
 
       - name: Build static site
         working-directory: frontend-v2
-        run: npm run build
+        run: |
+          npm run build
+          node scripts/check-water-cylinders.mjs --built
 
       - name: Upload artifact
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
