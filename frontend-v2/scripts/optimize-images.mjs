@@ -27,6 +27,7 @@ const generatedDirectories = [
   "public/media/products/generated",
   "public/media/products/r290-series",
   "public/media/products/sk-series",
+  "public/media/products/water-cylinders",
   "public/media/solutions",
   "public/media/technology",
   "public/media/company-events",
@@ -34,7 +35,10 @@ const generatedDirectories = [
 
 for (const directory of generatedDirectories) {
   const absoluteDirectory = path.join(root, directory);
-  const entries = await fs.readdir(absoluteDirectory, { withFileTypes: true });
+  const entries = await fs.readdir(absoluteDirectory, { withFileTypes: true }).catch((error) => {
+    if (error.code === "ENOENT" && directory === "public/media/products/water-cylinders") return [];
+    throw error;
+  });
 
   for (const entry of entries) {
     if (

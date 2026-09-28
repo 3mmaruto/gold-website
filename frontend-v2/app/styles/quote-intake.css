@@ -1,0 +1,27 @@
+.intake-form { min-inline-size: 0; }
+.intake-form fieldset { border: 0; padding: 0; margin: 0; min-inline-size: 0; }
+.intake-form fieldset:disabled { opacity: .75; }
+.intake-form .intake-hint { margin-block: .8rem; color: var(--muted); font-size: .8rem; line-height: 1.8; }
+.intake-form input, .intake-form button, .intake-contact-options a { min-block-size: 44px; }
+.intake-form .intake-consent { display: flex; align-items: flex-start; gap: .7rem; cursor: pointer; }
+.intake-form .intake-consent input { flex: 0 0 22px; inline-size: 22px; block-size: 22px; min-block-size: 22px; padding: 0; margin-block-start: .2rem; accent-color: var(--gold); }
+.intake-form .intake-consent span { font-size: .85rem; line-height: 1.8; }
+.intake-form .intake-field-error { display: block; color: #a4262c; font-size: .8rem; }
+.intake-form [aria-invalid="true"] { border-color: #a4262c; }
+.intake-error { border-inline-start: 3px solid #a4262c; padding: 1rem; margin-block: 1rem; background: #fff1f1; color: #7c2026; overflow-wrap: anywhere; }
+.intake-error p { margin-block: .45rem 0; }
+.intake-error:focus, .intake-success [role="status"]:focus { outline: 2px solid var(--blue); outline-offset: 4px; }
+.intake-challenge { margin-block: 1rem; min-inline-size: 0; }
+.intake-form .form-submit { margin-block-start: 1rem; }
+.intake-form button:disabled { opacity: .65; cursor: not-allowed; box-shadow: none; }
+.intake-contact-options { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin-block-start: 1.1rem; }
+.intake-contact-options a { display: inline-flex; gap: .5rem; align-items: center; color: var(--navy); font-size: .85rem; text-decoration: underline; text-underline-offset: 4px; }
+.intake-unavailable h3 { font-size: 1.2rem; }
+.intake-unavailable p { color: var(--muted); }
+.intake-form .intake-remove { border: 1px solid var(--line); border-radius: 10px; background: white; padding-inline: .8rem; color: var(--navy); margin-block-start: .5rem; }
+.intake-form input[type="file"] { font-size: .8rem; padding: .7rem; }
+.intake-form input::file-selector-button { padding: .5rem; border: 0; border-radius: 6px; margin-inline-end: .5rem; background: #ece5d1; color: var(--navy); font: inherit; }
+.intake-success h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-block: 1rem; }
+.intake-success [role="status"] > svg { color: #177443; font-size: 2rem; }
+.intake-success p { color: var(--muted); line-height: 1.8; }
+.intake-reference { display: block; overflow-wrap: anywhere; font-size: clamp(.95rem, 2vw, 1.15rem); padding-block: 1rem 1.8rem; color: var(--navy); }

@@ -41,6 +41,12 @@ export function getCatalog(locale) {
       value: localized(spec.value, safeLocale),
     })),
     highlights: product.highlights[safeLocale] ?? [],
+    detailsLabel: localized(product.detailsLabel, safeLocale),
+    detailSpecsTitle: localized(product.detailSpecsTitle, safeLocale),
+    detailSpecs: (product.detailSpecs ?? []).map((spec) => ({
+      label: localized(spec.label, safeLocale),
+      value: localized(spec.value, safeLocale),
+    })),
     modelLinks: (product.modelLinks ?? []).map((link) => ({
       ...link,
       label: localized(link.label, safeLocale),
@@ -73,6 +79,7 @@ export function queryCatalog({ locale, query = "", category = "all", page = 1 })
       product.summary,
       product.categoryLabel,
       ...product.specs.flatMap((spec) => [spec.label, spec.value]),
+      ...product.detailSpecs.flatMap((spec) => [spec.label, spec.value]),
       ...product.highlights,
       ...(product.models ?? []),
       ...product.modelLinks.flatMap((link) => [link.model, link.capacity]),

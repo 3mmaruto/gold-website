@@ -1,5 +1,9 @@
 # Generated Website Assets
 
+## Hot-water cylinder cutaway — 2026-09-21
+
+The new illustrative cutaway, original product photograph, reference scope and three ImageGen refinement briefs are documented in [WATER_CYLINDERS_HANDOFF.md](WATER_CYLINDERS_HANDOFF.md#image-provenance-and-technical-treatment). Only the approved final cutaway and optimized web renditions are included in public assets; private source PDFs and rejected drafts are excluded.
+
 Generated with the built-in ImageGen workflow on 2026-07-18. Originals remain in the local Codex generated-image store; project copies are listed below.
 
 ## Homepage hero
