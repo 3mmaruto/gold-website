@@ -49,11 +49,12 @@ jobs:
         working-directory: frontend-v2
         run: npm ci
 
-      - name: Verify guest intake and route types
+      - name: Verify guest intake, navigation and route types
         working-directory: frontend-v2
         run: |
           npm run test:intake
           npm run test:cylinders
+          npm run test:navigation
           npm run typecheck
 
       - name: Build static site

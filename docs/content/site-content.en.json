@@ -79,6 +79,7 @@
           }
         ]
       },
+      { "id": "lab", "label": "Gold Lab", "href": "https://lab.gold-group-hvac.com/lab?lang=en" },
       { "id": "about", "label": "About Us", "path": "about/" },
       { "id": "contact", "label": "Contact Us", "path": "contact/" }
     ]

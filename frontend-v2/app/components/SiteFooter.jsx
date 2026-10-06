@@ -27,6 +27,7 @@ export default function SiteFooter({ locale, content, ui }) {
           data-reveal
         >
           {content.navigation.menu.map((item) => {
+            if (item.href) return <a key={item.id} href={item.href}>{item.label}</a>;
             if (item.id === "products" && item.children) {
               return (
                 <details className="footer-nav-group" key={item.id}>
