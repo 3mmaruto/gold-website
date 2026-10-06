@@ -79,6 +79,7 @@
           }
         ]
       },
+      { "id": "lab", "label": "مختبر غولد", "href": "https://lab.gold-group-hvac.com/lab?lang=ar" },
       { "id": "about", "label": "من نحن", "path": "about/" },
       { "id": "contact", "label": "تواصل معنا", "path": "contact/" }
     ]

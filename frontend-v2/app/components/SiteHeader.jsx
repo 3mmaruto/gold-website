@@ -24,6 +24,9 @@ export default function SiteHeader({ locale, content, ui }) {
   const otherLocale = oppositeLocale(locale);
   const homePath = `/${locale}/`;
   const menu = content.navigation.menu;
+  const headerRef = useRef(null);
+  const headerInnerRef = useRef(null);
+  const pendingGroupFocusRef = useRef(null);
   const menuToggleRef = useRef(null);
   const solutionsButtonRef = useRef(null);
   const productsButtonRef = useRef(null);
@@ -55,18 +58,25 @@ export default function SiteHeader({ locale, content, ui }) {
   }
 
   function focusGroupLink(groupId, position = "first") {
-    requestAnimationFrame(() => {
+    // Let visibility:hidden transition to visible before focusing a cold-open menu.
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      if (buttonRefs[groupId]?.current?.getAttribute("aria-expanded") !== "true") return;
       const links = groupLinks(groupId);
       const link = position === "last" ? links.at(-1) : links[0];
       link?.focus();
-    });
+    }));
   }
 
   function handleGroupButtonKeyDown(event, groupId) {
     if (["ArrowDown", "ArrowUp"].includes(event.key)) {
       event.preventDefault();
-      setDesktopGroupOpen(groupId);
-      focusGroupLink(groupId, event.key === "ArrowUp" ? "last" : "first");
+      const position = event.key === "ArrowUp" ? "last" : "first";
+      if (desktopGroupOpen === groupId) {
+        focusGroupLink(groupId, position);
+      } else {
+        pendingGroupFocusRef.current = { groupId, position };
+        setDesktopGroupOpen(groupId);
+      }
     }
 
     if (event.key === "Escape" && desktopGroupOpen === groupId) {
@@ -111,6 +121,55 @@ export default function SiteHeader({ locale, content, ui }) {
   }, [pathname]);
 
   useEffect(() => {
+    // Focus only after React has committed the open/visible menu to the DOM.
+    const pending = pendingGroupFocusRef.current;
+    pendingGroupFocusRef.current = null;
+    if (pending?.groupId === desktopGroupOpen) focusGroupLink(pending.groupId, pending.position);
+  }, [desktopGroupOpen]);
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1051px)");
+    function closeAtBreakpoint() {
+      const focused = document.activeElement;
+      const mobileHadFocus = focused === menuToggleRef.current || headerRef.current?.querySelector(".mobile-nav")?.contains(focused);
+      const desktopHadFocus = headerRef.current?.querySelector(".desktop-nav")?.contains(focused);
+      setMobileOpen(false);
+      setMobileGroupOpen(null);
+      setDesktopGroupOpen(null);
+      if (desktop.matches && mobileHadFocus) headerRef.current?.querySelector(".desktop-nav a")?.focus();
+      if (!desktop.matches && desktopHadFocus) menuToggleRef.current?.focus();
+    }
+    desktop.addEventListener("change", closeAtBreakpoint);
+    return () => desktop.removeEventListener("change", closeAtBreakpoint);
+  }, []);
+
+  useEffect(() => {
+    // Measure the header row, not the expanded menu, to avoid resize feedback.
+    // visualViewport also follows mobile browser chrome and viewport zoom.
+    const viewport = window.visualViewport;
+    function updateAvailableHeight() {
+      const bottom = headerInnerRef.current?.getBoundingClientRect().bottom ?? 0;
+      const viewportBottom = viewport ? viewport.offsetTop + viewport.height : window.innerHeight;
+      headerRef.current?.style.setProperty(
+        "--navigation-available-height",
+        `${Math.max(0, viewportBottom - bottom - 12)}px`,
+      );
+    }
+    updateAvailableHeight();
+    const observer = new ResizeObserver(updateAvailableHeight);
+    observer.observe(headerInnerRef.current);
+    window.addEventListener("resize", updateAvailableHeight);
+    viewport?.addEventListener("resize", updateAvailableHeight);
+    viewport?.addEventListener("scroll", updateAvailableHeight);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateAvailableHeight);
+      viewport?.removeEventListener("resize", updateAvailableHeight);
+      viewport?.removeEventListener("scroll", updateAvailableHeight);
+    };
+  }, []);
+
+  useEffect(() => {
     if (!desktopGroupOpen) return undefined;
     const activeMenuRef = menuRefs[desktopGroupOpen];
 
@@ -152,15 +211,20 @@ export default function SiteHeader({ locale, content, ui }) {
     if (!mobileOpen) return undefined;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    function handleOutsidePointer(event) {
+      if (!headerRef.current?.contains(event.target)) closeMobileMenu();
+    }
+    document.addEventListener("pointerdown", handleOutsidePointer);
     return () => {
       document.body.style.overflow = previousOverflow;
+      document.removeEventListener("pointerdown", handleOutsidePointer);
     };
   }, [mobileOpen]);
 
   return (
-    <header className="site-header">
+    <header className="site-header" ref={headerRef}>
       <a className="skip-link" href="#main-content">{ui.skip}</a>
-      <div className="container header-inner">
+      <div className="container header-inner" ref={headerInnerRef}>
         <Link className="header-brand" to={homePath} aria-label={content.brand.companyName}>
           <BrandLogo alt={`${content.brand.name} logo`} />
           <span className="header-brand-copy">
@@ -171,6 +235,9 @@ export default function SiteHeader({ locale, content, ui }) {
 
         <nav className="desktop-nav" aria-label={content.navigation.home}>
           {menu.map((item) => {
+            if (item.href) {
+              return <a key={item.id} href={item.href} className="nav-lab-link">{item.label}</a>;
+            }
             if (!item.children) {
               return (
                 <NavLink
@@ -261,6 +328,14 @@ export default function SiteHeader({ locale, content, ui }) {
       >
         <div className="container mobile-nav-inner">
           {menu.map((item, index) => {
+            if (item.href) {
+              return (
+                <a key={item.id} href={item.href} className="nav-lab-link" tabIndex={mobileOpen ? 0 : -1} onClick={() => closeMobileMenu()}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  {item.label}
+                </a>
+              );
+            }
             if (!item.children) {
               return (
                 <NavLink

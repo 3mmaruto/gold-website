@@ -13,6 +13,7 @@
     "typecheck": "react-router typegen",
     "test:intake": "node --test tests/intake-*.test.mjs",
     "test:cylinders": "node --test tests/cylinder-*.test.mjs",
+    "test:navigation": "node --test tests/navigation.test.mjs",
     "preview": "vite preview --outDir build/client"
   },
   "dependencies": {
