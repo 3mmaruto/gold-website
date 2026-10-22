@@ -9,6 +9,7 @@ import PageHero from "../components/PageHero";
 import ResponsivePicture from "../components/ResponsivePicture";
 import SeoLinks from "../components/SeoLinks";
 import Section from "../components/Section";
+import "../styles/catalog.css";
 import { queryCatalog } from "../lib/catalog";
 import { getContent, getUi } from "../lib/content";
 import {
@@ -70,22 +71,20 @@ export default function ProductsPage({ params }) {
         categoryListJsonLd(locale),
       ]} />
       <PageHero
+        className="catalog-hero"
         locale={locale}
         eyebrow={content.products.eyebrow}
         title={content.products.title}
         intro={content.products.intro}
         pageLabel={content.navigation.products}
-      />
-
-      <div className="product-banner-section">
-        <div className="container">
+      >
           <div className="product-banner" data-reveal>
             <ResponsivePicture
               asset="products"
               alt={content.products.imageAlt}
               className="product-banner-media"
               imgClassName="product-banner-image"
-              sizes="(max-width: 900px) 100vw, 1180px"
+              sizes="(max-width: 768px) 100vw, 540px"
               priority
             />
             <div className="product-banner-label">
@@ -93,8 +92,7 @@ export default function ProductsPage({ params }) {
               <strong>{locale === "ar" ? "مكوّنات المنظومة" : "System components"}</strong>
             </div>
           </div>
-        </div>
-      </div>
+      </PageHero>
 
       <Section
         className="catalog-section"
@@ -108,6 +106,7 @@ export default function ProductsPage({ params }) {
               <FiSearch aria-hidden="true" />
               <input
                 type="search"
+                aria-label={ui.searchProducts}
                 value={query}
                 placeholder={ui.searchPlaceholder}
                 onChange={(event) => updateParams({ q: event.target.value })}
@@ -116,7 +115,7 @@ export default function ProductsPage({ params }) {
               {query ? (
                 <button
                   type="button"
-                  aria-label={ui.clearFilters}
+                  aria-label={ui.clearSearch}
                   onClick={() => updateParams({ q: "" })}
                 >
                   <FiX aria-hidden="true" />
@@ -219,7 +218,7 @@ export default function ProductsPage({ params }) {
             <Button to={`/${locale}/heat-pumps/`} variant="dark">
               {content.home.solutions.heatPumpsCta}
             </Button>
-            <Button to={`/${locale}/underfloor-heating/`} variant="ghost">
+            <Button to={`/${locale}/underfloor-heating/`} variant="outline">
               {content.home.solutions.underfloorHeatingCta}
             </Button>
           </div>

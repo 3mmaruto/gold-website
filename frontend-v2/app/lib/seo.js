@@ -1,5 +1,5 @@
 import { getContent, isSupportedLocale, oppositeLocale } from "./content";
-import { getCatalog } from "./catalog";
+import { getCatalog, getCatalogProduct } from "./catalog";
 import { getSkProduct, getSkProductProfiles } from "../data/skProducts";
 
 export const productionOrigin = "https://gold-group-hvac.com";
@@ -75,7 +75,13 @@ export function buildLinks(locale, page) {
 
 export function buildProductMeta(locale, slug) {
   const safeLocale = isSupportedLocale(locale) ? locale : "ar";
-  const product = getSkProduct(safeLocale, slug);
+  const catalogProduct = getCatalogProduct(safeLocale, slug);
+  const product = getSkProduct(safeLocale, slug) ?? (catalogProduct ? {
+    seoTitle: `${catalogProduct.name} | GOLD`,
+    seoDescription: catalogProduct.summary,
+    image: catalogProduct.images[0],
+    imageAlt: catalogProduct.images[0].alt,
+  } : null);
   if (!product) return [];
 
   const url = productUrl(safeLocale, slug);

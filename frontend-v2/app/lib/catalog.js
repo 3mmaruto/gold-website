@@ -29,6 +29,7 @@ export function getCatalog(locale) {
   const products = catalogSource.products.map((product) => ({
     ...product,
     name: localized(product.name, safeLocale),
+    detailsPath: product.detailsPath ?? `products/${product.slug}/`,
     summary: localized(product.summary, safeLocale),
     categoryLabel: labelsByCategory[product.category] ?? product.category,
     images: product.images.map((image) => ({
@@ -60,6 +61,10 @@ export function getCatalog(locale) {
     categories,
     products,
   };
+}
+
+export function getCatalogProduct(locale, slug) {
+  return getCatalog(locale).products.find((product) => product.slug === slug);
 }
 
 export function queryCatalog({ locale, query = "", category = "all", page = 1 }) {

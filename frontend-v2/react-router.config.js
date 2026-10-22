@@ -1,3 +1,10 @@
+import catalog from "./app/data/products.json" with { type: "json" };
+
+const catalogPages = ["ar", "en"].flatMap((locale) =>
+  catalog.products.filter((product) => !product.detailsPath)
+    .map((product) => `/${locale}/products/${product.slug}/`),
+);
+
 /** @type {import('@react-router/dev/config').Config} */
 export default {
   ssr: false,
@@ -27,6 +34,7 @@ export default {
     "/en/manufacturer-documents/",
     "/en/heat-pumps/",
     "/en/underfloor-heating/",
+    ...catalogPages,
   ],
   routeDiscovery: { mode: "initial" },
 };

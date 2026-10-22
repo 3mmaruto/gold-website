@@ -14,6 +14,7 @@
     "test:intake": "node --test tests/intake-*.test.mjs",
     "test:cylinders": "node --test tests/cylinder-*.test.mjs",
     "test:navigation": "node --test tests/navigation.test.mjs",
+    "test:catalog": "node --test tests/catalog.test.mjs",
     "preview": "vite preview --outDir build/client"
   },
   "dependencies": {
