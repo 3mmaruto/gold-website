@@ -1,11 +1,11 @@
 import { Link } from "react-router";
 
-export default function PageHero({ locale, eyebrow, title, intro, pageLabel, children }) {
+export default function PageHero({ locale, eyebrow, title, intro, pageLabel, children, className = "" }) {
   return (
-    <section className="page-hero">
+    <section className={`page-hero ${className}`.trim()}>
       <div className="page-hero-grid" aria-hidden="true" />
       <div className="container page-hero-inner">
-        <nav className="breadcrumbs" aria-label="Breadcrumb" data-reveal>
+        <nav className="breadcrumbs" aria-label={locale === "ar" ? "مسار الصفحة" : "Breadcrumb"} data-reveal>
           <Link to={`/${locale}/`}>{locale === "ar" ? "الرئيسية" : "Home"}</Link>
           <span aria-hidden="true">/</span>
           <span aria-current="page">{pageLabel}</span>

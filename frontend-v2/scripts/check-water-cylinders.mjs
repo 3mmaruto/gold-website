@@ -68,15 +68,16 @@ assert.equal(cylinder.detailSpecs.at(-1).value.en, "120 L: 7 bar · 200 L: 10 ba
 assert.match(cylinder.detailSpecsTitle.ar, /120.*200/);
 assert.match(cylinder.detailSpecsTitle.en, /120.*200/);
 assert.equal(cylinder.highlights.en.includes("Coil configuration"), false);
-assert.equal(new Set(config.prerender).size, 25);
-assert.equal(config.prerender.length, 25, "no duplicate pre-render paths");
+const expectedRouteCount = 25 + 2 * catalog.products.filter((product) => !product.detailsPath).length;
+assert.equal(new Set(config.prerender).size, expectedRouteCount);
+assert.equal(config.prerender.length, expectedRouteCount, "no duplicate pre-render paths");
 assert.ok(config.prerender.every((route) => !retiredLabPath.test(route)), "no retired Lab pre-render path");
 
 const routes = await read("app/routes.js");
 assert.ok(routes.indexOf('route("products/hot-water-cylinders"') < routes.indexOf('route("products/:productSlug"'));
 assert.doesNotMatch(routes, /route\(\s*["'][^"']*(?:gold-)?lab(?:\/|["'])/i, "no explicit retired Lab route");
 const sitemap = await read("public/sitemap.xml");
-assert.equal([...sitemap.matchAll(/<loc>/g)].length, 25);
+assert.equal([...sitemap.matchAll(/<loc>/g)].length, expectedRouteCount);
 const sitemapPaths = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => new URL(url).pathname);
 assert.deepEqual([...sitemapPaths].sort(), [...config.prerender].sort(), "sitemap matches every pre-render route");
 assertNoPrivateSource(await read("app/data/waterCylinders.js"), "new public data");
@@ -145,8 +146,8 @@ for (const locale of ["ar", "en"]) {
     assertPublicMarkup(html, `${locale}: cylinder page`);
     const catalogHtml = await read(`build/client/${locale}/products/index.html`);
     assert.ok(catalogHtml.includes(`href="${route}"`), `${locale}: visible catalog route`);
-    const scopedHeading = cylinder.detailSpecsTitle[locale].replaceAll("&", "&amp;");
-    assert.ok(catalogHtml.includes(scopedHeading), `${locale}: model-scoped card specs`);
+    const scopedLabel = cylinder.specs.find((spec) => /120/.test(spec.label.en)).label[locale].replaceAll("&", "&amp;");
+    assert.ok(catalogHtml.includes(scopedLabel), `${locale}: jacket description stays scoped to 120 and 200 L on the card`);
   }
 }
 
@@ -163,4 +164,4 @@ if (process.argv.includes("--built")) {
   }
 }
 
-console.log(`Water-cylinder integration checks passed${process.argv.includes("--built") ? ` (25 pre-rendered pages, ${checkedAssets.size} local image assets, bilingual schema/specification/privacy checks)` : " (source; use --built after the production build)"}.`);
+console.log(`Water-cylinder integration checks passed${process.argv.includes("--built") ? ` (${expectedRouteCount} pre-rendered pages, ${checkedAssets.size} local image assets, bilingual schema/specification/privacy checks)` : " (source; use --built after the production build)"}.`);

@@ -79,7 +79,7 @@ export default function SiteFooter({ locale, content, ui }) {
             <FaWhatsapp aria-hidden="true" /> {content.footer.whatsapp}
           </a>
           <a href={`mailto:${content.contact.email}`}>
-            <FiMail aria-hidden="true" /> {content.contact.email}
+            <FiMail aria-hidden="true" /> <bdi>{content.contact.email}</bdi>
           </a>
           <span>
             <FiMapPin aria-hidden="true" /> {content.contact.location}

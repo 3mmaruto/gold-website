@@ -7,12 +7,14 @@ import {
 } from "react-icons/fi";
 import { Link, Navigate } from "react-router";
 import Button from "../components/Button";
+import CatalogProductProfile from "../components/CatalogProductProfile";
 import CtaPanel from "../components/CtaPanel";
 import JsonLd from "../components/JsonLd";
 import ResponsivePicture from "../components/ResponsivePicture";
 import SeoLinks from "../components/SeoLinks";
 import { getSkProduct, isSkProductSlug } from "../data/skProducts";
 import { getContent } from "../lib/content";
+import { getCatalogProduct } from "../lib/catalog";
 import {
   buildProductMeta,
   productBreadcrumbsJsonLd,
@@ -84,6 +86,8 @@ export default function ProductDetailPage({ params }) {
   const slug = params.productSlug;
 
   if (!isSkProductSlug(slug)) {
+    const catalogProduct = getCatalogProduct(locale, slug);
+    if (catalogProduct) return <CatalogProductProfile locale={locale} product={catalogProduct} />;
     return <Navigate replace to={`/${locale}/products/`} />;
   }
 
